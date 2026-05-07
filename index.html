@@ -60,7 +60,7 @@
             </li>
           </ul>
         </nav>
-        <a href="#" class="btn_cta btn-small">지원하기 ↗</a>
+        <a href="#" class="btn_cta btn-small">지원하기</a>
       </div>
     </header>
 
@@ -163,8 +163,12 @@
       <section id="curriculum">
         <h2 class="text-header">AI선도 기업이 설계한 실무 중심 커리큘럼</h2>
         <div class="curriculum_hero_guide">
-          <h3 class="text-h1">성장을 만드는 학습과정, 지금 확인하세요!</h3>
-          <p class="text-body">상기 과정명을 클릭하면 커리큘럼을 확인할 수 있어요.</p>
+          <img src="images/curriculum_mouse_icon.png" alt="마우스 아이콘" class="curriculum_mouse_icon">
+          <div class="hero_guide_text">
+            <h3 class="text-h1">성장을 만드는 학습과정, <br>지금 확인하세요!</h3>
+            <p class="text-body">상기 과정명을 클릭하면 커리큘럼을 확인할 수 있어요.</p>
+          </div>
+          
         </div>
         <div class="category_group">
           <input type="radio" name="tab" id="tab1" checked />
@@ -179,83 +183,93 @@
           >
         </div>
         <div class="curriculum_container">
-          <div class="curriculum_schedule">
-            <div class="month1">
-              <h4>1개월차</h4>
-              <p>기초 웹 프로그래밍 기초 - HTML부터 Figma까지</p>
-            </div>
-            <div class="month2">
-              <h4>2개월차</h4>
-              <p>동적 웹 프로그래밍 기초 - Javascript, SASS, Jquery 등</p>
-            </div>
-            <div class="month3">
-              <h4>3개월차</h4>
-              <p>동적 웹 프로그래밍 심화 - React.js, GitHub 중급, Firebase 등</p>
-            </div>
-            <div class="final">
-              <h4>최종 실전 프로그램</h4>
-              <ul>
-                <li>HTML/CSS(레이아웃 구현)</li>
-                <li>HTML/CSS/JS 프로젝트(인터렉티브 앱 구현)</li>
-                <li>HTML/CSS/JS/React(팀 프로젝트)</li>
-              </ul>
-            </div>
+          <input type="radio" name="month" id="month1" checked>
+          <input type="radio" name="month" id="month2">
+          <input type="radio" name="month" id="month3">
+          <input type="radio" name="month" id="final">
+
+            <div class="curriculum_schedule">
+              <label for="month1">
+                <h4 class="text-h2-100">1개월차</h4>
+                <p class="text-body-b">기초 웹 프로그래밍 기초 - HTML부터 Figma까지</p>
+              </label>
+
+              <label for="month2">
+                <h4 class="text-h2-100">2개월차</h4>
+                <p class="text-body-b">동적 웹 프로그래밍 기초 - Javascript, SASS, Jquery 등</p>
+              </label>
+
+              <label for="month3">
+                <h4 class="text-h2-100">3개월차</h4>
+                <p class="text-body-b">동적 웹 프로그래밍 심화 - React.js, GitHub 중급, Firebase 등</p>
+              </label>
+
+              <label for="final">
+                <h4 class="text-h2-100">최종 실전 프로그램</h4>
+                <ul class="text-body">
+                  <li>HTML/CSS(레이아웃 구현)</li>
+                  <li>HTML/CSS/JS 프로젝트(인터렉티브 앱 구현)</li>
+                  <li>HTML/CSS/JS/React(팀 프로젝트)</li>
+                </ul>
+              </label>
           </div>
-          <div class="title_group">
-            <h4>프론트엔드</h4>
-            <a href="#" class="btn_cta">지원하기 ↗</a>
-          </div>
-          <div class="curriculum_detail_group">
-            <div class="detail_month1">
-              <h5>기초 및 이론</h5>
-              <ul>
-                <li>HTML/CSS</li>
-                <li>CSS/SaaS</li>
-                <li>GitHub 초급</li>
-                <li>TailwindCSS,Bootstrap</li>
-                <li>Figma</li>
-                <li>정적 호스팅</li>
-              </ul>
-              <h5>AI 활용과정</h5>
-              <ul>
-                <li>HAI 활용 HTML/CSS 코드생성 및 최적화</li>
-                <li>Figma AI 플러그인으로 와이어프레임 자동생성</li>
-                <li>AI 이미지 생성으로 UI 제작</li>
-              </ul>
+          <div class="curriculum_right">
+            <div class="title_group">
+              <h4 class="text-h1">프론트엔드</h4>
+              <a href="#" class="btn_cta btn-small">지원하기</a>
             </div>
-            <div class="detail_month2">
-              <h5>기초 및 이론</h5>
-              <ul>
-                <li>Javascript 프로그래밍</li>
-                <li>Javascript 코딩테스트</li>
-                <li>HTTP/ HTTPS</li>
-                <li>웹 개발자 도구</li>
-                <li>성능측정/최적화/Web Vitals</li>
-                <li>AI로 간단한 JS 코드 작성</li>
-                <li>테스트 코드 자동 생성</li>
-              </ul>
-            </div>
-            <div class="detail_month3">
-              <h5>기초 및 이론</h5>
-              <ul>
-                <li>React.js / TypeScript</li>
-                <li>TDO</li>
-                <li>웹팩</li>
-                <li>GitHub 중급</li>
-                <li>Firebase</li>
-                <li>테스트(Jest, TDO 기초)</li>
-                <li>성능 최적화(코드 스플리팅, React.memo, Web Vitals)</li>
-                <li>React + AI API 연동</li>
-                <li>Copilot으로 TypeScript 자동 완성 & 리팩토링</li>
-              </ul>
-            </div>
-            <div class="detail_last">
-              <h5>실습 프로젝트 실행</h5>
-              <ul>
-                <li>HTML/ CSS (레이아웃 구현)</li>
-                <li>HTML/ CSS/ JS 프로젝트 (인터렉티브 앱 구현)</li>
-                <li>HTML/ CSS/ JS/ React (팀 프로젝트)</li>
-              </ul>
+            <div class="curriculum_detail_group">
+              <div class="detail_month1">
+                <h5 class="text-h3">기초 및 이론</h5>
+                <ul>
+                  <li>HTML/CSS</li>
+                  <li>CSS/SaaS</li>
+                  <li>GitHub 초급</li>
+                  <li>TailwindCSS,Bootstrap</li>
+                  <li>Figma</li>
+                  <li>정적 호스팅</li>
+                </ul>
+                <h5 class="text-h3">AI 활용과정</h5>
+                <ul>
+                  <li>HAI 활용 HTML/CSS 코드생성 및 최적화</li>
+                  <li>Figma AI 플러그인으로 와이어프레임 자동생성</li>
+                  <li>AI 이미지 생성으로 UI 제작</li>
+                </ul>
+              </div>
+              <div class="detail_month2">
+                <h5 class="text-h3">기초 및 이론</h5>
+                <ul>
+                  <li>Javascript 프로그래밍</li>
+                  <li>Javascript 코딩테스트</li>
+                  <li>HTTP/ HTTPS</li>
+                  <li>웹 개발자 도구</li>
+                  <li>성능측정/최적화/Web Vitals</li>
+                  <li>AI로 간단한 JS 코드 작성</li>
+                  <li>테스트 코드 자동 생성</li>
+                </ul>
+              </div>
+              <div class="detail_month3">
+                <h5 class="text-h3">기초 및 이론</h5>
+                <ul>
+                  <li>React.js / TypeScript</li>
+                  <li>TDO</li>
+                  <li>웹팩</li>
+                  <li>GitHub 중급</li>
+                  <li>Firebase</li>
+                  <li>테스트(Jest, TDO 기초)</li>
+                  <li>성능 최적화(코드 스플리팅, React.memo, Web Vitals)</li>
+                  <li>React + AI API 연동</li>
+                  <li>Copilot으로 TypeScript 자동 완성 & 리팩토링</li>
+                </ul>
+              </div>
+              <div class="detail_last">
+                <h5 class="text-h3">실습 프로젝트 실행</h5>
+                <ul>
+                  <li>HTML/ CSS (레이아웃 구현)</li>
+                  <li>HTML/ CSS/ JS 프로젝트 (인터렉티브 앱 구현)</li>
+                  <li>HTML/ CSS/ JS/ React (팀 프로젝트)</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
