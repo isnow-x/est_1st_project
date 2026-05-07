@@ -43,30 +43,37 @@ body {
 .text-header {
   font-size: var(--header);
   line-height: calc(var(--header) * 1);
+  font-weight: 700;
 }
 .text-h1 {
   font-size: var(--h1);
   line-height: calc(var(--h1) * 1.25);
+  font-weight: 700;
 }
 .text-serve {
   font-size: var(--serve);
   line-height: calc(var(--serve) * 1);
+  font-weight: 700;
 }
 .text-h2-100 {
   font-size: var(--h2-100);
   line-height: calc(var(--h2-100) * 1);
+  font-weight: 700;
 }
 .text-h2-125 {
   font-size: var(--h2-125);
   line-height: calc(var(--h2-125) * 1.25);
+  font-weight: 700;
 }
 .text-h2-150 {
   font-size: var(--h2-150);
   line-height: calc(var(--h2-150) * 1.5);
+  font-weight: 700;
 }
 .text-h3 {
   font-size: var(--h3);
   line-height: calc(var(--serve) * 1);
+  font-weight: 700;
 }
 .text-qna {
   font-size: var(--qna);
@@ -79,6 +86,7 @@ body {
 .text-body-b {
   font-size: var(--body-b);
   line-height: calc(var(-body-b) * 1.5);
+  font-weight: 700;
 }
 .text-content {
   font-size: var(--content);
