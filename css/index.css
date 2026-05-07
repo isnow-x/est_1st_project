@@ -1,7 +1,28 @@
 /* 히어로 - 이채연 */
 
 /* 커리큘럼 - 문송연 */
+#curriculum {
+  min-height: 1960px;
+  background: var(--super-black);
+  background-image: url(../images/curriculum_bg.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+}
+#curriculum h2 {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 160px;
+}
+.curriculum_hero_guide {
+  background-image: url(..images/curriculum_mouse_icon.png);
+  text-align: center;
+  margin-bottom: 218px;
+}
 
+.curriculum_hero_guide h3 {
+  margin-bottom: 35px;
+}
 /* 리뷰 : 장도담 */
 
 /* 혜택 : 최정민 */
