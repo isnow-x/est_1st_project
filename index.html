@@ -9,8 +9,10 @@
     <!-- 헤더 : 문송연 -->
     <header>
       <div class="inner">
-        <h1>LOGO</h1>
-        <nav>
+        <h1>
+          <img src="images/estcamp_logo.png" alt="ESTcamp logo">
+        </h1>
+        <nav class="menu">
           <ul>
             <li>이스트 캠프</li>
             <li>이스트 스쿨</li>
@@ -18,35 +20,207 @@
             <li>내일배움카드</li>
           </ul>
         </nav>
+        <button type="button">지원하기</button>
       </div>
     </header>
 
     <!-- 메인 -->
     <main>
+
       <!-- 히어로 : 이채연 -->
       <section id="hero">
-        <div class="inner">
-          <h2>메인 카피</h2>
-          <p>서브 텍스트</p>
+        <div class="inner hero_slide_container">
+          <ul class="hero_slide">
+            <li class="slide_item item1">
+              <article class="hero_content">
+                <h2>부트캠프</h2>
+                <h3>프론트엔드 개발자 부트캠프 00기 모집중</h3>
+                <p>
+                  코딩으로 시작하는 커리어의 첫걸음, 기초부터 실무 프로젝트까지 현업 개발자에게 배우고
+                  자신감 있게 나만의 당신의 커리어를 시작해보세요.
+                </p>
+                <a href="#" class="btn_primary">지원하기 ↗(변경)</a>
+              </article>
+            </li>
+            <li class="slide_item item2">
+              <article class="hero_content">
+                <h2>제주 오르미 캠프</h2>
+                <h3>[제주] 프론트엔드 오르미 캠프 00기 모집중</h3>
+                <span>모집기간 &#124; 2026.06.01 &sim; 2026.06.20</span>
+                <p>
+                  제주의 푸른 자연 속에서 펼쳐지는 압도적 몰입의 시간. 숙소 지원부터 전문가
+                  멘토링까지, 오직 성장에만 집중할 수 있는 최고의 환경을 제공합니다.
+                </p>
+                <a href="#" class="btn_primary">지원하기 ↗(변경)</a>
+              </article>
+            </li>
+            <li class="slide_item item3">
+              <article class="hero_content">
+                <h2>인공지능사관학교</h2>
+                <h3>인공지능사관학교 프론트엔드 코스 모집중</h3>
+                <span>모집기간 &#124; 2026.05.15 &sim; 2026.06.10</span>
+                <p>
+                  AI 기술을 이해하고 활용하는 차세대 프론트엔드 개발자로 거듭나세요. 광주에서 펼쳐지는
+                  1,000시간의 고밀도 교육 과정입니다.
+                </p>
+                <a href="#" class="btn_primary">지원하기 ↗(변경)</a>
+              </article>
+            </li>
+            <li class="slide_item item4">
+              <article class="hero_content">
+                <h2>이스트 소프트 뉴스</h2>
+                <h3>세상을 변화시키는 기술, 이스트소프트 소식</h3>
+                <span>Lastest News &#124; 2026.05.03 </span>
+                <p>
+                  AI 기술을 이해하고 활용하는 차세대 프론트엔드 개발자로 거듭나세요. 광주에서 펼쳐지는
+                  1,000시간의 고밀도 교육 과정입니다.
+                </p>
+                <a href="#" class="btn_primary">지원하기 ↗(변경)</a>
+              </article>
+            </li>
+          </ul>
+
+          <div class="slider_arrow">
+            <button class="btn_prev">이전</button>
+            <button class="btn_next">다음</button>
+          </div>
+
+          <ul class="slider_pagination">
+            <li class="active">부트캠프</li>
+            <li>오르미캠프</li>
+            <li>인공지능사관학교</li>
+            <li>이스트소프트 뉴스</li>
+          </ul>
         </div>
-      </section>
+
+      <aside class="quick_aside">
+        <div class="quick_chat_group">
+          <!-- 호버 시 나타날 말풍선 -->
+          <div class="chat_bubble">
+            <p>무엇이든 물어보세요!</p>
+            <div class="chat_links">
+              <span>1:1 문의하기</span>
+              <a href="#"><img src="instagram_icon.png" alt="인스타그램" /></a>
+              <a href="#"><img src="kakao_icon.png" alt="카카오톡" /></a>
+            </div>
+          </div>
+
+          <!-- 실제 마우스 올릴 알약 아이콘 -->
+          <button type="button" class="btn_chat">
+            <img src="pill_character.png" alt="챗봇 상담하기" />
+          </button>
+        </div>
+
+        <!-- TOP 버튼 -->
+        <a href="#" class="btn_top">
+          <span class="blind">위로 이동</span>
+          <!-- 화살표 아이콘 -->
+        </a>
+      </aside>
 
       <!-- 커리큘럼 : 문송연 -->
-      <section id="curriculum">
-        <div class="inner">
-          <h2>AI 선도 기업이 설계한 실무 중심 커리큘럼</h2>
+    <section id="curriculum">
+        <h2>AI선도 기업이 설계한 실무 중심 커리큘럼</h2>
+        <div class="curriculum_hero_guide">  
+          <h3>성장을 만드는 학습과정, 지금 확인하세요!</h3>
+          <p>상기 과정명을 클릭하면 커리큘럼을 확인할 수 있어요.</p>
         </div>
-      </section>
+        <div class="category_group">
+          <input type="radio" name="tab" id="tab1" checked>
+          <label for="tab1"><img src="images/curriculum_frontend.png" alt="프론트엔드 아이콘 이미지">프론트엔드</label>
+          <input type="radio" name="tab" id="tab2">
+          <label for="tab2"><img src="images/curriculum_ios.png" alt="ios 앱 개발 아이콘이미지">IOS 앱 개발</label>
+          <input type="radio" name="tab" id="tab3">
+          <label for="tab3"><img src="images/curriculum_inpra.png" alt="가디언즈 인프라보안 아이콘이미지">가디언즈 인프라보안</label>
+        </div>
+        <div class="curriculum_container">
+            <div class="curriculum_schedule">
+              <div class="month1">
+                <h4>1개월차</h4>
+                <p>기초 웹 프로그래밍 기초 - HTML부터 Figma까지</p>
+              </div>
+              <div class="month2">
+                <h4>2개월차</h4>
+                <p>동적 웹 프로그래밍 기초 - Javascript, SASS, Jquery 등</p>
+              </div>
+              <div class="month3">
+                <h4>3개월차</h4>
+                <p>동적 웹 프로그래밍 심화 - React.js, GitHub 중급, Firebase 등</p>
+              </div>
+              <div class="final">
+                <h4>최종 실전 프로그램</h4>
+                <ul>
+                  <li>HTML/CSS(레이아웃 구현)</li>
+                  <li>HTML/CSS/JS 프로젝트(인터렉티브 앱 구현)</li>
+                  <li>HTML/CSS/JS/React(팀 프로젝트)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="title_group">
+              <h4>프론트엔드</h4>
+              <button type="button">지원하기</button>
+            </div>
+            <div class="curriculum_detail_group">
+              <div class="detail_month1">
+                <h5>기초 및 이론</h5>
+                  <ul>
+                      <li>HTML/CSS</li>
+                      <li>CSS/SaaS</li>
+                      <li>GitHub 초급</li>
+                      <li>TailwindCSS,Bootstrap</li>
+                      <li>Figma</li>
+                      <li>정적 호스팅</li>
+                    </ul>
+                <h5>AI 활용과정</h5>
+                  <ul>
+                    <li>HAI 활용 HTML/CSS 코드생성 및 최적화</li>
+                    <li>Figma AI 플러그인으로 와이어프레임 자동생성</li>
+                    <li>AI 이미지 생성으로 UI 제작</li>
+                  </ul>
+              </div>
+              <div class="detail_month2">
+                <h5>기초 및 이론</h5>
+                  <ul>
+                    <li>Javascript 프로그래밍</li>
+                    <li>Javascript 코딩테스트</li>
+                    <li>HTTP/ HTTPS</li>
+                    <li>웹 개발자 도구</li>
+                    <li>성능측정/최적화/Web Vitals</li>
+                    <li>AI로 간단한 JS 코드 작성</li>
+                    <li>테스트 코드 자동 생성</li>
+                  </ul>
+              </div>
+              <div class="detail_month3">
+                <h5>기초 및 이론</h5>
+                  <ul>
+                    <li>React.js / TypeScript</li>
+                    <li>TDO</li>
+                    <li>웹팩</li>
+                    <li>GitHub 중급</li>
+                    <li>Firebase</li>
+                    <li>테스트(Jest, TDO 기초)</li>
+                    <li>성능 최적화(코드 스플리팅, React.memo, Web Vitals)</li>
+                    <li>React + AI API 연동</li>
+                    <li>Copilot으로 TypeScript 자동 완성 & 리팩토링</li>
+                  </ul>
+              </div>
+              <div class="detail_last">
+                <h5>실습 프로젝트 실행</h5>
+                  <ul>
+                    <li>HTML/ CSS (레이아웃 구현)</li>
+                    <li>HTML/ CSS/ JS 프로젝트 (인터렉티브 앱 구현)</li>
+                    <li>HTML/ CSS/ JS/ React (팀 프로젝트)</li>
+                  </ul>
+              </div>
+          </div>
+        </div>
+    </section>
 
       <!-- 리뷰 : 장도담 -->
       <section id="review">
         <div class="inner">
           <h2>리뷰</h2>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam mollitia placeat harum
-            obcaecati odit possimus eius autem sequi aperiam, vero cum neque id, sit inventore magni
-            quam doloremque enim omnis?
-          </p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam mollitia placeat harum obcaecati odit possimus eius autem sequi aperiam, vero cum neque id, sit inventore magni quam doloremque enim omnis?</p>
         </div>
       </section>
 
@@ -56,15 +230,146 @@
           <h2>지원자 혜택</h2>
 
           <!-- 배경 이미지 -->
+          <div class="benefit_bg_wrap">
+            <img src="/images/Benefit_bg_coins.jpg" alt="Benefit_bg_coins">
+          </div>
 
           <!-- 카드 발급 -->
+
         </div>
       </section>
 
       <!-- 지원요건 : 이채연 -->
       <section id="apply">
         <div class="inner">
-          <h2 class="apply_header">지원요건</h2>
+          <header class="apply_header">
+          <h2>지원요건</h2>
+          <p>나도 가능할까? 지금 바로 확인해보세요.</p>
+          <div class="apply_controller">
+            <div class="apply_slider_number">
+              <span class="current">1</span>
+              <span class="bar"></span>
+              <!-- CSS로 긴 가로선 구현 -->
+              <span class="total">4</span>
+            </div>
+
+            <div class="apply_arrows">
+              <button type="button" class="btn_prev" aria-label="이전 슬라이드">
+                <span class="arrow_icon">&larr;</span>
+              </button>
+              <button type="button" class="btn_next" aria-label="다음 슬라이드">
+                <span class="arrow_icon">&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <div class="apply_slide_wrapper">
+          <ul>
+            <li class="slide_item apply_slide1">
+              <article class="apply_card">
+                <!-- 왼쪽 텍스트 영역 -->
+                <div class="card_content">
+                  <h3 class="card_title">국민내일배움카드 발급이 가능하신 분</h3>
+                  <p class="card_desc">
+                    고용 24 검색창 아래의<br />
+                    국민내일배움카드 → 국민내일배움카드 발급 → 발급신청
+                  </p>
+
+                  <!-- 하단 인디케이터 (카드 내부용) -->
+                  <ul class="card_step_list">
+                    <li class="active">01</li>
+                    <li>02</li>
+                    <li>03</li>
+                    <li>04</li>
+                  </ul>
+                </div>
+
+                <!-- 오른쪽 이미지 영역 -->
+                <figure class="card_img">
+                  <img src="card_icon.png" alt="국민내일배움카드 아이콘" />
+                </figure>
+              </article>
+            </li>
+            <li class="slide_item apply_slide2">
+              <article class="apply_card">
+                <!-- 왼쪽 텍스트 영역 -->
+                <div class="card_content">
+                  <h3 class="card_title">5년 이내 KDT 수강 이력이 없는 분</h3>
+                  <p class="card_desc">
+                    고용 24 로그인 → 나의 정보 → 나의 훈련 이력 위와 같이 확인 후 이전 KDT 과정 수강
+                    이력(수료, 하차, 포기 모두 포함)이 있다면, 신청이 불가한 것은 아니나 자비 부담금
+                    발생합니다.
+                  </p>
+
+                  <!-- 하단 인디케이터 (카드 내부용) -->
+                  <ul class="card_step_list">
+                    <li>01</li>
+                    <li class="active">02</li>
+                    <li>03</li>
+                    <li>04</li>
+                  </ul>
+                </div>
+
+                <!-- 오른쪽 이미지 영역 -->
+                <figure class="card_img">
+                  <img src="card_icon.png" alt="K-디지털 아이콘" />
+                </figure>
+              </article>
+            </li>
+            <li class="slide_item apply_slide3">
+              <article class="apply_card">
+                <!-- 왼쪽 텍스트 영역 -->
+                <div class="card_content">
+                  <h3 class="card_title">평일 9 TO 6 교육 참여가 가능한 분</h3>
+                  <p class="card_desc">
+                    고용 24 평일 주 5일(공휴일 제외) 9:00 ~ 18:00 풀타임 강의로 진행 풀타임으로
+                    온전히 참여하실 수 있는 분들을 우선 대상으로 선발 학교/직장과 병행하더라도
+                    수강시간 확보가 가능하신 경우에 교육 참여가 가능
+                  </p>
+
+                  <!-- 하단 인디케이터 (카드 내부용) -->
+                  <ul class="card_step_list">
+                    <li>01</li>
+                    <li>02</li>
+                    <li class="active">03</li>
+                    <li>04</li>
+                  </ul>
+                </div>
+
+                <!-- 오른쪽 이미지 영역 -->
+                <figure class="card_img">
+                  <img src="card_icon.png" alt="9to6 아이콘" />
+                </figure>
+              </article>
+            </li>
+            <li class="slide_item apply_slide4">
+              <article class="apply_card">
+                <!-- 왼쪽 텍스트 영역 -->
+                <div class="card_content">
+                  <h3 class="card_title">졸업까지 남은 연한이 2년 이내인 분</h3>
+                  <p class="card_desc">
+                    &middot; 4년제 대학 재학생 - 2학년 2학기 종료 시부터 지원가능 &middot; 3년제
+                    대학 재학생 - 1학년 2학기 종료 시부터 지원가능 &middot; 2년제 대학 재학생 -
+                    1학년 입학 시부터 지원가능
+                  </p>
+
+                  <!-- 하단 인디케이터 (카드 내부용) -->
+                  <ul class="card_step_list">
+                    <li>01</li>
+                    <li>02</li>
+                    <li>03</li>
+                    <li class="active">04</li>
+                  </ul>
+                </div>
+
+                <!-- 오른쪽 이미지 영역 -->
+                <figure class="card_img">
+                  <img src="card_icon.png" alt="졸업연한 아이콘" />
+                </figure>
+              </article>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -177,11 +482,7 @@
     <footer class="">
       <div class="inner">
         <p>© 2026 footer</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio officia aliquam
-          suscipit necessitatibus alias voluptatibus optio corrupti fugit ea sed consequatur, eius
-          doloribus qui omnis labore ducimus quas obcaecati!
-        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio officia aliquam suscipit necessitatibus alias voluptatibus optio corrupti fugit ea sed consequatur, eius doloribus qui omnis labore ducimus quas obcaecati!</p>
       </div>
     </footer>
   </body>
