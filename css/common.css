@@ -36,89 +36,109 @@
 body {
   font-family: "Pretendard", sans-serif;
   letter-spacing: var(--base-letter-spacing);
+  color: var(--white);
 }
 
 /* 타이포그래피 */
 .text-header {
   font-size: var(--header);
   line-height: calc(var(--header) * 1);
-  color: var(--white);
 }
 .text-h1 {
   font-size: var(--h1);
   line-height: calc(var(--h1) * 1.25);
-  color: var(--white);
 }
 .text-serve {
   font-size: var(--serve);
   line-height: calc(var(--serve) * 1);
-  color: var(--white);
 }
 .text-h2-100 {
   font-size: var(--h2-100);
   line-height: calc(var(--h2-100) * 1);
-  color: var(--white);
 }
 .text-h2-125 {
   font-size: var(--h2-125);
   line-height: calc(var(--h2-125) * 1.25);
-  color: var(--white);
 }
 .text-h2-150 {
   font-size: var(--h2-150);
   line-height: calc(var(--h2-150) * 1.5);
-  color: var(--white);
 }
 .text-h3 {
   font-size: var(--h3);
   line-height: calc(var(--serve) * 1);
-  color: var(--white);
 }
 .text-qna {
   font-size: var(--qna);
   line-height: calc(var(-qna) * 1.5);
-  color: var(--white);
 }
 .text-body {
   font-size: var(--body);
   line-height: calc(var(-body) * 1.5);
-  color: var(--white);
 }
 .text-body-b {
   font-size: var(--body-b);
   line-height: calc(var(-body-b) * 1.5);
-  color: var(--white);
 }
 .text-content {
   font-size: var(--content);
   line-height: calc(var(-content) * 1.5);
-  color: var(--white);
 }
 .text-footer {
   font-size: var(--footer);
   line-height: calc(var(-footer) * 1);
-  color: var(--white);
 }
 /* 링크 버튼 */
-.btn {
-  height: 60px;
+.btn-big {
   background: var(--yellow);
   border-radius: 36px;
+  display: inline-flex;
+  padding: 15px 70px;
+  font-size: var(--h2-100);
+  font-weight: bold;
+  gap: 10px;
+  color: var(--black);
+  align-items: center;
 }
-/* 헤더 - 문송연 */
 
-/* 히어로 - 이채연 */
+/* 
+.material-symbols-rounded {
+  font-size: 32px;
+  display: inline-block;
+  margin-top: 1.5px;
+} 
+*/
 
-/* 커리큘럼 - 문송연 */
+.btn-small {
+  background: var(--purple);
+  border-radius: 36px;
+  display: inline-flex;
+  padding: 7px 19px 7px 28px;
+  font-size: var(--h3);
+  font-weight: bold;
+  gap: 5px;
+  color: var(--white);
+  align-items: center;
+}
+/* 레이아웃 */
+.inner {
+  width: 1280px;
+  margin: 0 auto;
+}
 
-/* 리뷰 : 장도담 */
+.inner-pd {
+  padding: calc(var(--base-unit) * 5) 0;
+}
 
-/* 혜택 : 최정민 */
+.hidden {
+  position: absolute;
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 
-/* 지원요건 : 이채연 */
-
-/* 지원독려 : 황시원 */
-
-/* QNA : 황시원 */
-
-/* 푸터 : 장도담 */
+/* 로고 */
+.estcamp-logo {
+  background: url(../images/estcamp_logo.png) center / cover no-repeat;
+}
