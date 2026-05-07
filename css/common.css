@@ -1,0 +1,50 @@
+@import url("normalize.css");
+@import url("reset.css");
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  /* Layout */
+  --base-unit: 20px;
+  --base-font: 18px;
+  --base-letter-spacing: -0.05em;
+
+  /* Color styles */
+  --purple: rgb(138, 56, 245, 1);
+  --yellow: rgb(255, 187, 39, 1);
+  --white: rgb(241, 241, 241, 1);
+  --gray: rgb(89, 89, 89, 1);
+  --super-gray: rgb(46, 46, 46, 1);
+  --black: rgb(15, 15, 15, 1);
+  --super-black: rgb(0, 0, 0, 1);
+
+  /* Text-size styles */
+
+  /* 타이포그래피 */
+
+  /* 링크 버튼 */
+
+  /* 헤더 - 문송연 */
+
+  /* 히어로 - 이채연 */
+
+  /* 커리큘럼 - 문송연 */
+
+  /* 리뷰 : 장도담 */
+
+  /* 혜택 : 최정민 */
+
+  /* 지원요건 : 이채연 */
+
+  /* 지원독려 : 황시원 */
+
+  /* QNA : 황시원 */
+
+  /* 푸터 : 장도담 */
+}
