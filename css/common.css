@@ -77,24 +77,24 @@ body {
 }
 .text-qna {
   font-size: var(--qna);
-  line-height: calc(var(-qna) * 1.5);
+  line-height: calc(var(--qna) * 1.5);
 }
 .text-body {
   font-size: var(--body);
-  line-height: calc(var(-body) * 1.5);
+  line-height: calc(var(--body) * 1.5);
 }
 .text-body-b {
   font-size: var(--body-b);
-  line-height: calc(var(-body-b) * 1.5);
+  line-height: calc(var(--body-b) * 1.5);
   font-weight: 700;
 }
 .text-content {
   font-size: var(--content);
-  line-height: calc(var(-content) * 1.5);
+  line-height: calc(var(--content) * 1.5);
 }
 .text-footer {
   font-size: var(--footer);
-  line-height: calc(var(-footer) * 1);
+  line-height: calc(var(--footer) * 1);
 }
 /* 링크 버튼 */
 .btn-big {
