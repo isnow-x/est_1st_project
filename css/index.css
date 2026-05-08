@@ -307,6 +307,9 @@
   background-size: cover, cover;
 }
 /* QNA : 황시원 */
+.qna {
+  background: var(--white);
+}
 .qna-text {
   color: var(--black);
 }
