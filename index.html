@@ -74,9 +74,9 @@
       <section id="hero">
         <h1>히어로 페이지</h1>
         <div class="inner hero_slide_container">
-          <ul class="hero_slide">
-            <li class="slide_item item1">
-              <article class="hero_content">
+          <ul class="hero_slide d-flex">
+            <li class="slide_item d-flex align-items-center item1">
+              <article class="hero_content d-flex flex-column">
                 <h2 class="text-header">부트캠프</h2>
                 <h3 class="text-h2-100">프론트엔드 개발자 부트캠프 00기 모집중</h3>
                 <span class="text-qna">모집기간 &#124; 2026.05.01 &sim; 2026.05.31</span>
@@ -142,8 +142,8 @@
             <button class="btn_next">다음</button>
           </div>
 
-          <div class="slider_pagination_container">
-            <ul class="slider_pagination">
+          <div class="slider_pagination_container d-flex justify-content-center">
+            <ul class="slider_pagination d-flex justify-content-between">
               <li class="text-body-b">부트캠프</li>
               <li class="text-body-b">오르미캠프</li>
               <li class="text-body-b">인공지능사관학교</li>
@@ -872,7 +872,7 @@
           <h2 class="text-h1">시작은 이스트 캠프에서, 결과는 취업입니다</h2>
           <p class="text-qna">지금 바로 신청하고 당신의 가능성을 현실로 만들어보세요</p>
         </div>
-        <a href="#" class="btn-big">지원하기</a>
+        <a href="#" class="btn-big">지원하기<span class="material-icons-round">arrow_outward</span></a>
       </section>
 
       <!-- QNA : 황시원 -->
@@ -881,7 +881,7 @@
           <img src="images/footer_qna_icon.png" alt="qna_logo" class="qna-icon" />
           <h2 class="text-h1">자주 묻는 질문</h2>
         </div>
-        <ul class="qnalist inner">
+        <ul class="qnalist">
           <li class="active">
             <div class="question text-h2-100">
               <p class="question-title">

@@ -18,7 +18,6 @@
 }
 
 .hero_slide {
-  display: flex;
   width: 400%;
   height: 100%;
   transition: transform 0.5s ease;
@@ -28,8 +27,6 @@
 .slide_item {
   width: 25%;
   height: 100%;
-  display: flex;
-  align-items: center;
   justify-content: flex-start;
   padding-left: 300px;
 }
@@ -53,8 +50,6 @@
   border-radius: 30px;
   width: 630px;
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
   padding: calc(var(--base-unit) * 3) 48px;
 }
 
@@ -74,21 +69,12 @@
   bottom: 50px;
   left: 0;
   z-index: 10;
-
-  display: flex;
-  justify-content: center;
 }
 
 .slider_pagination {
   position: relative;
-
   width: 1280px;
-
-  display: flex;
-  justify-content: space-between;
-
   list-style: none;
-
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -146,7 +132,8 @@
 .curriculum {
   min-height: 1960px;
   background: var(--super-black) url(../images/curriculum_bg.png) no-repeat top center;
-  background-size: 100% 620px;
+  background-size: 100% auto;
+  background-position: top-center;
   position: relative;
 }
 .curriculum::before {
@@ -156,7 +143,7 @@
   left: 0;
   width: 100%;
   height: 620px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.8) 100%);
   z-index: 0;
 }
 .curriculum > * {
@@ -165,7 +152,7 @@
   z-index: 1;
 }
 .curriculum h2 {
-  padding: 110px 0 160px;
+  padding: 100px 0 80px;
   white-space: nowrap;
   margin-bottom: 0;
   color: var(--white);
@@ -353,11 +340,97 @@
   display: none;
 }
 /* 리뷰 : 장도담 */
+#review {
+  background: linear-gradient(180deg, #000000 40%, #c4c4c4 80%, #f8f8f8 100%);
+  color: var(--white);
+  padding: 0;
+}
+
+#review .inner {
+  position: relative;
+  width: 1920px;
+  height: 980px;
+  margin: 0 auto;
+  display: block;
+}
+
+.review_header {
+  position: absolute;
+  top: 230px;
+  left: 360px;
+}
+
+.review_header > img {
+  height: 28px;
+  width: auto;
+  display: block;
+  margin-bottom: 36px;
+}
+
+.review_header .review_title {
+  font-size: var(--h1);
+  line-height: 1.45;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 28px;
+  letter-spacing: var(--base-letter-spacing);
+}
+
+.review_header .review_title strong {
+  font-weight: 700;
+}
+
+.review_header .review_subtitle {
+  font-size: var(--h3);
+  color: var(--yellow);
+  font-weight: 700;
+}
+
+.review_company_logo {
+  position: absolute;
+  left: 359px;
+  bottom: 90px;
+  width: 580px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 50px 0 30px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+
+.review_estchat {
+  position: absolute;
+  top: 90px;
+  bottom: 90px;
+  right: 359px;
+  width: 580px;
+  background: var(--black);
+  border: 1px solid var(--super-gray);
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.review_estchat > header {
+  flex-shrink: 0;
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--super-gray);
+  background: transparent;
+  position: static;
+  height: auto;
+}
 
 /* 혜택 : 최정민 */
 
 #benefit {
-  width: 100%;
+  /* width: 100%; */
+  width: 1920px;
   min-height: 980px; /* 피그마 높이 980 적용 */
   padding: 100px 0; /* 상단 여백 100 적용 */
   position: relative; /* 가상 요소의 기준점 */
@@ -477,6 +550,7 @@
 .card_back p {
   font-size: var(--h2-150); /* 24px */
   line-height: 1.6;
+  font-weight: 700;
 }
 
 /* 배지 (12px 적용) */
@@ -484,10 +558,11 @@
   width: 140px; /* 배지 너비 140 */
   height: 30px; /* 배지 높이 30 */
   background: rgba(255, 255, 255, 0.15);
-  color: var(--yellow);
+  color: var(--white);
   border-radius: 50px;
   font-size: var(--body-b); /* 12px */
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-weight: 800; /* 배지 텍스트 강력 강조 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -513,6 +588,10 @@
 }
 .qna-icon {
   width: 90px;
+}
+.qnalist {
+  width: 1000px;
+  margin: 0 auto;
 }
 .qnalist .question {
   display: flex;
@@ -551,4 +630,21 @@
 .qnalist li.active .question > span {
   color: var(--white);
   transform: rotate(180deg);
+}
+.join .btn-big {
+  filter: drop-shadow(0 0 10px var(--yellow));
+  animation: btnBounce 1.5s ease infinite;
+}
+@keyframes btnBounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
