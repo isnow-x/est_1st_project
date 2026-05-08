@@ -202,9 +202,6 @@ body > header {
   z-index: 100;
 }
 header .inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   height: 100%;
   padding: 0 70px;
   position: relative;
@@ -214,12 +211,8 @@ header .menu {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  align-items: center;
 }
 header .menu ul {
-  display: flex;
-  align-items: center;
   gap: 40px;
 }
 header .menu li ul {
