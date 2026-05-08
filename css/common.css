@@ -131,10 +131,8 @@ body {
 }
 #benefit .inner {
   width: 1240px; /* 내부 콘텐츠 폭 1240 적용 */
-  /* 
   position: relative;
-  z-index: 10; 
-  */
+  z-index: 10;
 }
 /* 섹션 제목 (24px 적용) */
 #benefit h2 {
