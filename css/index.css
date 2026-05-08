@@ -498,12 +498,11 @@
 
 /* 혜택 : 최정민 */
 
-#benefit {
-  /* 피그마 가이드 너비 1920px 고정 */
-  width: 1920px;
-  /* 브라우저 화면 중앙에 배치하기 위한 핵심 코드 */
-  margin: 0 auto;
-  min-height: 980px; /* 피그마 높이 가이드 반영 */
+/* 피드백 반영: id 대신 .benefit 클래스 사용 권장 */
+.benefit {
+  /* 피드백: width: 1920px 제거 (전체 너비 허용) */
+  width: 100%;
+  /* 피드백: min-height: 980px 제거 (콘텐츠 양에 따라 유동적으로 조절) */
   padding: 100px 0;
   position: relative;
   display: flex;
@@ -513,45 +512,48 @@
   overflow: hidden;
 }
 
-/* ★ 배경 이미지 가상 요소: 1920*980 최적화 및 투명도 40% 적용 */
-#benefit::before {
+/* 배경 이미지 가상 요소 */
+.benefit::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* 1920*980 영역에 이미지가 꽉 차도록 설정 */
   background: url("/images/benefit_bg1.jpg") no-repeat center center / cover;
-  opacity: 0.6; /* 40% 투명도 (불투명도 60%) */
+  opacity: 0.6;
   z-index: 1;
 }
 
-#benefit .inner {
-  width: 1240px; /* 내부 가이드 폭 반영 */
+/* 피드백: 공통 컨테이너 클래스 활용 */
+.benefit .container {
+  /* 필요 시 공통 common.css의 .container 너비를 따름 */
+  width: 1240px;
+  margin: 0 auto;
   position: relative;
   z-index: 10;
 }
 
-/* 섹션 제목: Bold 적용 */
+/* 섹션 제목 */
 .text-header {
   text-align: center;
-  font-size: var(--header); /* 24px */
-  margin-bottom: 96px; /* 하단 여백 가이드 적용 */
+  font-size: var(--header);
+  margin-bottom: 96px;
   color: var(--black);
-  font-weight: 700; /* Bold 강조 */
+  font-weight: 700;
 }
 
 /* 카드 그리드 레이아웃 */
 .benefit_card_container {
   display: grid;
-  grid-template-columns: repeat(3, 400px); /* 카드 너비 400px */
+  /* 카드 너비는 가이드대로 400px 유지 */
+  grid-template-columns: repeat(3, 400px);
   grid-auto-rows: 300px;
   gap: 20px;
   justify-content: center;
 }
 
-/* 카드 공통 스타일 */
+/* 카드 공통 스타일 및 애니메이션 (이전과 동일) */
 .benefit_card {
   perspective: 1000px;
 }
@@ -576,8 +578,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden; /* */
-  border-radius: 25px; /* 카드 라운드 값 */
+  backface-visibility: hidden;
+  border-radius: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -586,7 +588,6 @@
   box-sizing: border-box;
 }
 
-/* 카드 앞면: 강력한 Bold 적용 */
 .card_front {
   background: linear-gradient(135deg, var(--purple), #3f1d6d);
   color: var(--white);
@@ -595,11 +596,10 @@
 }
 
 .card_front h3 {
-  font-size: var(--serve); /* 20px */
-  font-weight: 800; /* 제목 Extra Bold 강조 */
+  font-size: var(--serve);
+  font-weight: 800;
 }
 
-/* 아이콘 박스 및 피그마 드롭 쉐도우 효과 */
 .icon_box {
   width: 100%;
   height: 120px;
@@ -612,11 +612,10 @@
 .icon_box img {
   max-height: 100%;
   object-fit: contain;
-  /* 피그마의 White 50% 그림자 값 반영 */
+  /* 피그마 효과 반영 */
   filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
 }
 
-/* 카드 뒷면: 가독성을 위한 강조 */
 .card_back {
   background: linear-gradient(135deg, var(--purple), #3f1d6d);
   color: var(--white);
@@ -626,26 +625,25 @@
 }
 
 .card_back h3 {
-  font-size: var(--serve); /* 20px */
+  font-size: var(--serve);
   margin-bottom: 15px;
   font-weight: 800;
 }
 
 .card_back p {
-  font-size: var(--h2-150); /* 24px */
+  font-size: var(--h2-150);
   line-height: 1.6;
   font-weight: 700;
 }
 
-/* 배지 디자인 최적화 */
 .badge {
   width: 140px;
   height: 30px;
   background: rgba(255, 255, 255, 0.15);
   color: var(--white);
   border-radius: 50px;
-  font-size: var(--body-b); /* 12px */
-  font-weight: 800; /* 피그마의 두꺼운 느낌 강조 */
+  font-size: var(--body-b);
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
