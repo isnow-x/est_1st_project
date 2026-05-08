@@ -148,15 +148,28 @@
 
 /* 커리큘럼 - 문송연 */
 
-#curriculum {
+.curriculum {
   min-height: 1960px;
   background: var(--super-black) url(../images/curriculum_bg.png) no-repeat top center;
   background-size: 100% 620px;
+  position: relative;
 }
-#curriculum * {
+.curriculum::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 620px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.5) 100%);
+  z-index: 0;
+}
+.curriculum > * {
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
-#curriculum h2 {
+.curriculum h2 {
   padding: 110px 0 160px;
   white-space: nowrap;
 }
@@ -185,9 +198,7 @@
   justify-content: space-between;
   margin: 0 320px 50px;
 }
-.category_group input[type="radio"],
-.curriculum_schedule input[type="radio"],
-.curriculum_container > input[type="radio"] {
+.category_group input[type="radio"] {
   display: none;
 }
 
@@ -195,13 +206,32 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  transition: filter 0.3s;
+  transition:
+    filter 0.3s,
+    transform 0.3s;
 }
-/* 카테고리 탭 클릭 시 노란 그림자 */
-#tab1:checked + label,
-#tab2:checked + label,
-#tab3:checked + label {
-  filter: drop-shadow(0 0 20px var(--yellow));
+.category_group label:hover {
+  filter: drop-shadow(0 0 30px var(--yellow));
+  animation: bounce 0.6s ease infinite;
+}
+/* 애니메이션 설정*/
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* 호버 끝나면 제자리 */
+.category_group label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: filter 0.3s;
 }
 
 .category_group label img {
@@ -237,7 +267,7 @@
   display: flex;
   flex-direction: column;
 }
-.curriculum_schedule label {
+.curriculum_schedule > div {
   width: 405px;
   min-height: 150px;
   display: flex;
@@ -246,35 +276,35 @@
   align-items: flex-start;
   gap: 10px;
   border-radius: 20px;
-  padding: 0 45px;
+  padding: 0 55px;
   box-sizing: border-box;
   cursor: pointer;
   border: 3px solid var(--black);
   margin-bottom: 30px;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
 }
-.curriculum_schedule label:last-child {
-  margin-bottom: 0;
-}
-#final + label {
-  padding: 0 45px;
-}
-
-/* 와일드카드 center 덮어쓰기 */
-#curriculum .curriculum_schedule label h4,
-#curriculum .curriculum_schedule label p,
-#curriculum .curriculum_schedule label ul,
-#curriculum .curriculum_schedule label li {
-  margin: 0;
-  text-align: left;
-}
-
-/* 개월 수 클릭 시 노란 테두리 + 배경 */
-#month1:checked ~ .curriculum_schedule label[for="month1"],
-#month2:checked ~ .curriculum_schedule label[for="month2"],
-#month3:checked ~ .curriculum_schedule label[for="month3"],
-#final:checked ~ .curriculum_schedule label[for="final"] {
+.curriculum_schedule > div:hover {
   background: rgba(255, 205, 41, 0.3);
   border-color: var(--yellow);
+}
+
+.curriculum_schedule .final {
+  margin-bottom: 0;
+  padding: 20px 45px 16px;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.curriculum_schedule ul {
+  margin: 0;
+}
+.curriculum .curriculum_schedule h4,
+.curriculum .curriculum_schedule p,
+.curriculum .curriculum_schedule li {
+  margin: 0;
+  text-align: left;
 }
 
 /* 오른쪽 — 커리큘럼 상세 패널 */
@@ -289,26 +319,23 @@
   gap: 300px;
 }
 
-/* 개월별 상세 내용 기본 숨김 */
-.detail_month1,
-.detail_month2,
-.detail_month3,
-.detail_last {
-  display: none;
+/* 커리큘럼 지원하기 cta 호버 시 */
+.title_group .btn_cta.btn-small {
+  filter: drop-shadow(0 0 10px var(--purple));
+  animation: btnBounce 1.5s ease infinite;
 }
+@keyframes btnBounce {
+  0% {
+    transform: translateY(0);
+  }
 
-/* 선택된 개월에 맞는 상세 내용만 표시 */
-#month1:checked ~ .curriculum_right .detail_month1 {
-  display: block;
-}
-#month2:checked ~ .curriculum_right .detail_month2 {
-  display: block;
-}
-#month3:checked ~ .curriculum_right .detail_month3 {
-  display: block;
-}
-#final:checked ~ .curriculum_right .detail_last {
-  display: block;
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* 상세 내용 박스 */
@@ -321,22 +348,28 @@
   box-sizing: border-box;
   overflow-y: auto;
 }
-#curriculum .curriculum_detail_group h5,
-#curriculum .curriculum_detail_group li {
+.curriculum .curriculum_detail_group h5,
+.curriculum .curriculum_detail_group li {
   text-align: left;
   color: var(--white);
 }
-#curriculum .curriculum_detail_group h5 {
+.curriculum .curriculum_detail_group h5 {
   margin: 0 0 8px;
 }
-#curriculum .curriculum_detail_group ul {
+.curriculum .curriculum_detail_group ul {
   padding: 20px;
   margin: 0 0 16px;
   text-align: left;
 }
-#curriculum .curriculum_detail_group li {
+.curriculum .curriculum_detail_group li {
   margin-bottom: 4px;
   list-style: disc;
+}
+/* 내용 넘치는 것 조정 */
+.detail_month2,
+.detail_month3,
+.detail_last {
+  display: none;
 }
 /* 리뷰 : 장도담 */
 
@@ -345,25 +378,34 @@
   width: 100%;
   min-height: 980px; /* 피그마 높이 980 적용 */
   padding: 100px 0; /* 상단 여백 100 적용 */
-  background: url("/images/benefit_bg1.jpg") no-repeat center center / cover;
+  position: relative; /* 가상 요소의 기준점 */
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Pretendard", sans-serif;
-  letter-spacing: var(--base-letter-spacing);
+  overflow: hidden; /* 배경이 섹션을 벗어나지 않도록 설정 */
+}
+/* ★ 배경 이미지 투명도 40% 적용 (가상 요소 방식) */
+#benefit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/images/benefit_bg1.jpg") no-repeat center center / cover;
+  opacity: 0.6; /* 40% 투명도 적용 (불투명도 60%) */
+  z-index: 1; /* 콘텐츠보다 뒤에 배치 */
 }
 #benefit .inner {
   width: 1240px; /* 내부 콘텐츠 폭 1240 적용 */
-  /* 
   position: relative;
-  z-index: 10; 
-  */
+  z-index: 10; /* 배경 이미지보다 위로 올림 */
 }
-/* 섹션 제목 (24px 적용) */
-#benefit h2 {
+/* 피드백 반영: 섹션 제목 공통 스타일 */
+.text-header {
   text-align: center;
-  font-size: var(--header); /* 가이드 기준 1.33배(24px)로 수정 */
-  line-height: 1;
+  font-size: var(--header); /* 24px */
   margin-bottom: 96px; /* 제목 하단 여백 96 적용 */
   color: var(--black);
   font-weight: 700;
@@ -391,11 +433,15 @@
 .benefit_card:hover .card_inner {
   transform: rotateY(180deg);
 }
-.card_front.card_back {
+/* ★중요 수정: 쉼표(,) 추가 및 절대 위치 설정 */
+.card_front,
+.card_back {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
+  backface-visibility: hidden; /* 뒤집혔을 때 뒷면 숨김 */
   border-radius: 25px; /* 카드 라운드 값 */
   display: flex;
   flex-direction: column;
@@ -408,7 +454,37 @@
 .card_front {
   background: linear-gradient(135deg, var(--purple), #3f1d6d);
   color: var(--white);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+/* 아이콘 박스 제어 (추가됨) */
+.icon_box {
+  width: 100%;
+  height: 120px; /* 높이값 보정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.icon_box img {
+  max-height: 100%;
+  object-fit: contain;
+  /* ★ 피그마 바깥쪽 그림자 효과 적용 */
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+}
+/* 카드 뒷면 디자인 (18px 적용) */
+.card_back {
+  background: linear-gradient(135deg, var(--purple), #3f1d6d);
+  color: var(--white);
+  transform: rotateY(180deg); /* 글씨 뒤집힘 방지 */
+  text-align: center;
+}
+.card_back h3 {
+  font-size: var(--serve); /* 20px */
+  margin-bottom: 15px;
+}
+.card_back p {
+  font-size: var(--h2-150); /* 24px */
+  line-height: 1.6;
 }
 /* 배지 (12px 적용) */
 .badge {
@@ -417,31 +493,14 @@
   background: rgba(255, 255, 255, 0.15);
   color: var(--yellow);
   border-radius: 50px;
-  font-size: var(--body-b); /* 가이드 기준 0.67배(12px)로 수정 */
+  font-size: var(--body-b); /* 12px */
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px; /* 배지 하단 여백 20 */
 }
-/* 카드 제목 (20px 적용) */
-.card_front h3 {
-  font-size: var(--serve); /* 가이드 기준 1.11배(20px)로 수정 */
-  line-height: 1;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-/* 카드 뒷면 디자인 (18px 적용) */
-.card_back {
-  background: linear-gradient(135deg, var(--purple), #3f1d6d);
-  color: var(--white);
-  transform: rotateY(180deg);
-  text-align: center;
-  font-size: var(--body); /* 가이드 기준 1.00배(18px) 적용 */
-  line-height: 1.5;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
+
 /* 지원요건 : 이채연 */
 
 /* 지원독려 : 황시원 */
@@ -453,6 +512,9 @@
   background-size: cover, cover;
 }
 /* QNA : 황시원 */
+.qna {
+  background: var(--white);
+}
 .qna-text {
   color: var(--black);
 }

@@ -6,6 +6,7 @@
     <title>버그잡이</title>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/index.css" />
     <link
@@ -63,7 +64,7 @@
             </li>
           </ul>
         </nav>
-        <a href="#" class="btn_cta btn-small">지원하기</a>
+        <a href="#" class="btn_cta btn-small">지원하기<span class="material-icons-round">arrow_outward</span>
       </div>
     </header>
 
@@ -178,7 +179,7 @@
       </aside>
 
       <!-- 커리큘럼 : 문송연 -->
-      <section id="curriculum">
+      <section class="curriculum">
         <h2 class="text-header">AI선도 기업이 설계한 실무 중심 커리큘럼</h2>
         <div class="curriculum_hero_guide">
           <img
@@ -213,6 +214,7 @@
           >
         </div>
         <div class="curriculum_container">
+<<<<<<< apply
           <input type="radio" name="month" id="month1" checked />
           <input type="radio" name="month" id="month2" />
           <input type="radio" name="month" id="month3" />
@@ -244,11 +246,38 @@
                 <li>HTML/CSS/JS/React(팀 프로젝트)</li>
               </ul>
             </label>
+=======
+
+            <div class="curriculum_schedule">
+              <div class="month1">
+                <h4 class="text-h2-100">1개월차</h4>
+                <p class="text-body-b">기초 웹 프로그래밍 기초 - HTML부터 Figma까지</p>
+              </div>
+
+              <div class="month2">
+                <h4 class="text-h2-100">2개월차</h4>
+                <p class="text-body-b">동적 웹 프로그래밍 기초 <br>- Javascript, SASS, Jquery 등</p>
+              </div>
+
+              <div class="month3">
+                <h4 class="text-h2-100">3개월차</h4>
+                <p class="text-body-b">동적 웹 프로그래밍 심화 <br>- React.js, GitHub 중급, Firebase 등</p>
+              </div>
+
+              <div class="final">
+                <h4 class="text-h2-100">최종 실전 프로그램</h4>
+                <ul class="text-body">
+                  <li>HTML/CSS(레이아웃 구현)</li>
+                  <li>HTML/CSS/JS 프로젝트(인터렉티브 앱 구현)</li>
+                  <li>HTML/CSS/JS/React(팀 프로젝트)</li>
+                </ul>
+              </div>
+>>>>>>> main
           </div>
           <div class="curriculum_right">
             <div class="title_group">
               <h4 class="text-h1">프론트엔드</h4>
-              <a href="#" class="btn_cta btn-small">지원하기</a>
+              <a href="#" class="btn_cta btn-small">지원하기<span class="material-icons-round">arrow_outward</span></a>
             </div>
             <div class="curriculum_detail_group">
               <div class="detail_month1">
@@ -598,11 +627,13 @@
       <!-- 혜택 : 최정민 -->
       <section id="benefit">
         <div class="inner">
-          <h2>지원자 혜택</h2>
+          <h2 class="text-header">지원자 혜택</h2>
 
           <div class="benefit_card_container">
+
             <div class="benefit_card">
               <div class="card_inner">
+
                 <div class="card_front">
                   <span class="badge">취업 준비생</span>
                   <h3>1:1 커리어 컨설팅</h3>
@@ -836,8 +867,8 @@
       </section>
 
       <!-- 지원독려 : 황시원 -->
-      <section class="join inner-pd d-flex flex-column align-items-center g-2">
-        <div class="inner d-flex flex-column align-items-center g-1">
+      <section class="join inner inner-pd d-flex flex-column align-items-center g-2">
+        <div class="d-flex flex-column align-items-center g-1">
           <h2 class="text-h1">시작은 이스트 캠프에서, 결과는 취업입니다</h2>
           <p class="text-qna">지금 바로 신청하고 당신의 가능성을 현실로 만들어보세요</p>
         </div>
@@ -845,12 +876,12 @@
       </section>
 
       <!-- QNA : 황시원 -->
-      <section class="inner features qna inner-pd qna-text d-flex flex-column g-4">
+      <section class="qna features inner-pd qna-text d-flex flex-column g-4">
         <div class="inner d-flex flex-column align-items-center g-2">
           <img src="images/footer_qna_icon.png" alt="qna_logo" class="qna-icon" />
           <h2 class="text-h1">자주 묻는 질문</h2>
         </div>
-        <ul class="qnalist">
+        <ul class="qnalist inner">
           <li class="active">
             <div class="question text-h2-100">
               <p class="question-title">
