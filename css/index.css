@@ -10,6 +10,7 @@
   display: none;
 }
 
+/* 슬라이드 전체 컨테이너 */
 .hero_slide_container {
   position: relative;
   width: 1920px;
@@ -24,6 +25,7 @@
   animation: slide_auto 20s infinite;
 }
 
+/* 개별 슬라이드 */
 .slide_item {
   width: 25%;
   height: 100%;
@@ -34,6 +36,7 @@
   background-size: cover;
   background-position: center;
 }
+/* 슬라이드 배경 이미지 */
 .item1 {
   background-image: url(../images/hero_bg1.png);
 }
@@ -46,6 +49,7 @@
 .item4 {
   background-image: url(../images/hero_bg4.png);
 }
+/* 자동 슬라이드 애니메이션 */
 @keyframes slide_auto {
   0%,
   20% {
@@ -68,6 +72,7 @@
   }
 }
 
+/* 유리 느낌 콘텐츠 박스 */
 .hero_content {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(15px);
@@ -93,6 +98,7 @@
   margin-bottom: 60px;
 }
 
+/* 페이지네이션 전체 영역 */
 .slider_pagination_container {
   position: absolute;
   width: 100%;
@@ -115,6 +121,7 @@
   cursor: pointer;
 }
 
+/* 움직이는 상단 바 */
 .slider_pagination::before {
   content: "";
   position: absolute;
@@ -130,6 +137,7 @@
   --slide-move: 333px;
 }
 
+/* 페이지네이션 바 이동 */
 @keyframes li_slide_bar {
   0%,
   20% {
@@ -152,6 +160,7 @@
   }
 }
 
+/* 우측 하단 고정 영역 */
 .quick_aside {
   position: fixed;
 
@@ -160,60 +169,83 @@
 
   z-index: 9999;
 }
+
+/* 챗봇 그룹 */
 .quick_chat_group {
   position: relative;
+  width: 90px;
 }
 
+/* 말풍선 */
 .chat_bubble {
   position: absolute;
-
   right: 100px;
   bottom: 40px;
-
   width: 424px;
-
   padding: 20px;
-
   border: 1px solid var(--black);
   border-radius: 30px 30px 0 30px;
-
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   color: var(--black);
 }
 
+.chat_title {
+  margin-bottom: 14px;
+}
+
+/* 문의하기 + 아이콘 한 줄 */
+.chat_links {
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* 공통 아이콘 */
+.chat_links a {
+  width: 30px;
+  height: 30px;
+
+  display: block;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* 카카오 */
+.kakao_icon {
+  background-image: url("../images/hero_kakao_icon.png");
+}
+
+/* 인스타 */
+.insta_icon {
+  background-image: url("../images/hero_insta_icon.png");
+}
+
+/* 챗봇 버튼 */
 .btn_chat {
   width: 90px;
   height: 90px;
 
-  border: none;
-  background-color: transparent;
-
   cursor: pointer;
-  background: url("../images/hero_floating_character.png") center / contain no-repeat;
+
+  background: url("../images/hero_floating_character.png")
+    center / contain no-repeat;
 }
-.chat_links a {
-  display: inline-block; /* 크기를 가질 수 있게 변경 */
-  width: 3px; /* 아이콘 너비 */
-  height: 30px; /* 아이콘 높이 */
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  vertical-align: middle;
-  border: 1px solid red;
-}
-.chat_links a:first-child {
-  background: url(../images/hero_kakao_icon.png);
-}
-.chat_links a:last-child {
-  background: url(../images/hero_insta_icon.png);
-}
-.btn_top span {
-  display: inline-block; /* 크기를 가질 수 있게 변경 */
-  width: 36px; /* 아이콘 너비 */
-  height: 45px; /* 아이콘 높이 */
-  border: 1px solid var(--white);
+
+/* TOP 버튼 */
+.quick_chat_group .btn_top {
+  position: absolute;
+
+  top: -60px;
+  right: 27px;
+
+font-size: calc(var(--base-font)*2.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 참여이유 : 문송연  */
