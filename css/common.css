@@ -77,24 +77,24 @@ body {
 }
 .text-qna {
   font-size: var(--qna);
-  line-height: calc(var(-qna) * 1.5);
+  line-height: calc(var(--qna) * 1.5);
 }
 .text-body {
   font-size: var(--body);
-  line-height: calc(var(-body) * 1.5);
+  line-height: calc(var(--body) * 1.5);
 }
 .text-body-b {
   font-size: var(--body-b);
-  line-height: calc(var(-body-b) * 1.5);
+  line-height: calc(var(--body-b) * 1.5);
   font-weight: 700;
 }
 .text-content {
   font-size: var(--content);
-  line-height: calc(var(-content) * 1.5);
+  line-height: calc(var(--content) * 1.5);
 }
 .text-footer {
   font-size: var(--footer);
-  line-height: calc(var(-footer) * 1);
+  line-height: calc(var(--footer) * 1);
 }
 /* 링크 버튼 */
 .btn-big {
@@ -120,8 +120,8 @@ body {
 /* 혜택 */
 #benefit {
   width: 100%;
-  min-height: 980px;
-  padding: 100px 0;
+  min-height: 980px; /* 피그마 높이 980 적용 */
+  padding: 100px 0; /* 상단 여백 100 적용 */
   background: url("/images/benefit_bg1.jpg") no-repeat center center / cover;
   display: flex;
   justify-content: center;
@@ -129,37 +129,34 @@ body {
   font-family: "Pretendard", sans-serif;
   letter-spacing: var(--base-letter-spacing);
 }
-
 #benefit .inner {
-  width: 1240px;
+  width: 1240px; /* 내부 콘텐츠 폭 1240 적용 */
+  /* 
   position: relative;
-  z-index: 10;
+  z-index: 10; 
+  */
 }
-
-/* 섹션 제목 (H2-100 스타일 적용: 24px) */
+/* 섹션 제목 (24px 적용) */
 #benefit h2 {
   text-align: center;
-  font-size: var(--header);
+  font-size: var(--header); /* 가이드 기준 1.33배(24px)로 수정 */
   line-height: 1;
-  margin-bottom: 60px;
-  color: var(--white);
+  margin-bottom: 96px; /* 제목 하단 여백 96 적용 */
+  color: var(--black);
   font-weight: 700;
 }
-
 /* 카드 그리드 레이아웃 */
 .benefit_card_container {
   display: grid;
-  grid-template-columns: repeat(3, 400px);
-  grid-auto-rows: 300px;
-  gap: 30px;
+  grid-template-columns: repeat(3, 400px); /* 카드 너비 400 적용 */
+  grid-auto-rows: 300px; /* 카드 높이 300 적용 */
+  gap: 20px; /* 카드 사이 간격 20 적용 */
   justify-content: center;
 }
-
 /* 카드 공통 스타일 */
 .benefit_card {
   perspective: 1000px;
 }
-
 .card_inner {
   position: relative;
   width: 100%;
@@ -168,18 +165,15 @@ body {
   transform-style: preserve-3d;
   cursor: pointer;
 }
-
 .benefit_card:hover .card_inner {
   transform: rotateY(180deg);
 }
-
-.card_front,
-.card_back {
+.card_front.card_back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 25px;
+  border-radius: 25px; /* 카드 라운드 값 */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -187,45 +181,40 @@ body {
   padding: 30px;
   box-sizing: border-box;
 }
-
 /* 카드 앞면 디자인 */
 .card_front {
   background: linear-gradient(135deg, var(--purple), #3f1d6d);
   color: var(--white);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
-
-/* 배지 (Footer 사이즈 적용: 12px) */
+/* 배지 (12px 적용) */
 .badge {
-  width: 140px;
-  height: 30px;
+  width: 140px; /* 배지 너비 140 */
+  height: 30px; /* 배지 높이 30 */
   background: rgba(255, 255, 255, 0.15);
   color: var(--yellow);
   border-radius: 50px;
-  font-size: var(--body-b);
+  font-size: var(--body-b); /* 가이드 기준 0.67배(12px)로 수정 */
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* 배지 하단 여백 20 */
 }
-
-/* 카드 제목 (H3 스타일 적용: 20px) */
+/* 카드 제목 (20px 적용) */
 .card_front h3 {
-  font-size: var(--serve);
+  font-size: var(--serve); /* 가이드 기준 1.11배(20px)로 수정 */
   line-height: 1;
   margin-bottom: 20px;
   font-weight: 600;
 }
-
-/* 카드 뒷면 디자인 (앞면과 동일한 색상 적용) */
+/* 카드 뒷면 디자인 (18px 적용) */
 .card_back {
-  /* 앞면과 동일한 그라데이션으로 수정 */
   background: linear-gradient(135deg, var(--purple), #3f1d6d);
   color: var(--white);
   transform: rotateY(180deg);
   text-align: center;
-  font-size: var(--body);
+  font-size: var(--body); /* 가이드 기준 1.00배(18px) 적용 */
   line-height: 1.5;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
@@ -263,53 +252,16 @@ body {
 /* 로고 */
 .estcamp-logo {
   background: url(../images/estcamp_logo.png) center / cover no-repeat;
-  width: 200px;
-  height: 27px;
 }
-
-/* flex */
-.d-flex {
-  display: flex;
-}
-.flex-column {
-  flex-direction: column;
-}
-.justify-content-center {
-  justify-content: center;
-}
-.justify-content-between {
-  justify-content: space-between;
-}
-.align-items-center {
-  align-items: center;
-}
-.g-1 {
-  gap: var(--base-unit);
-}
-.g-2 {
-  gap: calc(var(--base-unit) * 2);
-}
-.g-3 {
-  gap: calc(var(--base-unit) * 3);
-}
-.g-4 {
-  gap: calc(var(--base-unit) * 4);
-}
-.g-5 {
-  gap: calc(var(--base-unit) * 5);
-}
-.text-center {
-  text-align: center;
-}
-
 /* 헤더 - 문송연 */
 
-header {
+body > header {
+  margin: 0;
   box-sizing: border-box;
   background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(80px);
   width: 100%;
   height: 80px;
-  padding: 20px 70px;
   position: fixed;
   top: 0;
   left: 0;
@@ -320,14 +272,16 @@ header .inner {
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  padding: 0 70px;
+  position: relative;
 }
-header .inner h1 {
-  font-size: 0;
-  line-height: 0;
-}
-header .inner h1 img {
-  width: auto;
-  height: 60px;
+
+header .menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
 }
 header .menu ul {
   display: flex;
@@ -336,6 +290,42 @@ header .menu ul {
 }
 header .menu li ul {
   display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(241, 241, 241, 0.7);
+  border-radius: 0 30px 30px 30px;
+  padding: 20px;
+  width: 200px;
+}
+header .menu > li > ul {
+  position: relative;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+header .menu li ul li a {
+  color: var(--black);
+  padding: 8px 0;
+  text-align: left;
+  display: block;
+}
+header .menu > ul > li {
+  position: relative;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+header .menu > ul > li > a {
+  font-weight: 700;
+}
+header .menu > ul > li:hover ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+header .menu > ul > li a:hover {
+  font-weight: 700;
 }
 
 /* 푸터 : 장도담 */
