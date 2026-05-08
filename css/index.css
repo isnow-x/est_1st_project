@@ -203,6 +203,50 @@
   background-image: url(../images/footer_cta_bg2.png), url(../images/footer_cta_bg1.jpg);
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
-  background-size: 100%, 100%;
+  background-size: cover, cover;
 }
 /* QNA : 황시원 */
+.qna-text {
+  color: var(--black);
+}
+.qna-icon {
+  width: 90px;
+}
+.qnalist .question {
+  display: flex;
+  height: calc(var(--base-unit) * 4);
+  padding: 0 40px;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--white);
+  border: 2px solid #d7d7d7;
+  border-color: #d7d7d7;
+  border-radius: 10px;
+}
+.qnalist li.active .question {
+  border-radius: 10px 10px 0 0;
+  background: #d7d7d7;
+}
+.qnalist .answer {
+  display: none;
+  height: auto;
+  padding: 30px 40px;
+  justify-content: space-between;
+  background: var(--white);
+  border: 2px solid #d7d7d7;
+  border-radius: 0 0 10px 10px;
+}
+.qnalist li.active .answer {
+  display: flex;
+}
+.question-title {
+  display: flex;
+  gap: 30px;
+}
+.qnalist .question > span {
+  color: #d7d7d7;
+}
+.qnalist li.active .question > span {
+  color: var(--white);
+  transform: rotate(180deg);
+}
