@@ -77,24 +77,24 @@ body {
 }
 .text-qna {
   font-size: var(--qna);
-  line-height: calc(var(-qna) * 1.5);
+  line-height: calc(var(--qna) * 1.5);
 }
 .text-body {
   font-size: var(--body);
-  line-height: calc(var(-body) * 1.5);
+  line-height: calc(var(--body) * 1.5);
 }
 .text-body-b {
   font-size: var(--body-b);
-  line-height: calc(var(-body-b) * 1.5);
+  line-height: calc(var(--body-b) * 1.5);
   font-weight: 700;
 }
 .text-content {
   font-size: var(--content);
-  line-height: calc(var(-content) * 1.5);
+  line-height: calc(var(--content) * 1.5);
 }
 .text-footer {
   font-size: var(--footer);
-  line-height: calc(var(-footer) * 1);
+  line-height: calc(var(--footer) * 1);
 }
 /* 링크 버튼 */
 .btn-big {
@@ -151,14 +151,51 @@ body {
 .estcamp-logo {
   background: url(../images/estcamp_logo.png) center / cover no-repeat;
 }
+
+/* flex */
+.d-flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.align-items-center {
+  align-items: center;
+}
+.g-1 {
+  gap: var(--base-unit);
+}
+.g-2 {
+  gap: calc(var(--base-unit) * 2);
+}
+.g-3 {
+  gap: calc(var(--base-unit) * 3);
+}
+.g-4 {
+  gap: calc(var(--base-unit) * 4);
+}
+.g-5 {
+  gap: calc(var(--base-unit) * 5);
+}
+.text-center {
+  text-align: center;
+}
+
 /* 헤더 - 문송연 */
 
-header {
+body > header {
+  margin: 0;
   box-sizing: border-box;
   background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(80px);
   width: 100%;
   height: 80px;
-  padding: 20px 70px;
   position: fixed;
   top: 0;
   left: 0;
@@ -169,14 +206,16 @@ header .inner {
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  padding: 0 70px;
+  position: relative;
 }
-header .inner h1 {
-  font-size: 0;
-  line-height: 0;
-}
-header .inner h1 img {
-  width: auto;
-  height: 60px;
+
+header .menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
 }
 header .menu ul {
   display: flex;
@@ -185,4 +224,137 @@ header .menu ul {
 }
 header .menu li ul {
   display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(241, 241, 241, 0.7);
+  border-radius: 0 30px 30px 30px;
+  padding: 20px;
+  width: 200px;
+}
+header .menu > li > ul {
+  position: relative;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+header .menu li ul li a {
+  color: var(--black);
+  padding: 8px 0;
+  text-align: left;
+  display: block;
+}
+header .menu > ul > li {
+  position: relative;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+header .menu > ul > li > a {
+  font-weight: 700;
+}
+header .menu > ul > li:hover ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+header .menu > ul > li a:hover {
+  font-weight: 700;
+}
+
+/* 푸터 : 장도담 */
+.footer {
+  background: var(--super-black);
+  padding: 60px 0 40px;
+  color: var(--white);
+}
+
+.footer .inner {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.footer_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.footer_logo img {
+  width: 200px;
+  height: auto;
+  display: block;
+}
+
+.footer_social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer_social a {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--super-black);
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.footer_divider {
+  border: 0;
+  border-top: 1px solid var(--super-gray);
+  margin: 0 0 30px;
+}
+
+.footer_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer_info address {
+  font-style: normal;
+  font-size: var(--content);
+  line-height: 1.7;
+  color: var(--white);
+}
+
+.footer_info .copyright {
+  margin-top: 8px;
+  font-size: var(--footer);
+  color: var(--gray);
+}
+
+.footer_menu ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer_menu li {
+  position: relative;
+  font-size: var(--content);
+}
+
+.footer_menu li + li::before {
+  content: "|";
+  position: absolute;
+  left: -18px;
+  color: var(--super-gray);
+}
+
+.footer_menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer_menu a:hover {
+  color: var(--purple);
 }

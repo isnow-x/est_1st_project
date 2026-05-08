@@ -2,11 +2,199 @@
 
 /* 커리큘럼 - 문송연 */
 
+#curriculum {
+  min-height: 1960px;
+  background: var(--super-black) url(../images/curriculum_bg.png) no-repeat top center;
+  background-size: 100% 620px;
+}
+#curriculum * {
+  text-align: center;
+}
+#curriculum h2 {
+  padding: 110px 0 160px;
+  white-space: nowrap;
+}
+
+/* 상단 히어로 가이드 */
+.curriculum_hero_guide {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  margin-bottom: 225px;
+}
+.hero_guide_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.curriculum_mouse_icon {
+  width: 120px;
+}
+/* 과정 카테고리 탭 (프론트엔드 / iOS / 인프라보안) */
+.category_group {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 320px 50px;
+}
+.category_group input[type="radio"],
+.curriculum_schedule input[type="radio"],
+.curriculum_container > input[type="radio"] {
+  display: none;
+}
+
+.category_group label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: filter 0.3s;
+}
+/* 카테고리 탭 클릭 시 노란 그림자 */
+#tab1:checked + label,
+#tab2:checked + label,
+#tab3:checked + label {
+  filter: drop-shadow(0 0 20px var(--yellow));
+}
+
+.category_group label img {
+  height: 231px;
+}
+#tab2 + label img {
+  width: 170px;
+}
+
+/* 커리큘럼 컨테이너 (전체 박스) */
+.curriculum_container {
+  width: 1280px;
+  min-height: 800px;
+  background: var(--super-gray);
+  border-radius: 30px;
+  margin: 0 auto;
+  padding: 28px 32px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 95px;
+}
+.category_group {
+  display: flex;
+  justify-content: space-between;
+  width: 1280px;
+  margin: 0 auto 50px;
+}
+
+/* 왼쪽 — 개월 수 선택 패널 */
+.curriculum_schedule {
+  padding: 27px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.curriculum_schedule label {
+  width: 405px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 20px;
+  padding: 0 45px;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 3px solid var(--black);
+  margin-bottom: 30px;
+}
+.curriculum_schedule label:last-child {
+  margin-bottom: 0;
+}
+#final + label {
+  padding: 0 45px;
+}
+
+/* 와일드카드 center 덮어쓰기 */
+#curriculum .curriculum_schedule label h4,
+#curriculum .curriculum_schedule label p,
+#curriculum .curriculum_schedule label ul,
+#curriculum .curriculum_schedule label li {
+  margin: 0;
+  text-align: left;
+}
+
+/* 개월 수 클릭 시 노란 테두리 + 배경 */
+#month1:checked ~ .curriculum_schedule label[for="month1"],
+#month2:checked ~ .curriculum_schedule label[for="month2"],
+#month3:checked ~ .curriculum_schedule label[for="month3"],
+#final:checked ~ .curriculum_schedule label[for="final"] {
+  background: rgba(255, 205, 41, 0.3);
+  border-color: var(--yellow);
+}
+
+/* 오른쪽 — 커리큘럼 상세 패널 */
+.curriculum_right {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.title_group {
+  display: flex;
+  align-items: center;
+  gap: 300px;
+}
+
+/* 개월별 상세 내용 기본 숨김 */
+.detail_month1,
+.detail_month2,
+.detail_month3,
+.detail_last {
+  display: none;
+}
+
+/* 선택된 개월에 맞는 상세 내용만 표시 */
+#month1:checked ~ .curriculum_right .detail_month1 {
+  display: block;
+}
+#month2:checked ~ .curriculum_right .detail_month2 {
+  display: block;
+}
+#month3:checked ~ .curriculum_right .detail_month3 {
+  display: block;
+}
+#final:checked ~ .curriculum_right .detail_last {
+  display: block;
+}
+
+/* 상세 내용 박스 */
+.curriculum_detail_group {
+  width: 636px;
+  min-height: 430px;
+  background: var(--black);
+  border-radius: 10px;
+  padding: 28px 32px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+#curriculum .curriculum_detail_group h5,
+#curriculum .curriculum_detail_group li {
+  text-align: left;
+  color: var(--white);
+}
+#curriculum .curriculum_detail_group h5 {
+  margin: 0 0 8px;
+}
+#curriculum .curriculum_detail_group ul {
+  padding: 20px;
+  margin: 0 0 16px;
+  text-align: left;
+}
+#curriculum .curriculum_detail_group li {
+  margin-bottom: 4px;
+  list-style: disc;
+}
 /* 리뷰 : 장도담 */
 
 /* 혜택 : 최정민 */
-
-/* 혜택 */
 #benefit {
   width: 100%;
   min-height: 980px; /* 피그마 높이 980 적용 */
@@ -20,8 +208,10 @@
 }
 #benefit .inner {
   width: 1240px; /* 내부 콘텐츠 폭 1240 적용 */
+  /* 
   position: relative;
-  z-index: 10;
+  z-index: 10; 
+  */
 }
 /* 섹션 제목 (24px 적용) */
 #benefit h2 {
@@ -55,8 +245,7 @@
 .benefit_card:hover .card_inner {
   transform: rotateY(180deg);
 }
-.card_front,
-.card_back {
+.card_front.card_back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -111,9 +300,54 @@
 
 /* 지원독려 : 황시원 */
 .join {
+  width: 100%;
   background-image: url(../images/footer_cta_bg2.png), url(../images/footer_cta_bg1.jpg);
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
-  background-size: 100%, 100%;
+  background-size: cover, cover;
 }
 /* QNA : 황시원 */
+.qna-text {
+  color: var(--black);
+}
+.qna-icon {
+  width: 90px;
+}
+.qnalist .question {
+  display: flex;
+  height: calc(var(--base-unit) * 4);
+  padding: 0 40px;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--white);
+  border: 2px solid #d7d7d7;
+  border-color: #d7d7d7;
+  border-radius: 10px;
+}
+.qnalist li.active .question {
+  border-radius: 10px 10px 0 0;
+  background: #d7d7d7;
+}
+.qnalist .answer {
+  display: none;
+  height: auto;
+  padding: 30px 40px;
+  justify-content: space-between;
+  background: var(--white);
+  border: 2px solid #d7d7d7;
+  border-radius: 0 0 10px 10px;
+}
+.qnalist li.active .answer {
+  display: flex;
+}
+.question-title {
+  display: flex;
+  gap: 30px;
+}
+.qnalist .question > span {
+  color: #d7d7d7;
+}
+.qnalist li.active .question > span {
+  color: var(--white);
+  transform: rotate(180deg);
+}
