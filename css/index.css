@@ -6,7 +6,7 @@
   height: calc(var(--base-unit) * 49);
   overflow: hidden;
 }
-#hero h1 {
+#hero > h2 {
   display: none;
 }
 
@@ -77,6 +77,10 @@
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
   padding: calc(var(--base-unit) * 3) 48px;
   margin-left: 200px;
+}
+.hero_content h2 {
+  color: var(--white);
+  text-align: left;
 }
 
 .hero_content h2,
@@ -166,7 +170,7 @@
   right: 100px;
   bottom: 40px;
 
-  width: 260px;
+  width: 424px;
 
   padding: 20px;
 
@@ -189,6 +193,28 @@
   cursor: pointer;
   background: url("../images/hero_floating_character.png") center / contain no-repeat;
 }
+.chat_links a {
+  display: inline-block; /* 크기를 가질 수 있게 변경 */
+  width: 3px; /* 아이콘 너비 */
+  height: 30px; /* 아이콘 높이 */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  vertical-align: middle;
+  border: 1px solid red;
+}
+.chat_links a:first-child {
+  background: url(../images/hero_kakao_icon.png);
+}
+.chat_links a:last-child {
+  background: url(../images/hero_insta_icon.png);
+}
+.btn_top span {
+  display: inline-block; /* 크기를 가질 수 있게 변경 */
+  width: 36px; /* 아이콘 너비 */
+  height: 45px; /* 아이콘 높이 */
+  border: 1px solid var(--white);
+}
 
 /* 참여이유 : 문송연  */
 .join {
@@ -196,7 +222,7 @@
   min-height: 1000px;
   background: var(--super-black) url(../images/section_join_BG.png) no-repeat center;
   background-size: cover;
-  position: relative;
+  position: rel ative;
 }
 .join::before {
   content: "";
