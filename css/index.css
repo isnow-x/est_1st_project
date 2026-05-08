@@ -193,9 +193,81 @@
 /* 참여이유 : 문송연  */
 .join {
   width: 100%;
-  background: var(--super-black) url(images/section_join_BG.png) no-repeat center;
+  min-height: 1000px;
+  background: var(--super-black) url(../images/section_join_BG.png) no-repeat center;
   background-size: cover;
   position: relative;
+}
+.join::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.5);
+  z-index: 0;
+}
+.join .inner {
+  padding: 100px 0;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.join .join_label {
+  color: var(--purple);
+}
+.join .text-serve {
+  margin-bottom: 0;
+}
+.join .inner > * + * {
+  margin-top: 0;
+}
+.join_slider_group {
+  width: 100%;
+  animation: slideAuto 6s ease-in-out infinite;
+}
+.join_slider_step1,
+.join_slider_step2 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@keyframes slideAuto {
+  0% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  90% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.join_slider_group .step_num {
+  color: var(--yellow);
+}
+
+.join_slider_step1 img,
+.join_slider_step2 img {
+  margin-bottom: 90px;
+  width: 500px;
+}
+.join_slider_step1 p:first-of-type,
+.join_slider_step2 p:first-of-type {
+  margin-bottom: 30px;
+}
+.join_slider_step1 h3,
+.join_slider_step2 h3 {
+  margin-bottom: 68px;
 }
 /* 커리큘럼 - 문송연 */
 
