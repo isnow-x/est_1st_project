@@ -139,7 +139,8 @@
 .curriculum {
   min-height: 1960px;
   background: var(--super-black) url(../images/curriculum_bg.png) no-repeat top center;
-  background-size: 100% 620px;
+  background-size: 100% auto;
+  background-position: top-center;
   position: relative;
 }
 .curriculum::before {
@@ -149,7 +150,7 @@
   left: 0;
   width: 100%;
   height: 620px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.8) 100%);
   z-index: 0;
 }
 .curriculum > * {
@@ -158,7 +159,7 @@
   z-index: 1;
 }
 .curriculum h2 {
-  padding: 110px 0 160px;
+  padding: 100px 0 80px;
   white-space: nowrap;
   margin-bottom: 0;
   color: var(--white);
@@ -317,7 +318,7 @@
 @keyframes btnBounce {
   0% {
     transform: translateY(0);
-}
+  }
 
   50% {
     transform: translateY(-5px);
