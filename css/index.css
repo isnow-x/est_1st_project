@@ -160,6 +160,8 @@
 .curriculum h2 {
   padding: 110px 0 160px;
   white-space: nowrap;
+  margin-bottom: 0;
+  color: var(--white);
 }
 
 /* 상단 히어로 가이드 */
