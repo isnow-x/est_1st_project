@@ -172,6 +172,7 @@
   align-items: center;
   gap: 300px;
 }
+
 /* 커리큘럼 지원하기 cta 호버 시 */
 .title_group .btn_cta.btn-small {
   filter: drop-shadow(0 0 10px var(--purple));
@@ -190,6 +191,7 @@
     transform: translateY(0);
   }
 }
+
 /* 상세 내용 박스 */
 .curriculum_detail_group {
   width: 636px;
@@ -216,6 +218,12 @@
 .curriculum .curriculum_detail_group li {
   margin-bottom: 4px;
   list-style: disc;
+}
+/* 내용 넘치는 것 조정 */
+.detail_month2,
+.detail_month3,
+.detail_last {
+  display: none;
 }
 /* 리뷰 : 장도담 */
 
