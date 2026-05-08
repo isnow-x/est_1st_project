@@ -364,6 +364,7 @@
 /* 리뷰 : 장도담 */
 
 /* 혜택 : 최정민 */
+
 #benefit {
   width: 100%;
   min-height: 980px; /* 피그마 높이 980 적용 */
@@ -375,6 +376,7 @@
   font-family: "Pretendard", sans-serif;
   overflow: hidden; /* 배경이 섹션을 벗어나지 않도록 설정 */
 }
+
 /* ★ 배경 이미지 투명도 40% 적용 (가상 요소 방식) */
 #benefit::before {
   content: "";
@@ -387,11 +389,13 @@
   opacity: 0.6; /* 40% 투명도 적용 (불투명도 60%) */
   z-index: 1; /* 콘텐츠보다 뒤에 배치 */
 }
+
 #benefit .inner {
   width: 1240px; /* 내부 콘텐츠 폭 1240 적용 */
   position: relative;
   z-index: 10; /* 배경 이미지보다 위로 올림 */
 }
+
 /* 피드백 반영: 섹션 제목 공통 스타일 */
 .text-header {
   text-align: center;
@@ -400,6 +404,7 @@
   color: var(--black);
   font-weight: 700;
 }
+
 /* 카드 그리드 레이아웃 */
 .benefit_card_container {
   display: grid;
@@ -408,6 +413,7 @@
   gap: 20px; /* 카드 사이 간격 20 적용 */
   justify-content: center;
 }
+
 /* 카드 공통 스타일 */
 .benefit_card {
   perspective: 1000px;
@@ -423,6 +429,7 @@
 .benefit_card:hover .card_inner {
   transform: rotateY(180deg);
 }
+
 /* ★중요 수정: 쉼표(,) 추가 및 절대 위치 설정 */
 .card_front,
 .card_back {
@@ -440,12 +447,14 @@
   padding: 30px;
   box-sizing: border-box;
 }
+
 /* 카드 앞면 디자인 */
 .card_front {
   background: linear-gradient(135deg, var(--purple), #3f1d6d);
   color: var(--white);
   z-index: 2;
 }
+
 /* 아이콘 박스 제어 (추가됨) */
 .icon_box {
   width: 100%;
@@ -455,12 +464,14 @@
   align-items: center;
   margin-top: 10px;
 }
+
 .icon_box img {
   max-height: 100%;
   object-fit: contain;
   /* ★ 피그마 바깥쪽 그림자 효과 적용 */
   filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
 }
+
 /* 카드 뒷면 디자인 (18px 적용) */
 .card_back {
   background: linear-gradient(135deg, var(--purple), #3f1d6d);
@@ -476,6 +487,7 @@
   font-size: var(--h2-150); /* 24px */
   line-height: 1.6;
 }
+
 /* 배지 (12px 적용) */
 .badge {
   width: 140px; /* 배지 너비 140 */
