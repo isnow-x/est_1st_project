@@ -317,7 +317,7 @@
 @keyframes btnBounce {
   0% {
     transform: translateY(0);
-}
+  }
 
   50% {
     transform: translateY(-5px);
@@ -606,6 +606,10 @@
 .qna-icon {
   width: 90px;
 }
+.qnalist {
+  width: 1000px;
+  margin: 0 auto;
+}
 .qnalist .question {
   display: flex;
   height: calc(var(--base-unit) * 4);
@@ -643,4 +647,21 @@
 .qnalist li.active .question > span {
   color: var(--white);
   transform: rotate(180deg);
+}
+.join .btn-big {
+  filter: drop-shadow(0 0 10px var(--yellow));
+  animation: btnBounce 1.5s ease infinite;
+}
+@keyframes btnBounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
