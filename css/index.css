@@ -317,7 +317,7 @@
 @keyframes btnBounce {
   0% {
     transform: translateY(0);
-}
+  }
 
   50% {
     transform: translateY(-5px);
@@ -569,6 +569,7 @@
 .card_back p {
   font-size: var(--h2-150); /* 24px */
   line-height: 1.6;
+  font-weight: 700;
 }
 
 /* 배지 (12px 적용) */
@@ -579,7 +580,8 @@
   color: var(--white);
   border-radius: 50px;
   font-size: var(--body-b); /* 12px */
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-weight: 800; /* 배지 텍스트 강력 강조 */
   display: flex;
   align-items: center;
   justify-content: center;
