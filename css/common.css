@@ -150,6 +150,42 @@ body {
 .estcamp-logo {
   background: url(../images/estcamp_logo.png) center / cover no-repeat;
 }
+
+/* flex */
+.d-flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.align-items-center {
+  align-items: center;
+}
+.g-1 {
+  gap: var(--base-unit);
+}
+.g-2 {
+  gap: calc(var(--base-unit) * 2);
+}
+.g-3 {
+  gap: calc(var(--base-unit) * 3);
+}
+.g-4 {
+  gap: calc(var(--base-unit) * 4);
+}
+.g-5 {
+  gap: calc(var(--base-unit) * 5);
+}
+.text-center {
+  text-align: center;
+}
+
 /* 헤더 - 문송연 */
 
 body > header {

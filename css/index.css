@@ -300,6 +300,7 @@
 
 /* 지원독려 : 황시원 */
 .join {
+  width: 100%;
   background-image: url(../images/footer_cta_bg2.png), url(../images/footer_cta_bg1.jpg);
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
