@@ -448,7 +448,8 @@
 /* 혜택 : 최정민 */
 
 #benefit {
-  width: 100%;
+  /* width: 100%; */
+  width: 1920px;
   min-height: 980px; /* 피그마 높이 980 적용 */
   padding: 100px 0; /* 상단 여백 100 적용 */
   position: relative; /* 가상 요소의 기준점 */
@@ -575,7 +576,7 @@
   width: 140px; /* 배지 너비 140 */
   height: 30px; /* 배지 높이 30 */
   background: rgba(255, 255, 255, 0.15);
-  color: var(--yellow);
+  color: var(--white);
   border-radius: 50px;
   font-size: var(--body-b); /* 12px */
   font-weight: bold;
