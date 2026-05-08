@@ -199,25 +199,34 @@
   width: 100%;
   min-height: 980px; /* 피그마 높이 980 적용 */
   padding: 100px 0; /* 상단 여백 100 적용 */
-  background: url("/images/benefit_bg1.jpg") no-repeat center center / cover;
+  position: relative; /* 가상 요소의 기준점 */
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Pretendard", sans-serif;
-  letter-spacing: var(--base-letter-spacing);
+  overflow: hidden; /* 배경이 섹션을 벗어나지 않도록 설정 */
+}
+/* ★ 배경 이미지 투명도 40% 적용 (가상 요소 방식) */
+#benefit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/images/benefit_bg1.jpg") no-repeat center center / cover;
+  opacity: 0.6; /* 40% 투명도 적용 (불투명도 60%) */
+  z-index: 1; /* 콘텐츠보다 뒤에 배치 */
 }
 #benefit .inner {
   width: 1240px; /* 내부 콘텐츠 폭 1240 적용 */
-  /* 
   position: relative;
-  z-index: 10; 
-  */
+  z-index: 10; /* 배경 이미지보다 위로 올림 */
 }
-/* 섹션 제목 (24px 적용) */
-#benefit h2 {
+/* 피드백 반영: 섹션 제목 공통 스타일 */
+.text-header {
   text-align: center;
-  font-size: var(--header); /* 가이드 기준 1.33배(24px)로 수정 */
-  line-height: 1;
+  font-size: var(--header); /* 24px */
   margin-bottom: 96px; /* 제목 하단 여백 96 적용 */
   color: var(--black);
   font-weight: 700;
@@ -245,11 +254,15 @@
 .benefit_card:hover .card_inner {
   transform: rotateY(180deg);
 }
-.card_front.card_back {
+/* ★중요 수정: 쉼표(,) 추가 및 절대 위치 설정 */
+.card_front,
+.card_back {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
+  backface-visibility: hidden; /* 뒤집혔을 때 뒷면 숨김 */
   border-radius: 25px; /* 카드 라운드 값 */
   display: flex;
   flex-direction: column;
@@ -262,7 +275,37 @@
 .card_front {
   background: linear-gradient(135deg, var(--purple), #3f1d6d);
   color: var(--white);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+/* 아이콘 박스 제어 (추가됨) */
+.icon_box {
+  width: 100%;
+  height: 120px; /* 높이값 보정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.icon_box img {
+  max-height: 100%;
+  object-fit: contain;
+  /* ★ 피그마 바깥쪽 그림자 효과 적용 */
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+}
+/* 카드 뒷면 디자인 (18px 적용) */
+.card_back {
+  background: linear-gradient(135deg, var(--purple), #3f1d6d);
+  color: var(--white);
+  transform: rotateY(180deg); /* 글씨 뒤집힘 방지 */
+  text-align: center;
+}
+.card_back h3 {
+  font-size: var(--serve); /* 20px */
+  margin-bottom: 15px;
+}
+.card_back p {
+  font-size: var(--h2-150); /* 24px */
+  line-height: 1.6;
 }
 /* 배지 (12px 적용) */
 .badge {
@@ -271,31 +314,14 @@
   background: rgba(255, 255, 255, 0.15);
   color: var(--yellow);
   border-radius: 50px;
-  font-size: var(--body-b); /* 가이드 기준 0.67배(12px)로 수정 */
+  font-size: var(--body-b); /* 12px */
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px; /* 배지 하단 여백 20 */
 }
-/* 카드 제목 (20px 적용) */
-.card_front h3 {
-  font-size: var(--serve); /* 가이드 기준 1.11배(20px)로 수정 */
-  line-height: 1;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-/* 카드 뒷면 디자인 (18px 적용) */
-.card_back {
-  background: linear-gradient(135deg, var(--purple), #3f1d6d);
-  color: var(--white);
-  transform: rotateY(180deg);
-  text-align: center;
-  font-size: var(--body); /* 가이드 기준 1.00배(18px) 적용 */
-  line-height: 1.5;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
+
 /* 지원요건 : 이채연 */
 
 /* 지원독려 : 황시원 */
