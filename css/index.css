@@ -221,8 +221,8 @@
   width: 100%;
   min-height: 1000px;
   background: var(--super-black) url(../images/section_join_BG.png) no-repeat center;
-  background-size: cover;
-  position: rel ative;
+  background-size: contain;
+  position: relative;
 }
 .join::before {
   content: "";
@@ -231,63 +231,52 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(15, 15, 15, 0.5);
+  background: rgba(15, 15, 15, 0.6);
   z-index: 0;
 }
 .join .inner {
   padding: 100px 0;
-  overflow: hidden;
   width: 100%;
   position: relative;
   z-index: 1;
+  gap: 20px;
 }
 .join .join_label {
   color: var(--purple);
 }
-.join .text-serve {
-  margin-bottom: 0;
-}
-.join .inner > * + * {
-  margin-top: 0;
-}
 .join_slider_group {
   width: 100%;
-  animation: slideAuto 6s ease-in-out infinite;
+  gap: 90px;
 }
 .join_slider_step1,
 .join_slider_step2 {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 30px;
 }
-@keyframes slideAuto {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
+
 .join_slider_group .step_num {
   color: var(--yellow);
 }
 
 .join_slider_step1 img,
 .join_slider_step2 img {
-  margin-bottom: 90px;
+  animation: pulse 2s ease-in-out infinite;
+  margin: 68px 0;
   width: 500px;
 }
-.join_slider_step1 p:first-of-type,
-.join_slider_step2 p:first-of-type {
-  margin-bottom: 30px;
-}
-.join_slider_step1 h3,
-.join_slider_step2 h3 {
-  margin-bottom: 68px;
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 /* 커리큘럼 - 문송연 */
 
