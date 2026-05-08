@@ -257,97 +257,97 @@ header .menu > ul > li a:hover {
 
 /* 푸터 : 장도담 */
 .footer {
-  background: var(--super-black);
-  padding: 60px 0 40px;
-  color: var(--white);
+background: var(--super-black);
+padding: 60px 0 40px;
+color: var(--white);
 }
 
 .footer .inner {
-  width: 1280px;
-  margin: 0 auto;
+width: 1280px;
+margin: 0 auto;
 }
 
 .footer_top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 30px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-bottom: 30px;
 }
 
 .footer_logo img {
-  width: 200px;
-  height: auto;
-  display: block;
+width: 200px;
+height: auto;
+display: block;
 }
 
 .footer_social {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+display: flex;
+align-items: center;
+gap: 12px;
 }
 
 .footer_social a {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--white);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--super-black);
-  font-size: 16px;
-  text-decoration: none;
+width: 32px;
+height: 32px;
+border-radius: 50%;
+background: var(--white);
+display: inline-flex;
+align-items: center;
+justify-content: center;
+color: var(--super-black);
+font-size: 16px;
+text-decoration: none;
 }
 
 .footer_divider {
-  border: 0;
-  border-top: 1px solid var(--super-gray);
-  margin: 0 0 30px;
+border: 0;
+border-top: 1px solid var(--super-gray);
+margin: 0 0 30px;
 }
 
 .footer_bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
 }
 
 .footer_info address {
-  font-style: normal;
-  font-size: var(--content);
-  line-height: 1.7;
-  color: var(--white);
+font-style: normal;
+font-size: var(--content);
+line-height: 1.7;
+color: var(--white);
 }
 
 .footer_info .copyright {
-  margin-top: 8px;
-  font-size: var(--footer);
-  color: var(--gray);
+margin-top: 8px;
+font-size: var(--footer);
+color: var(--gray);
 }
 
 .footer_menu ul {
-  display: flex;
-  align-items: center;
-  gap: 30px;
+display: flex;
+align-items: center;
+gap: 30px;
 }
 
 .footer_menu li {
-  position: relative;
-  font-size: var(--content);
+position: relative;
+font-size: var(--content);
 }
 
 .footer_menu li + li::before {
-  content: "|";
-  position: absolute;
-  left: -18px;
-  color: var(--super-gray);
+content: "|";
+position: absolute;
+left: -18px;
+color: var(--super-gray);
 }
 
 .footer_menu a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 500;
+color: var(--white);
+text-decoration: none;
+font-weight: 500;
 }
 
 .footer_menu a:hover {
-  color: var(--purple);
+color: var(--purple);
 }
