@@ -252,9 +252,9 @@ font-size: calc(var(--base-font)*2.5);
 .join {
   width: 100%;
   min-height: 1000px;
-  background: var(--super-black) url(../images/section_join_BG.png) no-repeat center;
-  background-size: cover;
-  position: rel ative;
+  background: var(--super-black) url(../images/section_join_BG.png) no-repeat top center;
+  background-size: 100% 100%;
+  position: relative;
 }
 .join::before {
   content: "";
@@ -263,69 +263,52 @@ font-size: calc(var(--base-font)*2.5);
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(15, 15, 15, 0.5);
+  background: rgba(15, 15, 15, 0.6);
   z-index: 0;
 }
 .join .inner {
   padding: 100px 0;
-  overflow: hidden;
   width: 100%;
   position: relative;
   z-index: 1;
+  gap: 20px;
 }
 .join .join_label {
   color: var(--purple);
 }
-.join .text-serve {
-  margin-bottom: 0;
-}
-.join .inner > * + * {
-  margin-top: 0;
-}
 .join_slider_group {
   width: 100%;
-  animation: slideAuto 6s ease-in-out infinite;
+  gap: 90px;
 }
 .join_slider_step1,
 .join_slider_step2 {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 30px;
 }
-@keyframes slideAuto {
-  0% {
-    transform: translateX(0);
-  }
-  40% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-50%);
-  }
-  90% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
+
 .join_slider_group .step_num {
   color: var(--yellow);
 }
 
 .join_slider_step1 img,
 .join_slider_step2 img {
-  margin-bottom: 90px;
+  animation: pulse 2s ease-in-out infinite;
+  margin: 68px 0;
   width: 500px;
 }
-.join_slider_step1 p:first-of-type,
-.join_slider_step2 p:first-of-type {
-  margin-bottom: 30px;
-}
-.join_slider_step1 h3,
-.join_slider_step2 h3 {
-  margin-bottom: 68px;
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 /* 커리큘럼 - 문송연 */
 
@@ -342,7 +325,7 @@ font-size: calc(var(--base-font)*2.5);
   top: 0;
   left: 0;
   width: 100%;
-  height: 620px;
+  height: 35vw;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.8) 100%);
   z-index: 0;
 }
@@ -946,10 +929,23 @@ font-size: calc(var(--base-font)*2.5);
   width: 90px;
 }
 .qnalist {
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.qna .inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: center;
 }
 .qnalist .question {
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   height: calc(var(--base-unit) * 4);
   padding: 0 40px;
@@ -965,6 +961,8 @@ font-size: calc(var(--base-font)*2.5);
   background: #d7d7d7;
 }
 .qnalist .answer {
+  width: 100%;
+  box-sizing: border-box;
   display: none;
   height: auto;
   padding: 30px 40px;
@@ -979,6 +977,7 @@ font-size: calc(var(--base-font)*2.5);
 .question-title {
   display: flex;
   gap: 30px;
+  min-width: 0;
 }
 .qnalist .question > span {
   color: #d7d7d7;
