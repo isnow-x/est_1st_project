@@ -1220,6 +1220,7 @@
 
 #apply .card_desc {
   margin-bottom: calc(var(--base-unit)*2);
+}
 .card_title {
   margin-bottom: calc(var(--base-unit) * 3);
 }
