@@ -993,15 +993,8 @@
     background-image: url("../images/benefit_bg2.png");
     background-size: cover;
     background-position: center;
-
     /* 요청사항: 이미지 투명도 50% 적용 */
     opacity: 0.5;
-
-    /* 60% 흐림 효과 (약 8px) */
-    filter: blur(8px);
-
-    /* 블러로 인한 외곽선 왜곡 방지를 위해 살짝 확대 */
-    transform: scale(1.1);
     z-index: 1;
   }
 
@@ -1116,12 +1109,6 @@
     background-size: cover;
     background-position: center;
   }
-
-  /* 모바일에서는 가상 요소 배경 제거 (중첩 방지) */
-  .benefit::before {
-    display: none;
-  }
-
   .benefit .container {
     width: 100%;
     padding: 0 16px; /* 좌우 여백 16px 반영 */
@@ -1148,9 +1135,7 @@
   .card_back {
     padding: 15px 10px;
     border-radius: 20px;
-    /* 모바일 투명도 및 블러 효과 */
     background: linear-gradient(135deg, rgba(111, 53, 191, 0.92), rgba(63, 29, 109, 0.92));
-    backdrop-filter: blur(8px);
   }
 
   /* 폰트 및 배지 사이즈 (최소 폰트 8px) */
