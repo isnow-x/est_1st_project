@@ -4,7 +4,7 @@
 :root {
   /* Layout */
   --base-unit: 20px;
-  --base-font: 18px;
+  --base-font: 16px;
   --base-letter-spacing: -0.05em;
 
   /* Color styles */
@@ -338,5 +338,38 @@ header .menu > ul > li a:hover {
   /* 텍스트 줄간격 */
   .footer_bottom .text-footer {
     gap: 6px;
+  }
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow: visible;
+  }
+  #popup {
+    display: none;
+  }
+  #nav {
+    display: none;
+  }
+  .inner {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-width: 400px) {
+  html,
+  body {
+    overflow: visible;
+  }
+  #popup {
+    display: none;
+  }
+  #nav {
+    display: none;
+  }
+  .inner {
+    width: 100%;
+    height: auto;
   }
 }
