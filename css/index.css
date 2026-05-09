@@ -230,8 +230,7 @@
 
   cursor: pointer;
 
-  background: url("../images/hero_floating_character.png")
-    center / contain no-repeat;
+  background: url("../images/hero_floating_character.png") center / contain no-repeat;
 }
 
 /* TOP 버튼 */
@@ -241,7 +240,7 @@
   top: -60px;
   right: 27px;
 
-font-size: calc(var(--base-font)*2.5);
+  font-size: calc(var(--base-font) * 2.5);
 
   display: flex;
   align-items: center;
@@ -568,7 +567,6 @@ font-size: calc(var(--base-font)*2.5);
   overflow: hidden;
 }
 
-
 /* 'display: flex' 안에 있는 자식들을 정렬하기 쉽도록 부모로 지정해주는 거구나 'width: max-content' 는 부모 요소의 너비가 아무리 좁더라도 줄바꿈을 하지 말고 내용물(콘텐츠)이 필요한 만큼만 너비를 가지라는 거구나*/
 .review_company_logo_track {
   display: flex;
@@ -583,13 +581,21 @@ font-size: calc(var(--base-font)*2.5);
 }
 
 /* '@keyframes 이름' 은 에니메이션이 어떻게 움직이게 할지 설정하는 거구나. 'transform: translateX(값)'은 가로로 얼마나 이동할 것인지를 정하는 거구나. */
-@keyframes scrollLeft{
-  from {transform: translateX(0);}
-  to {transform: translateX(-50%);}
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 @keyframes scrollRight {
-  from {transform: translateX(-50%);}
-  to {transform: translateX(0);}
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* 'animation: 이름 시간 타이밍 반복' 애니메이션을 어떻게 작동할지 설정하는 거구나. */
@@ -683,10 +689,10 @@ font-size: calc(var(--base-font)*2.5);
   width: 50px;
   height: 50px;
   border-radius: 15px;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
-.review_estchat_window li > div:last-child{
+.review_estchat_window li > div:last-child {
   display: flex;
   flex-direction: column;
   max-width: 422px;
@@ -1101,14 +1107,14 @@ font-size: calc(var(--base-font)*2.5);
   width: 1280px;
   margin: 0 auto;
 }
-#apply .inner h2{
+#apply .inner h2 {
   color: var(--white);
 }
 
 /* --- 헤더 영역 (제목 + 컨트롤러) --- */
 .apply_header {
   text-align: center;
-  margin-bottom:calc(var(--base-unit)*3);
+  margin-bottom: calc(var(--base-unit) * 3);
 }
 
 .apply_header h2 {
@@ -1117,7 +1123,7 @@ font-size: calc(var(--base-font)*2.5);
 
 .apply_header p {
   color: var(--purple);
-  margin-bottom: calc(var(--base-unit)*2);;
+  margin-bottom: calc(var(--base-unit) * 2);
 }
 
 /* 상단 컨트롤러 (1 --- 4 화살표) */
@@ -1140,7 +1146,7 @@ font-size: calc(var(--base-font)*2.5);
 
 .apply_arrows button {
   color: var(--white);
-/*   font-size: 24px; */
+  /*   font-size: 24px; */
   cursor: pointer;
   padding: 0 10px;
   opacity: 0.5;
@@ -1153,7 +1159,7 @@ font-size: calc(var(--base-font)*2.5);
 
 /* 슬라이드 영역 */
 .apply_slide_wrapper {
- width: 1280px;
+  width: 1280px;
 }
 
 .apply_slide_wrapper ul {
@@ -1185,21 +1191,21 @@ font-size: calc(var(--base-font)*2.5);
   height: 310px;
 } */
 .card_title {
-  margin-bottom: calc(var(--base-unit)*3);
+  margin-bottom: calc(var(--base-unit) * 3);
 }
 
 .card_desc {
-  margin-bottom: calc(var(--base-unit)*2);
+  margin-bottom: calc(var(--base-unit) * 2);
   word-break: keep-all; /* 한글 줄바꿈 예쁘게 */
 }
 
 /* 카드 내부 동그란 숫자 리스트 */
 .card_step_list {
   gap: 5px;
-  
+
   /* 핵심 코드: 내용물의 너비에 딱 맞게 영역을 줄입니다 */
-  width: fit-content; 
-  
+  width: fit-content;
+
   /* 만약 왼쪽 여백이 기본으로 잡혀있다면 초기화 */
   padding: 0;
   margin: 0;
@@ -1235,7 +1241,7 @@ font-size: calc(var(--base-font)*2.5);
   max-width: 300px;
   height: auto;
   /* 부드러운 입체감을 위해 필터나 애니메이션 추가 가능 */
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
 }
 
 /* 지원독려 : 황시원 */
@@ -1246,6 +1252,53 @@ font-size: calc(var(--base-font)*2.5);
   background-position: center, center;
   background-size: cover, cover;
 }
+.join_cta .btn-big {
+  filter: drop-shadow(0 0 10px var(--yellow));
+  animation: btnBounce 1.5s ease infinite;
+}
+/* 지원독려 태블릿 */
+@media (max-width: 768px) {
+  .join_cta {
+    height: 160px;
+    min-height: 160px;
+    padding: 30px 0;
+    box-sizing: border-box;
+    gap: 20px;
+  }
+  .join_cta .text-h1 {
+    font-size: 24px;
+  }
+  .join_cta .text-qna {
+    display: none;
+  }
+  .join_cta .btn-big {
+    padding: 9px 20px;
+    font-size: 12px;
+  }
+  .join_cta .btn-big .material-icons-round {
+    display: none;
+  }
+}
+/* 지원독려 모바일 */
+@media (max-width: 402px) {
+  .join_cta {
+    height: 140px;
+    min-height: 140px;
+    padding: 20px 0;
+    gap: 10px;
+  }
+  .join_cta .text-h1 {
+    font-size: 20px;
+  }
+  .join_cta .text-qna {
+    display: none;
+  }
+  .join_cta .btn-big {
+    padding: 9px 20px;
+    font-size: 12px;
+  }
+}
+
 /* QNA : 황시원 */
 .qna {
   background: var(--white);
@@ -1258,7 +1311,7 @@ font-size: calc(var(--base-font)*2.5);
 }
 .qnalist {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1040px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
@@ -1267,7 +1320,7 @@ font-size: calc(var(--base-font)*2.5);
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 0;
   box-sizing: border-box;
   text-align: center;
 }
@@ -1314,18 +1367,103 @@ font-size: calc(var(--base-font)*2.5);
   color: var(--white);
   transform: rotate(180deg);
 }
-.join .btn-big {
-  filter: drop-shadow(0 0 10px var(--yellow));
-  animation: btnBounce 1.5s ease infinite;
+
+/* 질문 태블릿 */
+@media (max-width: 768px) {
+  .qna-icon {
+    width: 60px;
+  }
+  .qna.inner-pd {
+    padding: 60px 0;
+  }
+  .qna {
+    gap: 60px;
+  }
+  .qnalist {
+    padding: 0 40px;
+  }
+  .qnalist .question {
+    height: calc(var(--base-unit) * 3);
+    padding: 0 30px;
+  }
+
+  .qnalist .answer {
+    padding: 20px 30px;
+  }
+  .question-title {
+    gap: 10px;
+    min-width: 0;
+  }
+
+  /* 폰트 사이즈 */
+  .qna .text-h1 {
+    font-size: 32px;
+  }
+  .question-title {
+    font-size: 16px;
+  }
+  .answer .text-h3 {
+    font-size: 16px;
+  }
+  .answer .text-content {
+    font-size: 12px;
+  }
+  .qnalist .question > span {
+    font-size: 20px;
+  }
+  .qnalist li.active .question > span {
+    font-size: 20px;
+  }
+  .answer .text-h3 {
+    line-height: 150%;
+  }
 }
-@keyframes btnBounce {
-  0% {
-    transform: translateY(0);
+
+/* 질문 모바일 */
+@media (max-width: 402px) {
+  .qna .inner {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
   }
-  50% {
-    transform: translateY(-5px);
+  .qna-icon {
+    width: 40px;
   }
-  100% {
-    transform: translateY(0);
+  .qna {
+    gap: 40px;
+  }
+  .qna.inner-pd {
+    padding: 40px 0;
+  }
+  .qnalist {
+    padding: 0 20px;
+  }
+  .qnalist .question {
+    height: calc(var(--base-unit) * 2);
+    padding: 0 20px;
+  }
+  .qnalist .answer {
+    padding: 20px 20px;
+  }
+
+  /* 폰트 사이즈 */
+  .qna .text-h1 {
+    font-size: 20px;
+  }
+  .question-title {
+    font-size: 10px;
+  }
+  .answer .text-h3 {
+    font-size: 10px;
+  }
+  .answer .text-content {
+    font-size: 8px;
+    line-height: 150%;
+  }
+  .qnalist .question > span {
+    font-size: 15px;
+  }
+  .qnalist li.active .question > span {
+    font-size: 15px;
   }
 }
