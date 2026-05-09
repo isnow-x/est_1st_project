@@ -230,8 +230,7 @@
 
   cursor: pointer;
 
-  background: url("../images/hero_floating_character.png")
-    center / contain no-repeat;
+  background: url("../images/hero_floating_character.png") center / contain no-repeat;
 }
 
 /* TOP 버튼 */
@@ -241,7 +240,7 @@
   top: -60px;
   right: 27px;
 
-font-size: calc(var(--base-font)*2.5);
+  font-size: calc(var(--base-font) * 2.5);
 
   display: flex;
   align-items: center;
@@ -568,7 +567,6 @@ font-size: calc(var(--base-font)*2.5);
   overflow: hidden;
 }
 
-
 /* 'display: flex' 안에 있는 자식들을 정렬하기 쉽도록 부모로 지정해주는 거구나 'width: max-content' 는 부모 요소의 너비가 아무리 좁더라도 줄바꿈을 하지 말고 내용물(콘텐츠)이 필요한 만큼만 너비를 가지라는 거구나*/
 .review_company_logo_track {
   display: flex;
@@ -583,13 +581,21 @@ font-size: calc(var(--base-font)*2.5);
 }
 
 /* '@keyframes 이름' 은 에니메이션이 어떻게 움직이게 할지 설정하는 거구나. 'transform: translateX(값)'은 가로로 얼마나 이동할 것인지를 정하는 거구나. */
-@keyframes scrollLeft{
-  from {transform: translateX(0);}
-  to {transform: translateX(-50%);}
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 @keyframes scrollRight {
-  from {transform: translateX(-50%);}
-  to {transform: translateX(0);}
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* 'animation: 이름 시간 타이밍 반복' 애니메이션을 어떻게 작동할지 설정하는 거구나. */
@@ -683,10 +689,10 @@ font-size: calc(var(--base-font)*2.5);
   width: 50px;
   height: 50px;
   border-radius: 15px;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
-.review_estchat_window li > div:last-child{
+.review_estchat_window li > div:last-child {
   display: flex;
   flex-direction: column;
   max-width: 422px;
@@ -938,156 +944,144 @@ font-size: calc(var(--base-font)*2.5);
   margin-bottom: 20px;
 }
 
-/* 태블릿 버전 (화면 너비 1240px 이하)  */
-@media (max-width: 1240px) {
+/* 태블릿 버전 (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .benefit {
+    padding: 80px 0;
+  }
+
   .benefit .container {
-    width: 90%;
-    /* 양옆 여백 확보  */
-  }
-
-  .benefit_card_container {
-    /* 카드를 2열로 변경  */
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 280px;
-    /* 높이 약간 축소 */
-    gap: 15px;
-    max-width: 900px;
+    width: calc(100% - 40px); /* 좌우 여백 20px 반영 */
+    max-width: 768px;
     margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
   }
 
+  /* 가장 큰 글씨 32px */
   .text-header {
-    font-size: 22px;
+    font-size: 32px;
     margin-bottom: 60px;
   }
 
-  /* ★ 추가 수정: 태블릿에서도 디자인 일관성 유지 ★  */
-  .card_front,
-  .card_back {
-    /* 모바일/데스크탑과 동일하게 그라데이션 및 라운드 유지  */
-    background: linear-gradient(135deg, var(--purple), #3f1d6d);
-    border-radius: 25px;
-    padding: 25px;
+  .benefit_card_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2열 */
+    grid-auto-rows: auto;
+    min-height: 576px; /* 가이드 높이 반영 */
+    gap: 20px;
   }
 
-  /* 태블릿 환경 아이콘 박스 크기 미세 조정 */
+  /* 데스크탑의 카드 회전 구조 유지 */
+  .benefit_card {
+    perspective: 1000px;
+    height: 300px; /* 태블릿 카드 높이 명시 */
+  }
+
+  .card_front,
+  .card_back {
+    padding: 25px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, var(--purple), #3f1d6d);
+  }
+
+  /* 폰트 및 요소 사이즈 조정 */
+  .card_front h3,
+  .card_back h3 {
+    font-size: 20px;
+    font-weight: 800;
+  }
+
+  .card_back p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* 가장 작은 글씨 10px */
+  .badge {
+    width: 110px;
+    height: 26px;
+    font-size: 10px;
+    margin-bottom: 15px;
+  }
+
   .icon_box {
     height: 100px;
   }
-  .icon_box img {
-    /* 피그마 효과 유지 */
-    filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.45));
-  }
-
-  /* 태블릿 환경 폰트 사이즈 최적화 */
-  .card_front h3,
-  .card_back h3 {
-    font-size: 18px;
-    font-weight: 800;
-  }
-
-  .card_back p {
-    font-size: 16px;
-    line-height: 1.5;
-    font-weight: 700;
-  }
-
-  .badge {
-    width: 120px;
-    height: 28px;
-    font-size: 11px;
-    font-weight: 800;
-  }
 }
 
-/* 모바일 화면 대응 (너비 402px 기준 최적화) */
-@media (max-width: 768px) {
+/* 모바일 화면 대응 (max-width: 400px) */
+@media screen and (max-width: 400px) {
   .benefit {
-    width: 100%;
     padding: 60px 0;
-    min-height: auto;
-    /* 피드백 반영: 고정 높이 제거 */
+    background-image: url("../images/benefit_bg3.jpg"); /* 모바일 전용 배경 */
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* 모바일에서는 가상 요소 배경 제거 (중첩 방지) */
+  .benefit::before {
+    display: none;
   }
 
   .benefit .container {
-    /* 가이드 너비 402px 반영  */
-    width: 402px;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 15px;
-    /* 양옆 최소 여백  */
+    width: 100%;
+    padding: 0 16px; /* 좌우 여백 16px 반영 */
+    box-sizing: border-box;
   }
 
-  /* 섹션 제목: 24px-100% 반영 */
+  /* 가장 큰 글씨 24px */
   .text-header {
     font-size: 24px;
-    font-weight: 700;
     margin-bottom: 40px;
   }
 
-  /* 카드 그리드: 402px 내에서 2열 배치 최적화 */
   .benefit_card_container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2열 유지 */
     gap: 12px;
-    justify-content: center;
   }
 
-  /* 카드 사이즈: 162 * 180 및 라운드 20 반영  */
   .benefit_card {
-    height: 180px;
+    height: 180px; /* 모바일 카드 높이 */
+    perspective: 800px;
   }
 
   .card_front,
   .card_back {
-    padding: 20px 10px;
+    padding: 15px 10px;
     border-radius: 20px;
-    /* 모바일 전용 라운드 값  */
-    background: linear-gradient(135deg, var(--purple), #3f1d6d);
+    /* 모바일 투명도 및 블러 효과 */
+    background: linear-gradient(135deg, rgba(111, 53, 191, 0.92), rgba(63, 29, 109, 0.92));
+    backdrop-filter: blur(8px);
   }
 
-  /* 배지: 60 * 15 가이드 기반 (폰트 8px Regular)  */
+  /* 폰트 및 배지 사이즈 (최소 폰트 8px) */
   .badge {
-    width: 70px;
+    width: 65px;
     height: 18px;
     font-size: 8px;
-    font-weight: 400;
-    margin-bottom: 12px;
-  }
-
-  /* 카드 앞면 혜택명: 12-100 Bold 반영  */
-  .card_front h3 {
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-
-  /* 아이콘: 80 * 56 및 드롭 쉐도우 유지  */
-  .icon_box {
-    width: 80px;
-    height: 56px;
-    margin-top: 8px;
-  }
-  .icon_box img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
-  }
-
-  /* 카드 뒷면 제목 및 설명 */
-  .card_back h3 {
-    font-size: 16px;
-    /* 16-100 Bold 반영 */
-    font-weight: 700;
     margin-bottom: 8px;
   }
 
+  .card_front h3 {
+    font-size: 12px;
+  }
+  .card_back h3 {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
   .card_back p {
     font-size: 10px;
-    /* 10-150 Regular 반영 */
-    line-height: 1.5;
-    font-weight: 400;
-    word-break: keep-all;
+    line-height: 1.4;
+  }
+
+  .icon_box {
+    height: 60px;
+    margin-top: 5px;
+  }
+
+  .icon_box img {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.35));
   }
 }
 
@@ -1101,14 +1095,14 @@ font-size: calc(var(--base-font)*2.5);
   width: 1280px;
   margin: 0 auto;
 }
-#apply .inner h2{
+#apply .inner h2 {
   color: var(--white);
 }
 
 /* --- 헤더 영역 (제목 + 컨트롤러) --- */
 .apply_header {
   text-align: center;
-  margin-bottom:calc(var(--base-unit)*3);
+  margin-bottom: calc(var(--base-unit) * 3);
 }
 
 .apply_header h2 {
@@ -1117,7 +1111,7 @@ font-size: calc(var(--base-font)*2.5);
 
 .apply_header p {
   color: var(--purple);
-  margin-bottom: calc(var(--base-unit)*2);;
+  margin-bottom: calc(var(--base-unit) * 2);
 }
 
 /* 상단 컨트롤러 (1 --- 4 화살표) */
@@ -1140,7 +1134,7 @@ font-size: calc(var(--base-font)*2.5);
 
 .apply_arrows button {
   color: var(--white);
-/*   font-size: 24px; */
+  /*   font-size: 24px; */
   cursor: pointer;
   padding: 0 10px;
   opacity: 0.5;
@@ -1153,7 +1147,7 @@ font-size: calc(var(--base-font)*2.5);
 
 /* 슬라이드 영역 */
 .apply_slide_wrapper {
- width: 1280px;
+  width: 1280px;
 }
 
 .apply_slide_wrapper ul {
@@ -1185,21 +1179,21 @@ font-size: calc(var(--base-font)*2.5);
   height: 310px;
 } */
 .card_title {
-  margin-bottom: calc(var(--base-unit)*3);
+  margin-bottom: calc(var(--base-unit) * 3);
 }
 
 .card_desc {
-  margin-bottom: calc(var(--base-unit)*2);
+  margin-bottom: calc(var(--base-unit) * 2);
   word-break: keep-all; /* 한글 줄바꿈 예쁘게 */
 }
 
 /* 카드 내부 동그란 숫자 리스트 */
 .card_step_list {
   gap: 5px;
-  
+
   /* 핵심 코드: 내용물의 너비에 딱 맞게 영역을 줄입니다 */
-  width: fit-content; 
-  
+  width: fit-content;
+
   /* 만약 왼쪽 여백이 기본으로 잡혀있다면 초기화 */
   padding: 0;
   margin: 0;
@@ -1235,7 +1229,7 @@ font-size: calc(var(--base-font)*2.5);
   max-width: 300px;
   height: auto;
   /* 부드러운 입체감을 위해 필터나 애니메이션 추가 가능 */
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
 }
 
 /* 지원독려 : 황시원 */
