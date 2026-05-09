@@ -1240,6 +1240,53 @@
   background-position: center, center;
   background-size: cover, cover;
 }
+.join_cta .btn-big {
+  filter: drop-shadow(0 0 10px var(--yellow));
+  animation: btnBounce 1.5s ease infinite;
+}
+/* 지원독려 태블릿 */
+@media (max-width: 768px) {
+  .join_cta {
+    height: 160px;
+    min-height: 160px;
+    padding: 30px 0;
+    box-sizing: border-box;
+    gap: 20px;
+  }
+  .join_cta .text-h1 {
+    font-size: 24px;
+  }
+  .join_cta .text-qna {
+    display: none;
+  }
+  .join_cta .btn-big {
+    padding: 9px 20px;
+    font-size: 12px;
+  }
+  .join_cta .btn-big .material-icons-round {
+    display: none;
+  }
+}
+/* 지원독려 모바일 */
+@media (max-width: 402px) {
+  .join_cta {
+    height: 140px;
+    min-height: 140px;
+    padding: 20px 0;
+    gap: 10px;
+  }
+  .join_cta .text-h1 {
+    font-size: 20px;
+  }
+  .join_cta .text-qna {
+    display: none;
+  }
+  .join_cta .btn-big {
+    padding: 9px 20px;
+    font-size: 12px;
+  }
+}
+
 /* QNA : 황시원 */
 .qna {
   background: var(--white);
@@ -1252,7 +1299,7 @@
 }
 .qnalist {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1040px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
@@ -1261,7 +1308,7 @@
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 0;
   box-sizing: border-box;
   text-align: center;
 }
@@ -1308,18 +1355,103 @@
   color: var(--white);
   transform: rotate(180deg);
 }
-.join .btn-big {
-  filter: drop-shadow(0 0 10px var(--yellow));
-  animation: btnBounce 1.5s ease infinite;
+
+/* 질문 태블릿 */
+@media (max-width: 768px) {
+  .qna-icon {
+    width: 60px;
+  }
+  .qna.inner-pd {
+    padding: 60px 0;
+  }
+  .qna {
+    gap: 60px;
+  }
+  .qnalist {
+    padding: 0 40px;
+  }
+  .qnalist .question {
+    height: calc(var(--base-unit) * 3);
+    padding: 0 30px;
+  }
+
+  .qnalist .answer {
+    padding: 20px 30px;
+  }
+  .question-title {
+    gap: 10px;
+    min-width: 0;
+  }
+
+  /* 폰트 사이즈 */
+  .qna .text-h1 {
+    font-size: 32px;
+  }
+  .question-title {
+    font-size: 16px;
+  }
+  .answer .text-h3 {
+    font-size: 16px;
+  }
+  .answer .text-content {
+    font-size: 12px;
+  }
+  .qnalist .question > span {
+    font-size: 20px;
+  }
+  .qnalist li.active .question > span {
+    font-size: 20px;
+  }
+  .answer .text-h3 {
+    line-height: 150%;
+  }
 }
-@keyframes btnBounce {
-  0% {
-    transform: translateY(0);
+
+/* 질문 모바일 */
+@media (max-width: 402px) {
+  .qna .inner {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
   }
-  50% {
-    transform: translateY(-5px);
+  .qna-icon {
+    width: 40px;
   }
-  100% {
-    transform: translateY(0);
+  .qna {
+    gap: 40px;
+  }
+  .qna.inner-pd {
+    padding: 40px 0;
+  }
+  .qnalist {
+    padding: 0 20px;
+  }
+  .qnalist .question {
+    height: calc(var(--base-unit) * 2);
+    padding: 0 20px;
+  }
+  .qnalist .answer {
+    padding: 20px 20px;
+  }
+
+  /* 폰트 사이즈 */
+  .qna .text-h1 {
+    font-size: 20px;
+  }
+  .question-title {
+    font-size: 10px;
+  }
+  .answer .text-h3 {
+    font-size: 10px;
+  }
+  .answer .text-content {
+    font-size: 8px;
+    line-height: 150%;
+  }
+  .qnalist .question > span {
+    font-size: 15px;
+  }
+  .qnalist li.active .question > span {
+    font-size: 15px;
   }
 }
