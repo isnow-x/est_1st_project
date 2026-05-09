@@ -250,16 +250,12 @@
     position: absolute;
     left: 20%;
     top: 110px;
-
     z-index: 10;
-
     color: var(--white);
-
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 1.4;
-
+    font-size: var(--serve);
     word-break: keep-all;
+    font-weight: 700
+;
   }
   /* 히어로 영역 */
   #hero .inner {
