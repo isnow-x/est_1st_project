@@ -224,8 +224,8 @@
   width: 70px;
   height: 70px;
   cursor: pointer;
-  background: url("../images/hero_floating_character.png")
-    center / contain no-repeat;
+
+  background: url("../images/hero_floating_character.png") center / contain no-repeat;
 }
 
 /* TOP 버튼 */
@@ -258,7 +258,7 @@
   z-index: 0;
 }
 .join .inner {
-  padding: 100px 0;
+  padding: 150px 0;
   width: 100%;
   position: relative;
   z-index: 1;
@@ -269,7 +269,8 @@
 }
 .join_slider_group {
   width: 100%;
-  gap: 90px;
+  gap: 60px;
+  margin-top: 70px;
 }
 .join_slider_step1,
 .join_slider_step2 {
@@ -287,7 +288,7 @@
 .join_slider_step1 img,
 .join_slider_step2 img {
   animation: pulse 2s ease-in-out infinite;
-  margin: 68px 0;
+  margin: 30px 0;
   width: 500px;
 }
 @keyframes pulse {
@@ -301,6 +302,44 @@
     transform: scale(1);
   }
 }
+
+/* 참여이유_테블릿 버전 css */
+
+@media (max-width: 768px) {
+  .join .join_label {
+    font-size: 24px;
+  }
+  .join .text-h1 {
+    font-size: 36px;
+  }
+  .join span {
+    font-size: 18px;
+  }
+  .join_slider_step1 h3,
+  .join_slider_step2 h3 {
+    font-size: 28px;
+  }
+  .join_slider_step1 p,
+  .join_slider_step2 p {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .join_slider_group {
+    gap: 60px;
+    margin-top: 80px;
+  }
+  .join_slider_step1,
+  .join_slider_step2 {
+    gap: 20px;
+  }
+  .join_slider_step1 img,
+  .join_slider_step2 img {
+    animation: pulse 2s ease-in-out infinite;
+    margin-bottom: 30px;
+    width: 350px;
+  }
+}
+
 /* 커리큘럼 - 문송연 */
 
 .curriculum {
@@ -385,10 +424,10 @@
 }
 
 .category_group label img {
-  height: 231px;
+  width: 150px;
 }
 #tab2 + label img {
-  width: 170px;
+  width: 120px;
 }
 
 /* 커리큘럼 컨테이너 (전체 박스) */
@@ -1171,6 +1210,10 @@
   width: 760px;
   height: 310px;
 } */
+.card_title {
+  margin-bottom: calc(var(--base-unit) * 3);
+}
+
 #apply .card_title {
   margin-bottom: calc(var(--base-unit)*3);
 }
