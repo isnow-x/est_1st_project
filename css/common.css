@@ -4,7 +4,7 @@
 :root {
   /* Layout */
   --base-unit: 20px;
-  --base-font: 18px;
+  --base-font: 16px;
   --base-letter-spacing: -0.05em;
 
   /* Color styles */
@@ -254,6 +254,20 @@ header .menu > ul > li:hover ul {
 header .menu > ul > li a:hover {
   font-weight: 700;
 }
+.btn_hamburger {
+  display: none;
+}
+
+/* header 태블릿 버전*/
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+  .btn_hamburger {
+    display: block;
+  }
+}
 
 /* 푸터 : 황시원 */
 .footer {
@@ -307,36 +321,90 @@ header .menu > ul > li a:hover {
   color: var(--purple);
 }
 
+/* 푸터 태블릿 */
 @media (max-width: 768px) {
   .footer {
-    padding: 20px 20px;
+    padding: 20px 0;
     overflow: hidden;
   }
   .footer * {
     box-sizing: border-box;
   }
-  .footer .inner {
-    width: 100%;
-  }
-  .footer > .inner > div:first-child {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-  }
-
-  /* 하단 영역 */
-  .footer_bottom {
-    flex-direction: column;
-    gap: 20px;
-  }
-
   /* 로고 크기 축소 */
   .footer_logo {
     width: 160px;
   }
+  /* 텍스트 크기 */
+  .text-footer {
+    font-size: 10px;
+  }
+  .footer_social a {
+    width: 24px;
+    height: 24px;
+  }
+}
 
+/* 푸터 모바일 */
+@media (max-width: 402px) {
+  .footer {
+    padding: 20px 0;
+    overflow: hidden;
+  }
+  .footer * {
+    box-sizing: border-box;
+  }
+  .footer > .inner > div:first-child {
+    justify-content: left;
+    gap: 20px;
+  }
+  /* 하단 영역 */
+  .footer_bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+  /* 로고 크기 축소 */
+  .footer_logo {
+    width: 120px;
+  }
   /* 텍스트 줄간격 */
   .footer_bottom .text-footer {
-    gap: 6px;
+    gap: 4px;
+  }
+  /* 텍스트 크기 */
+  .text-footer {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow: visible;
+  }
+  #popup {
+    display: none;
+  }
+  #nav {
+    display: none;
+  }
+  .inner {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-width: 400px) {
+  html,
+  body {
+    overflow: visible;
+  }
+  #popup {
+    display: none;
+  }
+  #nav {
+    display: none;
+  }
+  .inner {
+    width: 100%;
+    height: auto;
   }
 }
