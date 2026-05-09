@@ -1466,7 +1466,7 @@
   transform: rotate(180deg);
 }
 
-/* 질문 태블릿 */
+/* qna 태블릿 */
 @media (max-width: 768px) {
   .qna-icon {
     width: 60px;
@@ -1517,7 +1517,7 @@
   }
 }
 
-/* 질문 모바일 */
+/* qna 모바일 */
 @media (max-width: 402px) {
   .qna .inner {
     flex-direction: row;
