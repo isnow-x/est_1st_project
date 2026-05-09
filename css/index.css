@@ -24,15 +24,15 @@
   transition: transform 0.5s ease;
   animation: slide_auto 20s infinite;
 }
-
-/* 개별 슬라이드 */
-.slide_item {
-  width: 25%;
-  height: 100%;
-
+.hero_slide .slide_item{
   display: flex;
   align-items: center;
+}
 
+/* 개별 슬라이드 */
+ #hero .slide_item {
+  width: 25%;
+  height: 100%;
   background-size: cover;
   background-position: center;
 }
@@ -82,6 +82,8 @@
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
   padding: calc(var(--base-unit) * 3) 48px;
   margin-left: 200px;
+  display: flex;
+  flex-direction: column;
 }
 .hero_content h2 {
   color: var(--white);
@@ -131,9 +133,7 @@
   height: 5px;
   background: var(--white);
   z-index: 5;
-
   animation: li_slide_bar 20s infinite;
-
   --slide-move: 333px;
 }
 
@@ -163,10 +163,8 @@
 /* 우측 하단 고정 영역 */
 .quick_aside {
   position: fixed;
-
   right: 40px;
   bottom: 40px;
-
   z-index: 9999;
 }
 
@@ -181,8 +179,8 @@
   position: absolute;
   right: 100px;
   bottom: 40px;
-  width: 424px;
-  padding: 20px;
+  width: 280px;
+  padding: 15px;
   border: 1px solid var(--black);
   border-radius: 30px 30px 0 30px;
   background: rgba(255, 255, 255, 0.7);
@@ -198,16 +196,14 @@
 /* 문의하기 + 아이콘 한 줄 */
 .chat_links {
   justify-content: flex-end;
-  gap: 12px;
+  gap: 10px;
 }
 
 /* 공통 아이콘 */
 .chat_links a {
   width: 30px;
   height: 30px;
-
   display: block;
-
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -225,26 +221,22 @@
 
 /* 챗봇 버튼 */
 .btn_chat {
-  width: 90px;
-  height: 90px;
-
+  width: 70px;
+  height: 70px;
   cursor: pointer;
-
-  background: url("../images/hero_floating_character.png") center / contain no-repeat;
+  background: url("../images/hero_floating_character.png")
+    center / contain no-repeat;
 }
 
 /* TOP 버튼 */
 .quick_chat_group .btn_top {
   position: absolute;
-
-  top: -60px;
-  right: 27px;
-
-  font-size: calc(var(--base-font) * 2.5);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: -64px;
+  right: 30px;
+}
+.quick_chat_group .btn_top>span{
+  color: var(--purple);
+  font-size: calc(var(--base-font)*3);
 }
 
 /* 참여이유 : 문송연  */
@@ -1147,15 +1139,16 @@
 
 /* 슬라이드 영역 */
 .apply_slide_wrapper {
-  width: 1280px;
+ width: 1280px;
+ overflow: hidden;
 }
 
-.apply_slide_wrapper ul {
-  gap: 60px; /* 카드 사이 간격 */
+.apply_slide_wrapper>ul {
+  gap: 320px; /* 카드 사이 간격 */
   padding: 20px 0;
 }
 
-.slide_item {
+#apply .slide_item {
   flex: 0 0 1280px; /* 카드의 너비 고정 */
   scroll-snap-align: center; /* 스크롤 시 중앙에 딱 붙음 */
 }
@@ -1178,6 +1171,12 @@
   width: 760px;
   height: 310px;
 } */
+#apply .card_title {
+  margin-bottom: calc(var(--base-unit)*3);
+}
+
+#apply .card_desc {
+  margin-bottom: calc(var(--base-unit)*2);
 .card_title {
   margin-bottom: calc(var(--base-unit) * 3);
 }
@@ -1188,9 +1187,9 @@
 }
 
 /* 카드 내부 동그란 숫자 리스트 */
-.card_step_list {
-  gap: 5px;
-
+#apply .card_step_list {
+  gap: 25px;
+  
   /* 핵심 코드: 내용물의 너비에 딱 맞게 영역을 줄입니다 */
   width: fit-content;
 
@@ -1199,7 +1198,7 @@
   margin: 0;
 }
 
-.card_step_list li {
+#apply .card_step_list li {
   width: 50px;
   height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -1212,19 +1211,19 @@
   cursor: pointer;
 }
 
-.card_step_list li.active {
+#apply .card_step_list li.active {
   background-color: var(--white);
   color: var(--black);
 }
 
 /* 오른쪽 이미지 영역 */
-.card_img {
+#apply .card_img {
   flex: 0 0 350px;
   text-align: right;
   margin: 0;
 }
 
-.card_img img {
+#apply .card_img img {
   width: 100%; /* 이미지가 유동적으로 바뀌어도 영역에 맞게 설정 */
   max-width: 300px;
   height: auto;
