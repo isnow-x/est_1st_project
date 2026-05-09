@@ -17,6 +17,9 @@
   height: 100%;
   margin: 0 auto;
 }
+.tablet_hero_text {
+  display: none;
+}
 
 .hero_slide {
   width: 400%;
@@ -237,6 +240,79 @@
 .quick_chat_group .btn_top > span {
   color: var(--purple);
   font-size: calc(var(--base-font) * 3);
+}
+
+@media (max-width: 768px) {
+
+  .tablet_hero_text {
+    display: block;
+
+    position: absolute;
+    left: 20%;
+    top: 110px;
+
+    z-index: 10;
+
+    color: var(--white);
+
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    word-break: keep-all;
+  }
+  /* 히어로 영역 */
+  #hero .inner {
+    width: 100%;
+    height: 576px;
+
+    overflow: hidden;
+    background:  url(../images/t_hero_bg.png) center / cover no-repeat;
+  }
+
+  /* 컨테이너 */
+  .hero_slide_container {
+    width: 100%;
+    height: 100%;
+    
+  }
+
+  /* 슬라이드 애니메이션 제거 */
+  .hero_slide {
+    width: 100%;
+    height: 100%;
+
+    animation: none;
+    transform: translateX(0) !important;
+  }
+
+  /* 배경 이미지 */
+  .hero_slide .slide_item {
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
+  /* 콘텐츠 제거 */
+  .hero_content {
+    display: none;
+  }
+
+  /* 페이지네이션 제거 */
+  .slider_pagination_container {
+    display: none;
+  }
+
+  /* 화살표 제거 */
+  .slider_arrow {
+    display: none;
+  }
+
+  /* 플로팅 버튼 제거 */
+  .quick_aside {
+    display: none;
+  }
+
 }
 
 /* 참여이유 : 문송연  */
@@ -1234,14 +1310,21 @@
   overflow: hidden;
 }
 
-.apply_slide_wrapper > ul {
+.apply_slide_wrapper .slide_list {
   gap: 320px; /* 카드 사이 간격 */
   padding: 20px 0;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+}
+#apply .slide_list::-webkit-scrollbar {
+  display: none;
 }
 
 #apply .slide_item {
   flex: 0 0 1280px; /* 카드의 너비 고정 */
-  scroll-snap-align: center; /* 스크롤 시 중앙에 딱 붙음 */
+  scroll-snap-align: start;
 }
 
 /* --- 카드 디자인 --- */
@@ -1258,10 +1341,9 @@
 
 /* 왼쪽 텍스트 */
 
-/* .card_content{
-  width: 760px;
-  height: 310px;
-} */
+.card_content{
+  width: 500px;
+}
 .card_title {
   margin-bottom: calc(var(--base-unit) * 3);
 }
@@ -1280,15 +1362,14 @@
 .card_desc {
   margin-bottom: calc(var(--base-unit) * 2);
   word-break: keep-all; /* 한글 줄바꿈 예쁘게 */
+  font-size: var(--h2-150);
 }
 
 /* 카드 내부 동그란 숫자 리스트 */
 #apply .card_step_list {
   gap: 25px;
-
   /* 핵심 코드: 내용물의 너비에 딱 맞게 영역을 줄입니다 */
   width: fit-content;
-
   /* 만약 왼쪽 여백이 기본으로 잡혀있다면 초기화 */
   padding: 0;
   margin: 0;
@@ -1305,6 +1386,7 @@
   color: var(--white);
   transition: 0.3s;
   cursor: pointer;
+  font-size: var(--qna);
 }
 
 #apply .card_step_list li.active {
@@ -1317,6 +1399,7 @@
   flex: 0 0 350px;
   text-align: right;
   margin: 0;
+  overflow: hidden;
 }
 
 #apply .card_img img {
@@ -1325,7 +1408,80 @@
   height: auto;
   /* 부드러운 입체감을 위해 필터나 애니메이션 추가 가능 */
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+  display: block;
 }
+
+  /* 지원요건 태블릿 */
+@media (max-width: 768px) {
+  /* 전체 컨테이너 너비 해제 */
+  #apply .inner {
+    width: 100%;
+    padding: 0 20px; /* 양옆 여백 추가 */
+  }
+
+  /* 헤더 텍스트 크기 조절 */
+  .apply_header h2 {
+    font-size: var(--serve);
+  }
+
+  /* 슬라이드 래퍼 너비 조절 */
+  .apply_slide_wrapper {
+    width: 100%;
+  }
+
+  /* 슬라이드 아이템 너비 및 스냅 설정 변경 */
+  #apply .slide_item {
+    flex: 0 0 calc(100% - 40px); 
+    margin-right: 20px; 
+    scroll-snap-align: center; 
+  }
+  
+  .apply_slide_wrapper .slide_list {
+    gap: 0; /* gap 대신 margin-right로 간격 제어 */
+    padding: 20px 0;
+    overflow-x: auto; /* 스크롤 활성화 */
+  }
+
+  /* 카드 내부 레이아웃 변경 (가로 -> 세로) */
+  .apply_card {
+    flex-direction: column; 
+    height: auto; 
+    padding: 40px 30px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* 카드 내부 콘텐츠 너비 및 정렬 */
+  .card_content {
+    width: 100%;
+    order: 1; 
+  }
+  /* 카드 내부 숫자 리스트 중앙 정렬 */
+  #apply .card_step_list {
+    margin: 0 auto calc(var(--base-unit) * 2);
+  }
+
+  /* 이미지 영역 조절 */
+  #apply .card_img {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 200px; 
+    margin: 30px auto 0;
+    order: 2;
+    text-align: center;
+  }
+
+  #apply .card_img img {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  /* 상단 컨트롤러 숨김 여부 선택 */
+  .apply_arrows {
+    display: none;
+  }
+}
+  
 
 /* 지원독려 : 황시원 */
 .join_cta {
