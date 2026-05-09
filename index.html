@@ -757,133 +757,132 @@
         </div>
       </section>
 
-      <!-- 지원요건 : 이채연 -->
+     <!-- 지원요건 : 이채연 -->
       <section id="apply">
         <div class="inner">
           <header class="apply_header">
-            <h2>지원요건</h2>
-            <p>나도 가능할까? 지금 바로 확인해보세요.</p>
-            <div class="apply_controller">
-              <div class="apply_slider_number">
-                <span class="current">1</span>
-                <span class="bar"></span>
-                <!-- CSS로 긴 가로선 구현 -->
-                <span class="total">4</span>
+            <h2 class="text-header">지원 요건 확인하기</h2>
+            <p class="text-h2-100">나도 가능할까? 지금 바로 확인해보세요.</p>
+            
+            <div class="apply_controller d-flex justify-content-center align-items-center">
+              <!-- 현재 위치 표시 영역 -->
+              <div class="apply_slider_number d-flex align-items-center">
+                <span class="current text-content">1</span>
+                <span class="bar"></span> <!-- CSS로 가로선 구현 예정 -->
+                <span class="total text-content">4</span>
               </div>
 
+              <!-- 슬라이드 제어 버튼 -->
               <div class="apply_arrows">
-                <button type="button" class="btn_prev" aria-label="이전 슬라이드">
-                  <span class="arrow_icon">&larr;</span>
+                <button type="button text-content" class="btn_prev" aria-label="이전 슬라이드">
+                  <span class="arrow_icon" aria-hidden="true">←</span>
                 </button>
-                <button type="button" class="btn_next" aria-label="다음 슬라이드">
-                  <span class="arrow_icon">&rarr;</span>
+                <button type="button text-content" class="btn_next" aria-label="다음 슬라이드">
+                  <span class="arrow_icon" aria-hidden="true">→</span>
                 </button>
               </div>
             </div>
           </header>
 
           <div class="apply_slide_wrapper">
-            <ul>
+            <ul class="slide_list d-flex">
+              <!-- 슬라이드 01 -->
               <li class="slide_item apply_slide1">
-                <article class="apply_card">
-                  <!-- 왼쪽 텍스트 영역 -->
+                <article class="apply_card d-flex justify-content-between align-items-center">
                   <div class="card_content">
-                    <h3 class="card_title">국민내일배움카드 발급이 가능하신 분</h3>
-                    <p class="card_desc">
-                      고용 24 검색창 아래의<br />
+                    <h3 class="card_title text-serve">국민내일배움카드 발급이 가능하신 분</h3>
+                    <p class="card_desc text-h2-150">
+                      고용 24 검색창 아래의<br>
                       국민내일배움카드 → 국민내일배움카드 발급 → 발급신청
                     </p>
 
-                    <!-- 하단 인디케이터 (카드 내부용) -->
-                    <ul class="card_step_list">
-                      <li class="active">01</li>
+                    <!-- 하단 인디케이터 (탭 구조가 아니므로 단순 리스트로 처리) -->
+                    <ul class="card_step_list d-flex">
+                      <li class="active" title="현재 단계">01</li>
                       <li>02</li>
                       <li>03</li>
                       <li>04</li>
                     </ul>
                   </div>
 
-                  <!-- 오른쪽 이미지 영역 -->
                   <figure class="card_img">
-                    <img src="card_icon.png" alt="국민내일배움카드 아이콘" />
+                    <!-- [수정] 경로 및 alt 속성 정돈 -->
+                    <img src="images/apply_slider_item1_image.png" alt="국민내일배움카드 발급 안내 일러스트">
                   </figure>
                 </article>
               </li>
+
+              <!-- 슬라이드 02 -->
               <li class="slide_item apply_slide2">
                 <article class="apply_card">
-                  <!-- 왼쪽 텍스트 영역 -->
                   <div class="card_content">
-                    <h3 class="card_title">5년 이내 KDT 수강 이력이 없는 분</h3>
-                    <p class="card_desc">
+                    <h3 class="card_title text-serve">5년 이내 KDT 수강 이력이 없는 분</h3>
+                    <p class="card_desc text-h2-150">
                       고용 24 로그인 → 나의 정보 → 나의 훈련 이력 위와 같이 확인 후 이전 KDT 과정
                       수강 이력(수료, 하차, 포기 모두 포함)이 있다면, 신청이 불가한 것은 아니나 자비
                       부담금 발생합니다.
                     </p>
 
-                    <!-- 하단 인디케이터 (카드 내부용) -->
-                    <ul class="card_step_list">
+                    <ul class="card_step_list d-flex">
                       <li>01</li>
-                      <li class="active">02</li>
+                      <li class="active" title="현재 단계">02</li>
                       <li>03</li>
                       <li>04</li>
                     </ul>
                   </div>
 
-                  <!-- 오른쪽 이미지 영역 -->
                   <figure class="card_img">
-                    <img src="card_icon.png" alt="K-디지털 아이콘" />
+                    <img src="images/apply_slider_item2_image.png" alt="K-디지털 트레이닝 수강 이력 확인 일러스트">
                   </figure>
                 </article>
               </li>
+
+              <!-- 슬라이드 03 -->
               <li class="slide_item apply_slide3">
                 <article class="apply_card">
-                  <!-- 왼쪽 텍스트 영역 -->
                   <div class="card_content">
-                    <h3 class="card_title">평일 9 TO 6 교육 참여가 가능한 분</h3>
-                    <p class="card_desc">
+                    <h3 class="card_title text-serve">평일 9 TO 6 교육 참여가 가능한 분</h3>
+                    <p class="card_desc text-h2-150">
                       고용 24 평일 주 5일(공휴일 제외) 9:00 ~ 18:00 풀타임 강의로 진행 풀타임으로
                       온전히 참여하실 수 있는 분들을 우선 대상으로 선발 학교/직장과 병행하더라도
                       수강시간 확보가 가능하신 경우에 교육 참여가 가능
                     </p>
 
-                    <!-- 하단 인디케이터 (카드 내부용) -->
-                    <ul class="card_step_list">
+                    <ul class="card_step_list d-flex">
                       <li>01</li>
                       <li>02</li>
-                      <li class="active">03</li>
+                      <li class="active" title="현재 단계">03</li>
                       <li>04</li>
                     </ul>
                   </div>
 
-                  <!-- 오른쪽 이미지 영역 -->
                   <figure class="card_img">
-                    <img src="card_icon.png" alt="9to6 아이콘" />
+                    <img src="images/apply_slider_item3_image.png" alt="평일 전일제 교육 시간 안내 아이콘">
                   </figure>
                 </article>
               </li>
+
+              <!-- 슬라이드 04 -->
               <li class="slide_item apply_slide4">
                 <article class="apply_card">
-                  <!-- 왼쪽 텍스트 영역 -->
                   <div class="card_content">
-                    <h3 class="card_title">졸업까지 남은 연한이 2년 이내인 분</h3>
-                    <p class="card_desc">
-                      &middot; 4년제 대학 재학생 - 2학년 2학기 종료 시부터 지원가능 &middot; 3년제
-                      대학 재학생 - 1학년 2학기 종료 시부터 지원가능 &middot; 2년제 대학 재학생 -
-                      1학년 입학 시부터 지원가능
+                    <h3 class="card_title text-serve">졸업까지 남은 연한이 2년 이내인 분</h3>
+                    <p class="card_desc text-h2-150">
+                      &middot; 4년제 대학 재학생 - 2학년 2학기 종료 시부터 지원가능<br>
+                      &middot; 3년제 대학 재학생 - 1학년 2학기 종료 시부터 지원가능<br>
+                      &middot; 2년제 대학 재학생 - 1학년 입학 시부터 지원가능
                     </p>
 
-                    <!-- 하단 인디케이터 (카드 내부용) -->
-                    <ul class="card_step_list">
+                    <ul class="card_step_list d-flex">
                       <li>01</li>
                       <li>02</li>
                       <li>03</li>
-                      <li class="active">04</li>
+                      <li class="active" title="현재 단계">04</li>
                     </ul>
                   </div>
 
-                  <!-- 오른쪽 이미지 영역 -->
                   <figure class="card_img">
-                    <img src="card_icon.png" alt="졸업연한 아이콘" />
+                    <img src="images/apply_slider_item4_image.png" alt="대학 졸업 잔여 연한 기준 안내 아이콘">
                   </figure>
                 </article>
               </li>
