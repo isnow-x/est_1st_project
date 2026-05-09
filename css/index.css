@@ -24,13 +24,13 @@
   transition: transform 0.5s ease;
   animation: slide_auto 20s infinite;
 }
-.hero_slide .slide_item{
+.hero_slide .slide_item {
   display: flex;
   align-items: center;
 }
 
 /* 개별 슬라이드 */
- #hero .slide_item {
+#hero .slide_item {
   width: 25%;
   height: 100%;
   background-size: cover;
@@ -234,9 +234,9 @@
   top: -64px;
   right: 30px;
 }
-.quick_chat_group .btn_top>span{
+.quick_chat_group .btn_top > span {
   color: var(--purple);
-  font-size: calc(var(--base-font)*3);
+  font-size: calc(var(--base-font) * 3);
 }
 
 /* 참여이유 : 문송연  */
@@ -975,34 +975,75 @@
 @media (max-width: 1024px) {
   .benefit {
     padding: 80px 0;
+    position: relative;
+    min-height: auto;
+    overflow: hidden; /* 블러/확대된 이미지가 넘치지 않게 제어 */
+    background-color: #fff; /* 배경 투명도 적용 시 밑바탕 색상 */
+  }
+
+  /* ★ 배경 이미지 설정: 투명도 50% 및 블러 효과 ★ */
+  .benefit::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/benefit_bg2.png");
+    background-size: cover;
+    background-position: center;
+
+    /* 요청사항: 이미지 투명도 50% 적용 */
+    opacity: 0.5;
+
+    /* 60% 흐림 효과 (약 8px) */
+    filter: blur(8px);
+
+    /* 블러로 인한 외곽선 왜곡 방지를 위해 살짝 확대 */
+    transform: scale(1.1);
+    z-index: 1;
   }
 
   .benefit .container {
-    width: calc(100% - 40px); /* 좌우 여백 20px 반영 */
+    /* 좌우 여백 20px 반영 (전체 너비에서 40px 제외) */
+    width: calc(100% - 40px);
     max-width: 768px;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
+    position: relative;
+    z-index: 10; /* 배경보다 위로 배치 */
   }
 
   /* 가장 큰 글씨 32px */
   .text-header {
     font-size: 32px;
     margin-bottom: 60px;
+    color: #000;
+    text-align: center;
+    font-weight: 700;
   }
 
   .benefit_card_container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2열 */
+    grid-template-columns: repeat(2, 1fr); /* 2열 구조 */
     grid-auto-rows: auto;
     min-height: 576px; /* 가이드 높이 반영 */
     gap: 20px;
+    justify-items: center;
   }
 
-  /* 데스크탑의 카드 회전 구조 유지 */
+  /* 카드 박스 사이즈 354 * 360 반영 */
   .benefit_card {
     perspective: 1000px;
-    height: 300px; /* 태블릿 카드 높이 명시 */
+    width: 354px;
+    height: 360px;
+  }
+
+  .card_inner {
+    width: 100%;
+    height: 100%;
   }
 
   .card_front,
@@ -1010,18 +1051,46 @@
     padding: 25px;
     border-radius: 25px;
     background: linear-gradient(135deg, var(--purple), #3f1d6d);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
-  /* 폰트 및 요소 사이즈 조정 */
+  /* 아이콘 이미지 사이즈 170 * 120 반영 */
+  .icon_box {
+    width: 170px;
+    height: 120px;
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.45));
+  }
+
   .card_front h3,
   .card_back h3 {
     font-size: 20px;
     font-weight: 800;
+    margin-top: 10px;
+    text-align: center;
+    color: #fff;
   }
 
   .card_back p {
     font-size: 16px;
     line-height: 1.5;
+    text-align: center;
+    color: #fff;
   }
 
   /* 가장 작은 글씨 10px */
@@ -1030,10 +1099,12 @@
     height: 26px;
     font-size: 10px;
     margin-bottom: 15px;
-  }
-
-  .icon_box {
-    height: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -1041,7 +1112,7 @@
 @media screen and (max-width: 400px) {
   .benefit {
     padding: 60px 0;
-    background-image: url("../images/benefit_bg3.jpg"); /* 모바일 전용 배경 */
+    background-image: url("/images/benefit_bg3.jpg"); /* 모바일 전용 배경 */
     background-size: cover;
     background-position: center;
   }
@@ -1174,11 +1245,11 @@
 
 /* 슬라이드 영역 */
 .apply_slide_wrapper {
- width: 1280px;
- overflow: hidden;
+  width: 1280px;
+  overflow: hidden;
 }
 
-.apply_slide_wrapper>ul {
+.apply_slide_wrapper > ul {
   gap: 320px; /* 카드 사이 간격 */
   padding: 20px 0;
 }
@@ -1211,11 +1282,11 @@
 }
 
 #apply .card_title {
-  margin-bottom: calc(var(--base-unit)*3);
+  margin-bottom: calc(var(--base-unit) * 3);
 }
 
 #apply .card_desc {
-  margin-bottom: calc(var(--base-unit)*2);
+  margin-bottom: calc(var(--base-unit) * 2);
 }
 .card_title {
   margin-bottom: calc(var(--base-unit) * 3);
@@ -1229,7 +1300,7 @@
 /* 카드 내부 동그란 숫자 리스트 */
 #apply .card_step_list {
   gap: 25px;
-  
+
   /* 핵심 코드: 내용물의 너비에 딱 맞게 영역을 줄입니다 */
   width: fit-content;
 
