@@ -561,28 +561,24 @@ font-size: calc(var(--base-font)*2.5);
   padding: 40px 42px 29px;
   border-radius: 16px;
   margin-bottom: 230px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* 'overflow: hidden' 과 'padding'은 함께 두지 않아야 하는구나. 'overflow: hidden' 은 'padding box' 가장자리에서 자르기 때문이구나 */
 .review_company_logo_container {
   overflow: hidden;
 }
 
-
-/* 'display: flex' 안에 있는 자식들을 정렬하기 쉽도록 부모로 지정해주는 거구나 'width: max-content' 는 부모 요소의 너비가 아무리 좁더라도 줄바꿈을 하지 말고 내용물(콘텐츠)이 필요한 만큼만 너비를 가지라는 거구나*/
 .review_company_logo_track {
   display: flex;
   width: max-content;
   margin-bottom: 36px;
 }
 
-/* 'review_company_logo' 가 'overflow: hidden' 으로 설정되면 넘치는걸 다 짜르는데, 'display: flex' 한 것들이 안 짤릴려고 안으로 다 꾸역꾸역 들어오다보면 이미지가 찌그러지다보니 꾸역꾸역 찌그러지지말라고 하는게 flex-shrink: 0; */
 .review_company_logo_track li {
   flex-shrink: 0;
   margin-right: 27px;
 }
 
-/* '@keyframes 이름' 은 에니메이션이 어떻게 움직이게 할지 설정하는 거구나. 'transform: translateX(값)'은 가로로 얼마나 이동할 것인지를 정하는 거구나. */
 @keyframes scrollLeft{
   from {transform: translateX(0);}
   to {transform: translateX(-50%);}
@@ -592,7 +588,6 @@ font-size: calc(var(--base-font)*2.5);
   to {transform: translateX(0);}
 }
 
-/* 'animation: 이름 시간 타이밍 반복' 애니메이션을 어떻게 작동할지 설정하는 거구나. */
 .review_company_logo_track.left {
   animation: scrollLeft 25s linear infinite;
 }
@@ -600,7 +595,6 @@ font-size: calc(var(--base-font)*2.5);
   animation: scrollRight 25s linear infinite;
 }
 
-/* 'border-top: 1px solid var(--gray)' 로 구분선처럼 만들 수 있구나.  */
 .review_company_logo_caption {
   text-align: center;
   color: var(--gray);
@@ -608,12 +602,6 @@ font-size: calc(var(--base-font)*2.5);
   border-top: 1px solid var(--gray);
   margin-top: 42px;
 }
-
-/* 
-문제 발생: 기업로고 좌우 스크롤 무한 반복 시 한 번 깜빡인 후 다시 재생됨
-문제 원인: gap 대신 margin-right로, gap은 로고 사이 간격을 주는 것이므로 마지막 로고 뒤에는 gap이 없다보니 생긴문제
-해결 방안: 
-*/
 
 .review_estchat {
   display: flex;
@@ -624,21 +612,21 @@ font-size: calc(var(--base-font)*2.5);
   border: 1px solid var(--gray);
   border-radius: 16px;
   margin-top: 90px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* 'flex: 1' 은 자식 요소가 부모 안의 남은 여백을 모두 차지하여 크기를 꽉 채우는 속성으로 여러 자식 요소에게 부모의 공간을 균등하게 배분해주는거구나 */
 .review_estchat_title {
   flex: 1;
   text-align: center;
   color: var(--purple);
 }
 
-/* ------- 여기서부터 다시 공부해 ------- */
 .review_estchat > header {
   display: flex;
   align-items: center;
-  padding: 20px 27px;
+  padding: 10px 27px;
   border-bottom: 1px solid var(--gray);
+  margin-bottom: 22px;
 }
 
 .review_estchat > header::before {
@@ -656,29 +644,34 @@ font-size: calc(var(--base-font)*2.5);
   font-size: 32px;
   color: var(--gray);
 }
-/* ------- 여기까지 너무 어렵다. 이게 어떻게 된건지 모르겠어. 웹폰트 설정말야. ------- */
 
 .review_estchat_window {
-  flex: 1;
   font-size: var(--body);
   line-height: calc(var(--body) * 1.5);
-  padding: 0px 22px 22px;
   overflow: hidden;
 }
-/* 'flex-direction: column' 은 세로로 나열하라는 거구나 */
+
 .review_estchat_window > ol {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  margin-bottom: 22px;
+  padding: 22px 22px;
+  animation: scrollUp 60s linear infinite;
+}
+
+.review_estchat_window:hover > ol {
+  animation-play-state: paused;
 }
 
 .review_estchat_window li {
   display: flex;
   gap: 14px;
+  flex-shrink: 0;
+  margin-bottom: 18px;
 }
 
-/* 'object-fit: cover' 이게 무엇인지 나중에 알아보기 */
+@keyframes scrollUp {
+  from {transform: translateY(0);}
+  to {transform: translateY(-50%);}
+}
+
 .review_estchat_window li img {
   width: 50px;
   height: 50px;
@@ -689,20 +682,21 @@ font-size: calc(var(--base-font)*2.5);
 .review_estchat_window li > div:last-child{
   display: flex;
   flex-direction: column;
-  max-width: 422px;
+  max-width: 420px;
   gap: 7px;
   border: 1px solid var(--gray);
-  padding: 6px 12px;
 }
 
 .review_msg_completer > div:last-child {
   background-color: var(--super-gray);
   border-radius: 0px 16px 16px 16px;
+  padding: 6px 12px;
 }
 
 .review_msg_staff > div:last-child {
   background-color: var(--purple);
   border-radius: 0px 16px 16px 16px;
+  padding: 6px 12px;
 }
 
 .review_msg_cta {
@@ -716,9 +710,9 @@ font-size: calc(var(--base-font)*2.5);
   align-self: center;
   border-radius: 50px;
   padding: 0px 60px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* 'flex-direction' 은 자식들이 순서를 반대로 배치하게 하는 거구나 */
 .review_msg_user {
   flex-direction: row-reverse;
 }
@@ -735,7 +729,8 @@ font-size: calc(var(--base-font)*2.5);
 
 .review_estchat_input {
   background-color: var(--super-gray);
-  padding: 12px 6px;
+  padding: 12px 16px;
+  margin: 20px 14px 14px;
   border: 1px solid var(--gray);
   border-radius: 8px;
 }
@@ -743,7 +738,11 @@ font-size: calc(var(--base-font)*2.5);
 .review_estchat_options {
   display: flex;
   align-items: center;
-  gap: 12px;
+}
+
+.review_estchat_options::before {
+  content: "";
+  width: 25px;
 }
 
 .review_estchat_options > div {
@@ -755,30 +754,30 @@ font-size: calc(var(--base-font)*2.5);
 }
 
 .review_estchat_options button {
-  min-width: 355px;
+  width: 355px;
   font-size: var(--body);
-  text-align: center;
   color: var(--white);
   border: 1px solid var(--gray);
   border-radius: 15px;
-  padding: 8px 109px;
+  padding: 8px;
   cursor: pointer;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .review_estchat .fa-paper-plane {
   font-size: 30px;
+  
   color: var(--yellow);
 }
 
 .review_estchat_icons {
   display: flex;
   gap: 10px;
-  font-size: 14px;
+  font-size: 25px;
   color: var(--gray);
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
-/* 'box-shadow' 는 가로, 세로, 흐림정도, 퍼짐정도, 색상 순으로 입력하는 거구나*/
 .review_estchat_options button:hover {
   border-color: var(--yellow);
   box-shadow: 0 0 10px 0 var(--yellow);
