@@ -230,8 +230,7 @@
 
   cursor: pointer;
 
-  background: url("../images/hero_floating_character.png")
-    center / contain no-repeat;
+  background: url("../images/hero_floating_character.png") center / contain no-repeat;
 }
 
 /* TOP 버튼 */
@@ -241,7 +240,7 @@
   top: -60px;
   right: 27px;
 
-font-size: calc(var(--base-font)*2.5);
+  font-size: calc(var(--base-font) * 2.5);
 
   display: flex;
   align-items: center;
@@ -267,7 +266,7 @@ font-size: calc(var(--base-font)*2.5);
   z-index: 0;
 }
 .join .inner {
-  padding: 100px 0;
+  padding: 150px 0;
   width: 100%;
   position: relative;
   z-index: 1;
@@ -278,7 +277,8 @@ font-size: calc(var(--base-font)*2.5);
 }
 .join_slider_group {
   width: 100%;
-  gap: 90px;
+  gap: 60px;
+  margin-top: 70px;
 }
 .join_slider_step1,
 .join_slider_step2 {
@@ -296,7 +296,7 @@ font-size: calc(var(--base-font)*2.5);
 .join_slider_step1 img,
 .join_slider_step2 img {
   animation: pulse 2s ease-in-out infinite;
-  margin: 68px 0;
+  margin: 30px 0;
   width: 500px;
 }
 @keyframes pulse {
@@ -310,6 +310,44 @@ font-size: calc(var(--base-font)*2.5);
     transform: scale(1);
   }
 }
+
+/* 참여이유_테블릿 버전 css */
+
+@media (max-width: 768px) {
+  .join .join_label {
+    font-size: 24px;
+  }
+  .join .text-h1 {
+    font-size: 36px;
+  }
+  .join span {
+    font-size: 18px;
+  }
+  .join_slider_step1 h3,
+  .join_slider_step2 h3 {
+    font-size: 28px;
+  }
+  .join_slider_step1 p,
+  .join_slider_step2 p {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .join_slider_group {
+    gap: 60px;
+    margin-top: 80px;
+  }
+  .join_slider_step1,
+  .join_slider_step2 {
+    gap: 20px;
+  }
+  .join_slider_step1 img,
+  .join_slider_step2 img {
+    animation: pulse 2s ease-in-out infinite;
+    margin-bottom: 30px;
+    width: 350px;
+  }
+}
+
 /* 커리큘럼 - 문송연 */
 
 .curriculum {
@@ -394,10 +432,10 @@ font-size: calc(var(--base-font)*2.5);
 }
 
 .category_group label img {
-  height: 231px;
+  width: 150px;
 }
 #tab2 + label img {
-  width: 170px;
+  width: 120px;
 }
 
 /* 커리큘럼 컨테이너 (전체 박스) */
@@ -568,7 +606,6 @@ font-size: calc(var(--base-font)*2.5);
   overflow: hidden;
 }
 
-
 /* 'display: flex' 안에 있는 자식들을 정렬하기 쉽도록 부모로 지정해주는 거구나 'width: max-content' 는 부모 요소의 너비가 아무리 좁더라도 줄바꿈을 하지 말고 내용물(콘텐츠)이 필요한 만큼만 너비를 가지라는 거구나*/
 .review_company_logo_track {
   display: flex;
@@ -583,13 +620,21 @@ font-size: calc(var(--base-font)*2.5);
 }
 
 /* '@keyframes 이름' 은 에니메이션이 어떻게 움직이게 할지 설정하는 거구나. 'transform: translateX(값)'은 가로로 얼마나 이동할 것인지를 정하는 거구나. */
-@keyframes scrollLeft{
-  from {transform: translateX(0);}
-  to {transform: translateX(-50%);}
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 @keyframes scrollRight {
-  from {transform: translateX(-50%);}
-  to {transform: translateX(0);}
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* 'animation: 이름 시간 타이밍 반복' 애니메이션을 어떻게 작동할지 설정하는 거구나. */
@@ -683,10 +728,10 @@ font-size: calc(var(--base-font)*2.5);
   width: 50px;
   height: 50px;
   border-radius: 15px;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
-.review_estchat_window li > div:last-child{
+.review_estchat_window li > div:last-child {
   display: flex;
   flex-direction: column;
   max-width: 422px;
@@ -1101,14 +1146,14 @@ font-size: calc(var(--base-font)*2.5);
   width: 1280px;
   margin: 0 auto;
 }
-#apply .inner h2{
+#apply .inner h2 {
   color: var(--white);
 }
 
 /* --- 헤더 영역 (제목 + 컨트롤러) --- */
 .apply_header {
   text-align: center;
-  margin-bottom:calc(var(--base-unit)*3);
+  margin-bottom: calc(var(--base-unit) * 3);
 }
 
 .apply_header h2 {
@@ -1117,7 +1162,7 @@ font-size: calc(var(--base-font)*2.5);
 
 .apply_header p {
   color: var(--purple);
-  margin-bottom: calc(var(--base-unit)*2);;
+  margin-bottom: calc(var(--base-unit) * 2);
 }
 
 /* 상단 컨트롤러 (1 --- 4 화살표) */
@@ -1140,7 +1185,7 @@ font-size: calc(var(--base-font)*2.5);
 
 .apply_arrows button {
   color: var(--white);
-/*   font-size: 24px; */
+  /*   font-size: 24px; */
   cursor: pointer;
   padding: 0 10px;
   opacity: 0.5;
@@ -1153,7 +1198,7 @@ font-size: calc(var(--base-font)*2.5);
 
 /* 슬라이드 영역 */
 .apply_slide_wrapper {
- width: 1280px;
+  width: 1280px;
 }
 
 .apply_slide_wrapper ul {
@@ -1185,21 +1230,21 @@ font-size: calc(var(--base-font)*2.5);
   height: 310px;
 } */
 .card_title {
-  margin-bottom: calc(var(--base-unit)*3);
+  margin-bottom: calc(var(--base-unit) * 3);
 }
 
 .card_desc {
-  margin-bottom: calc(var(--base-unit)*2);
+  margin-bottom: calc(var(--base-unit) * 2);
   word-break: keep-all; /* 한글 줄바꿈 예쁘게 */
 }
 
 /* 카드 내부 동그란 숫자 리스트 */
 .card_step_list {
   gap: 5px;
-  
+
   /* 핵심 코드: 내용물의 너비에 딱 맞게 영역을 줄입니다 */
-  width: fit-content; 
-  
+  width: fit-content;
+
   /* 만약 왼쪽 여백이 기본으로 잡혀있다면 초기화 */
   padding: 0;
   margin: 0;
@@ -1235,7 +1280,7 @@ font-size: calc(var(--base-font)*2.5);
   max-width: 300px;
   height: auto;
   /* 부드러운 입체감을 위해 필터나 애니메이션 추가 가능 */
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
 }
 
 /* 지원독려 : 황시원 */

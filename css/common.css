@@ -254,6 +254,20 @@ header .menu > ul > li:hover ul {
 header .menu > ul > li a:hover {
   font-weight: 700;
 }
+.btn_hamburger {
+  display: none;
+}
+
+/* header 태블릿 버전*/
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+  .btn_hamburger {
+    display: block;
+  }
+}
 
 /* 푸터 : 황시원 */
 .footer {
