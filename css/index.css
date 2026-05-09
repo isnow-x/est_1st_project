@@ -10,6 +10,7 @@
   display: none;
 }
 
+/* 슬라이드 전체 컨테이너 */
 .hero_slide_container {
   position: relative;
   width: 1920px;
@@ -24,6 +25,7 @@
   animation: slide_auto 20s infinite;
 }
 
+/* 개별 슬라이드 */
 .slide_item {
   width: 25%;
   height: 100%;
@@ -34,6 +36,7 @@
   background-size: cover;
   background-position: center;
 }
+/* 슬라이드 배경 이미지 */
 .item1 {
   background-image: url(../images/hero_bg1.png);
 }
@@ -46,6 +49,7 @@
 .item4 {
   background-image: url(../images/hero_bg4.png);
 }
+/* 자동 슬라이드 애니메이션 */
 @keyframes slide_auto {
   0%,
   20% {
@@ -68,6 +72,7 @@
   }
 }
 
+/* 유리 느낌 콘텐츠 박스 */
 .hero_content {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(15px);
@@ -93,6 +98,7 @@
   margin-bottom: 60px;
 }
 
+/* 페이지네이션 전체 영역 */
 .slider_pagination_container {
   position: absolute;
   width: 100%;
@@ -115,6 +121,7 @@
   cursor: pointer;
 }
 
+/* 움직이는 상단 바 */
 .slider_pagination::before {
   content: "";
   position: absolute;
@@ -130,6 +137,7 @@
   --slide-move: 333px;
 }
 
+/* 페이지네이션 바 이동 */
 @keyframes li_slide_bar {
   0%,
   20% {
@@ -152,6 +160,7 @@
   }
 }
 
+/* 우측 하단 고정 영역 */
 .quick_aside {
   position: fixed;
 
@@ -160,69 +169,92 @@
 
   z-index: 9999;
 }
+
+/* 챗봇 그룹 */
 .quick_chat_group {
   position: relative;
+  width: 90px;
 }
 
+/* 말풍선 */
 .chat_bubble {
   position: absolute;
-
   right: 100px;
   bottom: 40px;
-
   width: 424px;
-
   padding: 20px;
-
   border: 1px solid var(--black);
   border-radius: 30px 30px 0 30px;
-
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   color: var(--black);
 }
 
+.chat_title {
+  margin-bottom: 14px;
+}
+
+/* 문의하기 + 아이콘 한 줄 */
+.chat_links {
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* 공통 아이콘 */
+.chat_links a {
+  width: 30px;
+  height: 30px;
+
+  display: block;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* 카카오 */
+.kakao_icon {
+  background-image: url("../images/hero_kakao_icon.png");
+}
+
+/* 인스타 */
+.insta_icon {
+  background-image: url("../images/hero_insta_icon.png");
+}
+
+/* 챗봇 버튼 */
 .btn_chat {
   width: 90px;
   height: 90px;
 
-  border: none;
-  background-color: transparent;
-
   cursor: pointer;
-  background: url("../images/hero_floating_character.png") center / contain no-repeat;
+
+  background: url("../images/hero_floating_character.png")
+    center / contain no-repeat;
 }
-.chat_links a {
-  display: inline-block; /* 크기를 가질 수 있게 변경 */
-  width: 3px; /* 아이콘 너비 */
-  height: 30px; /* 아이콘 높이 */
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  vertical-align: middle;
-  border: 1px solid red;
-}
-.chat_links a:first-child {
-  background: url(../images/hero_kakao_icon.png);
-}
-.chat_links a:last-child {
-  background: url(../images/hero_insta_icon.png);
-}
-.btn_top span {
-  display: inline-block; /* 크기를 가질 수 있게 변경 */
-  width: 36px; /* 아이콘 너비 */
-  height: 45px; /* 아이콘 높이 */
-  border: 1px solid var(--white);
+
+/* TOP 버튼 */
+.quick_chat_group .btn_top {
+  position: absolute;
+
+  top: -60px;
+  right: 27px;
+
+font-size: calc(var(--base-font)*2.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 참여이유 : 문송연  */
 .join {
   width: 100%;
   min-height: 1000px;
-  background: var(--super-black) url(../images/section_join_BG.png) no-repeat center;
-  background-size: cover;
-  position: rel ative;
+  background: var(--super-black) url(../images/section_join_BG.png) no-repeat top center;
+  background-size: 100% 100%;
+  position: relative;
 }
 .join::before {
   content: "";
@@ -231,69 +263,52 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(15, 15, 15, 0.5);
+  background: rgba(15, 15, 15, 0.6);
   z-index: 0;
 }
 .join .inner {
   padding: 100px 0;
-  overflow: hidden;
   width: 100%;
   position: relative;
   z-index: 1;
+  gap: 20px;
 }
 .join .join_label {
   color: var(--purple);
 }
-.join .text-serve {
-  margin-bottom: 0;
-}
-.join .inner > * + * {
-  margin-top: 0;
-}
 .join_slider_group {
   width: 100%;
-  animation: slideAuto 6s ease-in-out infinite;
+  gap: 90px;
 }
 .join_slider_step1,
 .join_slider_step2 {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 30px;
 }
-@keyframes slideAuto {
-  0% {
-    transform: translateX(0);
-  }
-  40% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-50%);
-  }
-  90% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
+
 .join_slider_group .step_num {
   color: var(--yellow);
 }
 
 .join_slider_step1 img,
 .join_slider_step2 img {
-  margin-bottom: 90px;
+  animation: pulse 2s ease-in-out infinite;
+  margin: 68px 0;
   width: 500px;
 }
-.join_slider_step1 p:first-of-type,
-.join_slider_step2 p:first-of-type {
-  margin-bottom: 30px;
-}
-.join_slider_step1 h3,
-.join_slider_step2 h3 {
-  margin-bottom: 68px;
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 /* 커리큘럼 - 문송연 */
 
@@ -310,7 +325,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 620px;
+  height: 35vw;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.8) 100%);
   z-index: 0;
 }
@@ -924,6 +939,151 @@
 }
 
 /* 지원요건 : 이채연 */
+#apply {
+  background-color: var(--black);
+  padding: 100px 0;
+}
+
+#apply .inner {
+  width: 1280px;
+  margin: 0 auto;
+}
+#apply .inner h2{
+  color: var(--white);
+}
+
+/* --- 헤더 영역 (제목 + 컨트롤러) --- */
+.apply_header {
+  text-align: center;
+  margin-bottom:calc(var(--base-unit)*3);
+}
+
+.apply_header h2 {
+  margin-bottom: var(--base-unit);
+}
+
+.apply_header p {
+  color: var(--purple);
+  margin-bottom: calc(var(--base-unit)*2);;
+}
+
+/* 상단 컨트롤러 (1 --- 4 화살표) */
+.apply_controller {
+  gap: 30px;
+}
+
+.apply_slider_number {
+  gap: 15px;
+  font-family: monospace;
+}
+
+.apply_slider_number .bar {
+  display: inline-block;
+  width: 64px; /* 긴 가로선 */
+  height: 1px;
+  background-color: var(--white);
+  opacity: 0.5;
+}
+
+.apply_arrows button {
+  color: var(--white);
+/*   font-size: 24px; */
+  cursor: pointer;
+  padding: 0 10px;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.apply_arrows button:hover {
+  opacity: 1;
+}
+
+/* 슬라이드 영역 */
+.apply_slide_wrapper {
+ width: 1280px;
+}
+
+.apply_slide_wrapper ul {
+  gap: 60px; /* 카드 사이 간격 */
+  padding: 20px 0;
+}
+
+.slide_item {
+  flex: 0 0 1280px; /* 카드의 너비 고정 */
+  scroll-snap-align: center; /* 스크롤 시 중앙에 딱 붙음 */
+}
+
+/* --- 카드 디자인 --- */
+.apply_card {
+  width: 100%;
+  background: linear-gradient(145deg, #222, #111);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 40px;
+  padding: 95px 110px;
+  height: 500px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* 왼쪽 텍스트 */
+
+/* .card_content{
+  width: 760px;
+  height: 310px;
+} */
+.card_title {
+  margin-bottom: calc(var(--base-unit)*3);
+}
+
+.card_desc {
+  margin-bottom: calc(var(--base-unit)*2);
+  word-break: keep-all; /* 한글 줄바꿈 예쁘게 */
+}
+
+/* 카드 내부 동그란 숫자 리스트 */
+.card_step_list {
+  gap: 5px;
+  
+  /* 핵심 코드: 내용물의 너비에 딱 맞게 영역을 줄입니다 */
+  width: fit-content; 
+  
+  /* 만약 왼쪽 여백이 기본으로 잡혀있다면 초기화 */
+  padding: 0;
+  margin: 0;
+}
+
+.card_step_list li {
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.card_step_list li.active {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+/* 오른쪽 이미지 영역 */
+.card_img {
+  flex: 0 0 350px;
+  text-align: right;
+  margin: 0;
+}
+
+.card_img img {
+  width: 100%; /* 이미지가 유동적으로 바뀌어도 영역에 맞게 설정 */
+  max-width: 300px;
+  height: auto;
+  /* 부드러운 입체감을 위해 필터나 애니메이션 추가 가능 */
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
 
 /* 지원독려 : 황시원 */
 .join_cta {
@@ -944,10 +1104,23 @@
   width: 90px;
 }
 .qnalist {
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.qna .inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: center;
 }
 .qnalist .question {
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   height: calc(var(--base-unit) * 4);
   padding: 0 40px;
@@ -963,6 +1136,8 @@
   background: #d7d7d7;
 }
 .qnalist .answer {
+  width: 100%;
+  box-sizing: border-box;
   display: none;
   height: auto;
   padding: 30px 40px;
@@ -977,6 +1152,7 @@
 .question-title {
   display: flex;
   gap: 30px;
+  min-width: 0;
 }
 .qnalist .question > span {
   color: #d7d7d7;
