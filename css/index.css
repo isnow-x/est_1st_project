@@ -482,6 +482,7 @@
   filter: drop-shadow(0 0 30px var(--yellow));
   animation: bounce 0.6s ease infinite;
 }
+
 /* 애니메이션 설정*/
 @keyframes bounce {
   0% {
@@ -629,9 +630,87 @@
 .detail_last {
   display: none;
 }
+/* 모바일용 숨기기 */
+.curriculum_container.mobile-only {
+  display: none;
+}
+.curriculum_mobile_cta {
+  display: none;
+}
 
 /* 커리큘럼 태블릿 css */
-
+@media (max-width:768px){
+  .curriculum_container.pc-only { display: none; } 
+  .curriculum_container.mobile-only {
+    display: block; 
+    width: 100%;
+    background: transparent;
+    padding: 30px 64px 100px;
+    box-sizing: border-box;
+  } 
+  .curriculum_container.mobile-only .curriculum_schedule > div{
+    width: 100%;
+    padding: 20px 55px;
+    box-sizing: border-box;
+    background: var(--super-gray);
+    border-radius: 20px;
+    margin-bottom: 25px;
+  }
+  .schedule_detail{ display: block;}
+  .curriculum{ min-height: auto;}
+  .curriculum h2{ 
+    white-space: normal;
+    padding: 100px 16px 80px;
+    font-size: 32px;
+  }
+  .curriculum_hero_guide{
+    margin-bottom: 100px;
+    padding: 0 16px;
+  }
+  .curriculum_hero_guide img{
+    width: 80px;
+  }
+  .curriculum_hero_guide .hero_guide_text h3{
+    font-size: 20px;
+    line-height: 125%;
+  }
+  .curriculum_hero_guide .hero_guide_text-body{
+    font-size: 14px;
+  }
+  .category_group{
+    width: 600px;
+  }
+  .curriculum .category_group label{
+    font-size: 16px;
+  }
+  .mobile-only .month_title{
+    color: var(--yellow);
+    font-size: 20px;
+  }
+  .mobile-only .schedule_detail{
+    font-weight: 400;
+  }
+  .mobile-only .month_title,
+  .mobile-only .schedule_detail {
+    text-align: left;
+  }
+  .curriculum_mobile_cta {
+    display: block;
+    width: 100%;
+    gap: 10px;
+    text-align: center;
+    padding: 18px 150px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: var(--yellow);
+    color: var(--black);
+    font-size: 24px;
+  }
+  .curriculum_mobile_cta .material-icons-round {
+  font-size: 24px;
+  line-height: 1; 
+}
+}
 
 /* 리뷰 : 장도담 */
 
