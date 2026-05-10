@@ -26,7 +26,7 @@
   --h2-150: calc(var(--base-font) * 1.33);
   --h3: calc(var(--base-font) * 1.11);
   /* 본문 및 기타 */
-  --qna: var(var(--base-font) * 1.33);
+  --qna: calc(var(--base-font) * 1.33);
   --body: var(--base-font);
   --body-b: var(--base-font);
   --content: calc(var(--base-font) * 0.88);
@@ -271,7 +271,7 @@ header .menu > ul > li a:hover {
   }
   header .inner{
     padding: 0 30px;
-    max-width: 1200;
+    max-width: 1200px;
     margin: 0 auto;
   }
   /* 로고 크기 변경 */
