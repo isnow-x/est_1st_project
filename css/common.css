@@ -258,15 +258,38 @@ header .menu > ul > li a:hover {
   display: none;
 }
 
-/* header 태블릿 버전*/
+/* 헤더 태블릿 버전 : 문송연 */
 
 @media (max-width: 768px) {
-  .menu {
+  body > header{
+    height: 60px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  header .menu{
     display: none;
   }
-  .btn_hamburger {
-    display: block;
+  header .inner{
+    padding: 0 30px;
+    max-width: 1200;
+    margin: 0 auto;
   }
+  /* 로고 크기 변경 */
+  header .inner h1 img{
+    width: 150px;
+    height: 20px;
+  }
+  .btn_hamburger{
+    display: block;
+    color: var(--white);
+    font-size: 24px;
+
+  }
+  .btn_cta{
+    padding: 7px 17px;
+    font-size: 12px;
+  }
+  /* 헤더 모바일 css 레이아웃 이상해요 .. 도와주세여 ㅜㅜ*/
 }
 
 /* 푸터 : 황시원 */
@@ -275,7 +298,7 @@ header .menu > ul > li a:hover {
   padding: 40px 0;
   overflow: hidden;
 }
-
+/* 레이아웃 */
 .footer .inner {
   width: 100%;
   max-width: 1280px;
@@ -284,23 +307,14 @@ header .menu > ul > li a:hover {
   box-sizing: border-box;
 }
 
+/* 로고 아이콘 */
 .footer_logo {
   width: 200px;
   height: auto;
   display: block;
 }
-
-.footer_social a {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--white);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--super-black);
-  font-size: 16px;
-  text-decoration: none;
+.footer_social img, i{
+  height: 15px;
 }
 
 .footer_divider {
@@ -308,7 +322,7 @@ header .menu > ul > li a:hover {
   border-top: 1px solid var(--super-gray);
   margin: 0;
 }
-
+/* 하단영역 */
 .footer_bottom .text-footer {
   gap: 10px;
 }
@@ -334,13 +348,9 @@ header .menu > ul > li a:hover {
   .footer_logo {
     width: 160px;
   }
-  /* 텍스트 크기 */
+  /* 폰트 크기 */
   .text-footer {
     font-size: 10px;
-  }
-  .footer_social a {
-    width: 24px;
-    height: 24px;
   }
 }
 
