@@ -425,7 +425,7 @@
   min-height: 1960px;
   background: var(--super-black) url(../images/curriculum_bg.png) no-repeat top center;
   background-size: 100% auto;
-  background-position: top-center;
+  background-position: top center;
   position: relative;
 }
 .curriculum::before {
