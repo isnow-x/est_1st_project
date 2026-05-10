@@ -242,8 +242,14 @@
   font-size: calc(var(--base-font) * 3);
 }
 
+/* 모바일 섹션은 숨기고, PC 섹션은 보임 */
+#m_hero {
+  display: none;
+}
+
 @media (max-width: 768px) {
-  .tablet_hero_text {
+
+  #hero .tablet_hero_text {
     display: block;
     position: absolute;
     left: 20%;
@@ -303,11 +309,102 @@
   .quick_aside {
     display: none;
   }
+  #m_hero {
+  display: none;
+  }
 }
+
 @media (max-width: 400px) {
-  #hero .tablet_hero_text {
+  #hero { 
+    display: none; 
+  }
+  #hero .tablet_hero_text
+  {
+    display: none;
+  }
+
+  /* 모바일 섹션 */
+  #m_hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 20px;
+    background: #050014; /* 시안의 딥퍼플/블랙 배경 */
     text-align: center;
-    margin: 0 auto;
+  }
+
+  /* 메인 타이틀 (최대 32px) */
+  .mobile_hero_title .text-sub {
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .mobile_hero_title .text-main {
+    font-size: 32px;
+    color: var(--white);
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+
+  /* 캐릭터 이미지 사이즈 조절 */
+  #m_hero {
+    width: 400px;
+    margin: 0 auto 30px;
+    background: url(../images/m_hero_bg.png);
+  }
+  #m_hero .m_inner{
+    height: auto;
+    width: 100%;
+  }
+
+  /* 모집 공고 유리창 영역 */
+  .hero_announcement_box {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px 10px;
+    margin-bottom: 30px;
+  }
+
+  /* 위아래 보조 텍스트 (최소 8px~12px) */
+  .announcement_sub {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 5px 0;
+  }
+
+  /* 중앙 노란색 강조 텍스트 (자동 롤링용) */
+  .announcement_active {
+    display: inline-block;
+    font-size: 15px;
+    color: #fff;
+    border: 2px solid #FFD43B; /* 노란색 테두리 */
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    box-shadow: 0 0 15px rgba(255, 212, 59, 0.6); /* 노란색 그림자 광채 */
+    background: rgba(255, 212, 59, 0.1);
+  }
+
+  /* 자세히 보기 버튼 (기존 btn-big 커스텀) */
+  .hero_mobile_btn .btn-big {
+    background-color: #FFD43B !important; /* 노란색 배경 */
+    color: #000 !important; /* 검정 글씨 */
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 35px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -1287,8 +1384,10 @@
 }
 
 #apply .inner {
-  width: 1280px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 #apply .inner h2 {
   color: var(--white);
@@ -1359,26 +1458,33 @@
 }
 
 #apply .slide_item {
-  flex: 0 0 1280px; /* 카드의 너비 고정 */
+  flex: 0 0 96%; /* 카드의 너비 고정 */
   scroll-snap-align: start;
+  margin: 0 auto;
 }
 
 /* --- 카드 디자인 --- */
 .apply_card {
   width: 100%;
+  max-width: 1280px;
   background: linear-gradient(145deg, #222, #111);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 40px;
   padding: 95px 110px;
-  height: 500px;
+  height: auto;
   box-sizing: border-box;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 왼쪽 텍스트 */
 
-.card_content {
-  width: 500px;
+.card_content{
+  width: 55%;
+  min-width: 300px;
 }
 .card_title {
   margin-bottom: calc(var(--base-unit) * 3);
@@ -1432,10 +1538,10 @@
 
 /* 오른쪽 이미지 영역 */
 #apply .card_img {
-  flex: 0 0 350px;
   text-align: right;
   margin: 0;
   overflow: hidden;
+  max-width: 240px;
 }
 
 #apply .card_img img {
@@ -1453,6 +1559,7 @@
     width: 100%;
     padding: 0 20px;
     box-sizing: border-box;
+    overflow: hidden;
   }
 
   /* 헤더 */
