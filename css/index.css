@@ -417,6 +417,12 @@
   background-size: 100% 100%;
   position: relative;
 }
+/* PC에서 br 숨기기 */
+.join_slider_step1 h3 br,
+.join_slider_step2 h3 br
+.join h2 br {
+  display: none;
+}
 .join::before {
   content: "";
   position: absolute;
@@ -479,6 +485,9 @@
   .join .join_label {
     font-size: 24px;
   }
+  .join h2 br {
+    display: block;
+  }
   .join .text-h1 {
     font-size: 36px;
     line-height: 125%;
@@ -515,7 +524,10 @@
 
 @media (max-width: 402px) {
   .join .inner {
-    padding: 50px;
+    padding: 50px 20PX;
+  }
+  .join h2 br {
+    display: block;
   }
   .join .join_label {
     font-size: 16px;
