@@ -1321,6 +1321,7 @@
 }
 
 /* 지원독려 : 황시원 */
+/* 배경 */
 .join_cta {
   width: 100%;
   background-image: url(../images/footer_cta_bg2.png), url(../images/footer_cta_bg1.jpg);
@@ -1328,12 +1329,14 @@
   background-position: center, center;
   background-size: cover, cover;
 }
+/* 버튼 */
 .join_cta .btn-big {
   filter: drop-shadow(0 0 10px var(--yellow));
   animation: btnBounce 1.5s ease infinite;
 }
 /* 지원독려 태블릿 */
 @media (max-width: 768px) {
+  /* 배경 */
   .join_cta {
     height: 160px;
     min-height: 160px;
@@ -1341,34 +1344,39 @@
     box-sizing: border-box;
     gap: 20px;
   }
+  /* 폰트 사이즈 */
   .join_cta .text-h1 {
     font-size: 24px;
   }
   .join_cta .text-qna {
     display: none;
   }
-  .join_cta .btn-big {
-    padding: 9px 20px;
-    font-size: 12px;
-  }
   .join_cta .btn-big .material-icons-round {
     display: none;
+  }
+  /* 버튼 */
+  .join_cta .btn-big {
+    padding: 10px 30px;
+    font-size: 16px;
   }
 }
 /* 지원독려 모바일 */
 @media (max-width: 402px) {
+  /* 배경 */
   .join_cta {
     height: 140px;
     min-height: 140px;
     padding: 20px 0;
     gap: 10px;
   }
+  /* 폰트 사이즈 */
   .join_cta .text-h1 {
     font-size: 20px;
   }
   .join_cta .text-qna {
     display: none;
   }
+  /* 버튼 */
   .join_cta .btn-big {
     padding: 9px 20px;
     font-size: 12px;
@@ -1376,9 +1384,11 @@
 }
 
 /* QNA : 황시원 */
+/* 배경 */
 .qna {
   background: var(--white);
 }
+/* 폰트 */
 .qna-text {
   color: var(--black);
 }
@@ -1400,6 +1410,7 @@
   box-sizing: border-box;
   text-align: center;
 }
+/* 질문상자 */
 .qnalist .question {
   width: 100%;
   box-sizing: border-box;
@@ -1417,6 +1428,7 @@
   border-radius: 10px 10px 0 0;
   background: #d7d7d7;
 }
+/* 답변상자 */
 .qnalist .answer {
   width: 100%;
   box-sizing: border-box;
@@ -1462,7 +1474,6 @@
     height: calc(var(--base-unit) * 3);
     padding: 0 30px;
   }
-
   .qnalist .answer {
     padding: 20px 30px;
   }
@@ -1521,7 +1532,6 @@
   .qnalist .answer {
     padding: 20px 20px;
   }
-
   /* 폰트 사이즈  */
   .qna .text-h1 {
     font-size: 20px;
