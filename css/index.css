@@ -417,7 +417,43 @@
 
 /* 참여이유_모바일 버전 css */
 
-
+@media (max-width:402px){
+  .join .inner{
+    padding: 50px;
+  }
+  .join .join_label {
+    font-size: 16px;
+  }
+  .join_slider_group{
+    margin-top: 35px;
+    gap: 0;
+  }
+  .join .text-h1 {
+    font-size: 24px;
+  }
+  .join_slider_step1,
+  .join_slider_step2 {
+    align-items: flex-start;
+    text-align: left;
+    gap: 10px;
+  }
+  .join_slider_step1 h3,
+  .join_slider_step2 h3 {
+    font-size: 16px;
+  }
+  .join span{
+    font-size: 12px;
+  }
+  .join_slider_step1 p,
+  .join_slider_step2 p {
+    font-size: 12px;
+  }
+  .join_slider_step1 img,
+  .join_slider_step2 img {
+    width: 100%;
+    align-self: center;
+  }
+}
 
 /* 커리큘럼 - 문송연 */
 
@@ -663,15 +699,31 @@
     padding: 100px 16px 80px;
     font-size: 32px;
   }
-  .curriculum_hero_guide{
-    margin-bottom: 100px;
+  .curriculum_hero_guide {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 60px;
     padding: 0 16px;
+  }
+  .hero_guide_text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 8px;
+  }
+  .hero_guide_text h3,
+  .hero_guide_text p {
+    text-align: left;
+    margin: 0;
   }
   .curriculum_hero_guide img{
     width: 80px;
   }
   .curriculum_hero_guide .hero_guide_text h3{
-    font-size: 20px;
+    font-size: 28px;
     line-height: 125%;
   }
   .curriculum_hero_guide .hero_guide_text-body{
@@ -687,29 +739,82 @@
     color: var(--yellow);
     font-size: 20px;
   }
-  .mobile-only .schedule_detail{
-    font-weight: 400;
+  .curriculum_container.mobile-only > .curriculum_schedule {
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
   .mobile-only .month_title,
   .mobile-only .schedule_detail {
     text-align: left;
   }
   .curriculum_mobile_cta {
-    display: block;
+    display: flex;
     width: 100%;
     gap: 10px;
     text-align: center;
-    padding: 18px 150px;
+    justify-content: space-between;
+    padding: 18px 80px;
     box-sizing: border-box;
     border-radius: 10px;
     background: var(--yellow);
     color: var(--black);
     font-size: 24px;
   }
-  .curriculum_mobile_cta .material-icons-round {
-  font-size: 24px;
-  line-height: 1; 
+  .curriculum_mobile_cta > span:first-child {
+  font-weight: 700;
+  }
+  /* 호버 애니메이션 제거 */
+  .category_group label:hover {
+    filter: none;
+    animation: none;
+  }
+  /* 자동 애니메이션 구현 */
+   #tab1 + label {
+    animation: bounce 1s ease infinite;
+    animation-delay: 0s;
+  }
+  #tab2 + label {
+    animation: bounce 1s ease infinite;
+    animation-delay: 0.5s;
+  }
+  #tab3 + label {
+    animation: bounce 1s ease infinite;
+    animation-delay: 1s;
+  }
+  #tab1 + label,
+  #tab2 + label,
+  #tab3 + label {
+    filter: drop-shadow(0 0 10px rgba(255, 187, 39, 0.5));
+  }
+  .cta_right {
+    animation: bounce 1s ease infinite;
+  }
 }
+
+/* 커리큘럼 모바일 css */
+
+@media (max-width: 402px) {
+  .curriculum h2 .text-header{
+    font-size: 24px !important;
+  }
+  .curriculum_container.mobile-only .curriculum_schedule > div {
+    padding: 16px 20px;
+    width: 100%;
+  }
+  .mobile-only .month_title {
+    font-size: 16px;
+  }
+  .mobile-only .schedule_detail {
+    font-size: 12px;
+  }
+  .curriculum_mobile_cta {
+    font-size: 16px;
+    padding: 16px 20px;
+  }
+  .curriculum_mobile_cta .material-icons-round {
+    font-size: 16px;
+  }
 }
 
 /* 리뷰 : 장도담 */
