@@ -63,7 +63,10 @@
             </li>
           </ul>
         </nav>
-        <a href="#" class="btn_cta btn-small">지원하기<span class="material-icons-round">arrow_outward</span></a>
+        <nav class="menu_m">
+          <a href="#" class="btn_cta btn-small">지원하기<span class="material-icons-round">arrow_outward</span></a>
+          <button class="btn_hamburger"><span class="material-icons-round">menu</span></button>
+        </nav>
       </div>
     </header>
 
@@ -248,7 +251,7 @@
             ><img src="images/curriculum_inpra.png" alt="가디언즈 인프라보안 아이콘이미지" />가디언즈 인프라보안</label
           >
         </div>
-        <div class="curriculum_container d-flex">
+        <div class="curriculum_container d-flex pc-only">
           <div class="curriculum_schedule d-flex flex-column">
             <div class="month1">
               <h4 class="text-h2-100">1개월차</h4>
@@ -333,6 +336,40 @@
               </div>
             </div>
           </div>
+        </div>
+        <!-- 모바일 반응형 html 구조 -->
+        <div class="curriculum_container mobile-only d-flex">
+          <div class="curriculum_schedule d-flex flex-column">
+            <div class="month1">
+              <h4 class="month_title">1개월차</h4>
+              <div class="detail_month1 schedule_detail text-body">
+                기초 웹 프로그래밍 기초 <br />- HTML부터 Figma까지
+              </div>
+            </div>
+            <div class="month2">
+              <h4 class="month_title">2개월차</h4>
+              <div class="detail_month2 schedule_detail text-body">
+                동적 웹 프로그래밍 기초 <br />- Javascript, SASS, Jquery 등
+              </div>
+            </div>
+            <div class="month3">
+              <h4 class="month_title">3개월차</h4>
+              <div class="detail_month3 schedule_detail text-body">
+                동적 웹 프로그래밍 심화 <br />- React.js, GitHub 중급, Firebase 등
+              </div>
+            </div>
+            <div class="final">
+              <h4 class="month_title">최종 실전 프로젝트 실행</h4>
+              <div class="detail_last schedule_detail text-body">
+                <ul>
+                  <li>HTML/CSS(레이아웃 구현)</li>
+                  <li>HTML/CSS/JS 프로젝트(인터렉티브 앱 구현)</li>
+                  <li>HTML/CSS/JS/React(팀 프로젝트)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="curriculum_mobile_cta d-flex justify-content-center align-items-center">교육과정 자세히 보기<span class="material-icons-round">arrow_forward</span></a>
         </div>
       </section>
 
