@@ -315,8 +315,8 @@
 
 /* 모바일 섹션 */
 @media (max-width: 402px) {
-  #hero { 
-    display: none; 
+  #hero {
+    display: none;
   }
   #hero .tablet_hero_text {
     display: none;
@@ -332,7 +332,7 @@
     text-align: center;
   }
 
-  .mobile_hero_title{
+  .mobile_hero_title {
     display: flex;
     flex-direction: column;
     gap: 80px;
@@ -345,7 +345,7 @@
     font-weight: 700;
   }
 
-  .mobile_hero_title .text-sub{
+  .mobile_hero_title .text-sub {
     font-size: 16px;
     color: var(--white);
     font-weight: 800;
@@ -897,20 +897,20 @@
 /* 커리큘럼 모바일 css */
 
 @media (max-width: 402px) {
-  .curriculum h2{
+  .curriculum h2 {
     font-size: 24px;
   }
-  .curriculum_hero_guide img{
+  .curriculum_hero_guide img {
     display: none;
   }
-  .hero_guide_text h3{
+  .hero_guide_text h3 {
     display: none;
   }
   .curriculum_container.mobile-only .curriculum_schedule > div {
     padding: 16px 20px;
     width: 100%;
   }
-  .category_group{
+  .category_group {
     justify-content: center;
     gap: 30px;
     padding: 0 16px;
@@ -918,7 +918,7 @@
     width: 100%;
     font-size: 10px;
   }
-  .category_group label{
+  .category_group label {
     align-items: center;
     text-align: center;
   }
@@ -934,7 +934,7 @@
   .curriculum_container.mobile-only {
     padding: 30px 16px 50px !important; /* 64px → 16px */
   }
-  
+
   .mobile-only .schedule_detail {
     font-size: 12px;
   }
@@ -942,7 +942,6 @@
     font-size: 16px;
     padding: 16px 20px;
   }
-
 }
 
 /* 리뷰 : 장도담 */
@@ -1337,7 +1336,7 @@
 }
 
 /* --- 태블릿 버전 (max-width: 1024px) --- */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .benefit {
     padding: 80px 0;
     position: relative;
@@ -1459,7 +1458,7 @@
 }
 
 /* --- 모바일 화면 대응 (max-width: 400px) --- */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 402px) {
   .benefit {
     width: 100%;
     padding: 0; /* 내부 간격은 padding-top으로 조절 */
