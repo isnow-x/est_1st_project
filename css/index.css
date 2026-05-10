@@ -246,16 +246,13 @@
 
   .tablet_hero_text {
     display: block;
-
     position: absolute;
     left: 20%;
     top: 110px;
-    z-index: 10;
     color: var(--white);
     font-size: var(--serve);
     word-break: keep-all;
-    font-weight: 700
-;
+    font-weight: 700;
   }
   /* 히어로 영역 */
   #hero .inner {
@@ -308,7 +305,12 @@
   .quick_aside {
     display: none;
   }
-
+}
+@media (max-width: 400px) {
+  #hero .tablet_hero_text{
+    text-align: center;
+    margin: 0 auto;
+  }
 }
 
 /* 참여이유 : 문송연  */
@@ -1412,7 +1414,7 @@
   /* 전체 컨테이너 너비 해제 */
   #apply .inner {
     width: 100%;
-    padding: 0 20px; /* 양옆 여백 추가 */
+    padding: 0 20px;
   }
 
   /* 헤더 텍스트 크기 조절 */
@@ -1442,7 +1444,7 @@
   .apply_card {
     flex-direction: column; 
     height: auto; 
-    padding: 40px 30px;
+    padding: 50px 90px;
     text-align: center;
     justify-content: center;
   }
@@ -1472,10 +1474,94 @@
     max-width: 100%;
   }
 
-  /* 상단 컨트롤러 숨김 여부 선택 */
+  /* 상단 컨트롤러 숨김 */
   .apply_arrows {
     display: none;
   }
+}
+@media (max-width: 400px) {
+
+  #apply {
+    padding: 40px 0;
+  }
+
+  /* 전체 여백 */
+  #apply .inner {
+    padding: 0 16px;
+    align-items: center;
+  }
+
+  /* 헤더 */
+  .apply_header {
+    margin-bottom: 40px;
+  }
+
+  .apply_header h2 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .apply_header p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* 슬라이드 */
+  #apply .slide_item {
+    flex: 0 0 100%;
+    margin-right: 16px;
+  }
+
+  .apply_slide_wrapper .slide_list {
+    padding: 10px 0;
+  }
+
+  /* 카드 */
+  .apply_card {
+    width: 90%;
+    padding: 20px 12px;
+    border-radius: 24px;
+  }
+
+  /* 텍스트 */
+  .card_title {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  .card_desc {
+    font-size: 12px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  /* 숫자 버튼 */
+  #apply .card_step_list {
+    gap: 10px;
+  }
+
+  #apply .card_step_list li {
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+  }
+
+  /* 이미지 */
+  #apply .card_img {
+    max-width: 140px;
+    margin-top: 10px;
+  }
+
+  /* 컨트롤러 */
+  .apply_slider_number {
+    font-size: 14px;
+  }
+
+  .apply_slider_number .bar {
+    width: 40px;
+  }
+
 }
   
 
