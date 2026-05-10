@@ -651,8 +651,6 @@
 }
 
 .review_headline_container {
-  display: flex;
-  flex-direction: column;
   gap: 18px;
   margin-bottom: 42px;
 }
@@ -662,8 +660,6 @@
 }
 
 .review_company_logo_container {
-  display: flex;
-  flex-direction: column;
   gap: 20px;
   overflow: hidden;
   background: linear-gradient(to bottom, #686868 0%, #cdcdcd 100%);
@@ -674,15 +670,11 @@
 }
 
 .review_company_logo {
-  display: flex;
-  gap: 20px;
   width: max-content;
   flex-shrink: 0;
 }
 
 .review_company_logo_up {
-  display: flex;
-  flex-direction: column;
   gap: 36px;
   margin-bottom: 42px;
   overflow: hidden;
@@ -707,7 +699,6 @@
 }
 
 .review_company_logo_down {
-  text-align: center;
   border-top: 1px solid var(--super-gray);
   padding-bottom: 30px;
 }
@@ -717,11 +708,6 @@
   margin-top: 26px;
 }
 
-.review_right {
-  display: flex;
-  /* align-items: center; */
-}
-
 .review_estchat_container {
   width: 580px;
   height: 800px;
@@ -729,15 +715,11 @@
   background: var(--black);
   border: 1px solid var(--gray);
   border-radius: 16px;
-  display: flex;
-  flex-direction: column;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .review_estchat_header {
   border-bottom: 1px solid var(--gray);
-  display: flex;
-  align-items: center;
   padding: 22px;
 }
 
@@ -752,60 +734,132 @@
 }
 
 .review_estchat_body ol {
-  display: flex;
-  flex-direction: column;
   gap: 12px;
+  padding-bottom: 12px;
+  animation: scrollUp 35s linear infinite;
+}
+
+.review_estchat_body:hover ol {
+  animation-play-state: paused;
+}
+
+@keyframes scrollUp {
+  from {transform: translateY(0);}
+  to {transform: translateY(-50%);}
 }
 
 .review_estchat_footer {
   height: 177px;
   margin: 21px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   background: var(--super-gray);
+  padding: 10px 0;
   border: 1px solid var(--gray);
   border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .review_estchat_options {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex: 1;
+  gap: 30px;
+  padding: 0 30px 0 90px;
 }
 
 .review_estchat_options > div {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
   gap: 10px;
 }
 
 .review_estchat_options button {
   width: 356px;
-  padding: 8px 16px;
-  background: var(--super-gray);
+  height: 34px;
+  background: transparent;
   color: var(--white);
-  border: 1px solid var(--gray); 
+  border: 1px solid var(--gray);
   border-radius: 16px;
+  padding: 0 16px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
   cursor: pointer;
-} 
+}
+
+.review_estchat_options button:hover {
+  border-color: var(--yellow);
+  box-shadow: 0 0 10px 0 var(--yellow);
+}
 
 .review_estchat_options .fa-paper-plane {
-  color: var(--yellow);
   font-size: 24px;
-} 
+  color: var(--yellow);
+}
 
 .review_estchat_icons {
-  display: flex;
   gap: 12px;
-} 
+  padding-left: 10px;
+}
 
 .review_estchat_icons i {
-  font-size: 25px;
   color: var(--gray);
+  font-size: 25px;
+}
+
+.review_chat_completer,
+.review_chat_user,
+.review_chat_staff {
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.review_chat_user {
+  flex-direction: row-reverse;
+}
+
+#review .review_chat_avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+#review .review_chat_bubble {
+  max-width: 422px;
+  padding: 4px 10px 10px;
+  gap: 4px;
+  box-sizing: border-box;
+  border: 1px solid var(--gray);
+}
+
+.review_chat_completer .review_chat_bubble {
+  background: var(--super-gray);
+  color: var(--white);
+  border-radius: 0 15px 15px 15px;
+}
+
+.review_chat_user .review_chat_bubble {
+  background: var(--yellow);
+  color: var(--black);
+  border-radius: 15px 0 15px 15px;
+  padding: 12px 32px;
+}
+
+.review_chat_staff .review_chat_bubble {
+  background: var(--purple);
+  color: var(--white);
+  border-radius: 0 15px 15px 15px;
+}
+
+.review_chat_staff .review_chat_bubble a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 140px;
+  height: 40px;
+  background: var(--yellow);
+  color: var(--black);
+  border: 1px solid var(--black);
+  border-radius: 50px;
+  font-weight: 700;
+  box-sizing: border-box;
 }
 
 /* 혜택 : 최정민 */
