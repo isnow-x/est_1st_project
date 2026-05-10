@@ -1167,158 +1167,168 @@
 }
 
   /* 지원요건 태블릿 */
-@media (max-width: 768px) {
-  /* 전체 컨테이너 너비 해제 */
-  #apply .inner {
+  @media (max-width: 768px) {
+ #apply .inner {
     width: 100%;
     padding: 0 20px;
+    box-sizing: border-box;
   }
 
-  /* 헤더 텍스트 크기 조절 */
+  /* 헤더 */
   .apply_header h2 {
     font-size: var(--serve);
   }
 
-  /* 슬라이드 래퍼 너비 조절 */
+  /* 슬라이드 래퍼 */
   .apply_slide_wrapper {
     width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
   }
 
-  /* 슬라이드 아이템 너비 및 스냅 설정 변경 */
-  #apply .slide_item {
-    flex: 0 0 calc(100% - 40px); 
-    margin-right: 20px; 
-    scroll-snap-align: center; 
-  }
-  
+  /* 슬라이드 리스트 */
   .apply_slide_wrapper .slide_list {
-    gap: 0; /* gap 대신 margin-right로 간격 제어 */
+    display: flex;
+    gap: 20px;
     padding: 20px 0;
-    overflow-x: auto; /* 스크롤 활성화 */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
   }
 
-  /* 카드 내부 레이아웃 변경 (가로 -> 세로) */
+  /* 스크롤바 제거 */
+  .apply_slide_wrapper .slide_list::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 슬라이드 */
+  #apply .slide_item {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+  }
+
+  /* 카드 */
   .apply_card {
-    flex-direction: column; 
-    height: auto; 
-    padding: 50px 90px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 50px 40px;
+    text-align: center;
+    box-sizing: border-box;
   }
 
-  /* 카드 내부 콘텐츠 너비 및 정렬 */
+  /* 콘텐츠 */
   .card_content {
     width: 100%;
-    order: 1; 
-  }
-  /* 카드 내부 숫자 리스트 중앙 정렬 */
-  #apply .card_step_list {
-    margin: 0 auto calc(var(--base-unit) * 2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 1;
   }
 
-  /* 이미지 영역 조절 */
+  /* 숫자리스트 */
+  #apply .card_step_list {
+    margin: 0 auto calc(var(--base-unit) * 2);
+    gap: 16px;
+  }
+
+  /* 이미지 */
   #apply .card_img {
     flex: 0 0 auto;
     width: 100%;
-    max-width: 200px; 
+    max-width: 200px;
     margin: 30px auto 0;
     order: 2;
     text-align: center;
   }
 
   #apply .card_img img {
-    margin: 0 auto;
+    display: block;
+    width: 100%;
     max-width: 100%;
+    margin: 0 auto;
   }
 
-  /* 상단 컨트롤러 숨김 */
+  /* 화살표 제거 */
   .apply_arrows {
     display: none;
   }
 }
+
+/* 지원요건 모바일 */
 @media (max-width: 400px) {
 
   #apply {
     padding: 40px 0;
   }
-
-  /* 전체 여백 */
+  /* 전체 */
   #apply .inner {
     padding: 0 16px;
-    align-items: center;
+    box-sizing: border-box;
   }
-
   /* 헤더 */
   .apply_header {
     margin-bottom: 40px;
   }
-
   .apply_header h2 {
     font-size: 28px;
     line-height: 1.3;
   }
-
   .apply_header p {
     font-size: 14px;
     line-height: 1.5;
   }
-
   /* 슬라이드 */
   #apply .slide_item {
     flex: 0 0 100%;
-    margin-right: 16px;
   }
-
   .apply_slide_wrapper .slide_list {
+    gap: 16px;
     padding: 10px 0;
   }
-
   /* 카드 */
   .apply_card {
-    width: 90%;
-    padding: 20px 12px;
+    width: 100%;
+    padding: 30px 20px;
     border-radius: 24px;
   }
-
-  /* 텍스트 */
+  /* 제목 */
   .card_title {
     font-size: 18px;
     line-height: 1.4;
     margin-bottom: 20px;
   }
-
+  /* 설명 */
   .card_desc {
     font-size: 12px;
     line-height: 1.7;
     margin-bottom: 24px;
   }
-
   /* 숫자 버튼 */
   #apply .card_step_list {
     gap: 10px;
   }
-
   #apply .card_step_list li {
     width: 30px;
     height: 30px;
     font-size: 10px;
   }
-
   /* 이미지 */
   #apply .card_img {
     max-width: 140px;
     margin-top: 10px;
   }
-
-  /* 컨트롤러 */
+  /* 상단 숫자 */
   .apply_slider_number {
     font-size: 14px;
   }
-
   .apply_slider_number .bar {
     width: 40px;
   }
-
 }
   
 
