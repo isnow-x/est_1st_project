@@ -202,10 +202,13 @@ body > header {
   z-index: 100;
 }
 header .inner {
+  max-width: 1280px;
   height: 100%;
   padding: 0 70px;
   position: relative;
+  box-sizing: border-box;
 }
+
 
 header .menu {
   position: absolute;
@@ -254,42 +257,86 @@ header .menu > ul > li:hover ul {
 header .menu > ul > li a:hover {
   font-weight: 700;
 }
-.btn_hamburger {
+header .btn_hamburger {
   display: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--white);
+}
+header .btn_hamburger .material-icons-round{
+  font-size: 32px;
+  line-height: 1;
 }
 
 /* 헤더 태블릿 버전 : 문송연 */
 
 @media (max-width: 768px) {
-  body > header{
-    height: 60px;
-    width: 100%;
-    box-sizing: border-box;
-  }
   header .menu{
     display: none;
   }
   header .inner{
     padding: 0 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+    margin: 0;
+    max-width: 768px;
+  }
+  header .menu_m{
+    display: flex;
+    gap:30px;
   }
   /* 로고 크기 변경 */
   header .inner h1 img{
     width: 150px;
     height: 20px;
   }
-  .btn_hamburger{
-    display: block;
-    color: var(--white);
-    font-size: 24px;
-
+  header .btn_hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .btn_cta{
     padding: 7px 17px;
     font-size: 12px;
   }
-  /* 헤더 모바일 css 레이아웃 이상해요 .. 도와주세여 ㅜㅜ*/
+  
+}
+/* 헤더 모바일 */
+@media (max-width: 402px) {
+  body > header{
+    height: 110px;
+  }
+  header .inner{
+    padding: 20px 20px;
+    margin: 0;
+    max-width: 402px;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    box-sizing: border-box;
+  }
+  header .menu_m{
+    gap:20px;
+  }
+  .header_mobile{
+    display: flex;
+    align-items: center;
+  }
+  /* 로고 크기 변경 */
+  header .inner h1 img{
+    width: 140px;
+    height: 20px;
+  }
+  .btn_cta{
+    padding: 2px 15px;
+    font-size: 10px;
+  }
+  header .btn_hamburger .material-icons-round{
+  font-size: 20px;
+  }
+  header .btn_cta .material-icons-round{
+    font-size: 20px;
+  }
 }
 
 /* 푸터 : 황시원 */
@@ -356,13 +403,6 @@ header .menu > ul > li a:hover {
 
 /* 푸터 모바일 */
 @media (max-width: 402px) {
-  .footer {
-    padding: 20px 0;
-    overflow: hidden;
-  }
-  .footer * {
-    box-sizing: border-box;
-  }
   .footer > .inner > div:first-child {
     justify-content: left;
     gap: 20px;
