@@ -634,275 +634,33 @@
 
 
 /* 리뷰 : 장도담 */
+
 #review {
   width: 100%;
   height: 980px;
-  background: linear-gradient(to bottom, var(--super-black) 40%, #c4c4c4 80%, #f8f8f8 100%);
+  background: linear-gradient(to bottom, var(--super-black) 40%, #c4c4c4 80%, var(--white) 100%);
+  display: flex;
+  align-items: stretch;
 }
 
-.review_left {
+#review .inner {
+  width: 1202px;
+  gap: 42px;
+}
+
+.review_left, .review_right {
   width: 580px;
-  margin-left: 39px;
+  height: 100%;
 }
 
-.review_right {
-  width: 580px;
-  margin-right: 39px;
-}
-
-.review_header {
-  padding-top: 230px;
-  margin-bottom: 30px;
-}
-
-.review_title {
-  margin-top: 13px;
-  color: var(--white);
+.review_headline_container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .review_subtitle {
-  margin-top: 23px;
   color: var(--yellow);
-}
-
-.review_company_logo {
-  background: linear-gradient(to bottom, #6f6f6f 0%, #cdcdcd 100%);
-  border: 1px solid var(--white);
-  padding: 40px 42px 29px;
-  border-radius: 16px;
-  margin-bottom: 230px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.review_company_logo_container {
-  overflow: hidden;
-}
-
-.review_company_logo_track {
-  display: flex;
-  width: max-content;
-  margin-bottom: 36px;
-}
-
-.review_company_logo_track li {
-  flex-shrink: 0;
-  margin-right: 27px;
-}
-
-@keyframes scrollLeft {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-@keyframes scrollRight {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-.review_company_logo_track.left {
-  animation: scrollLeft 25s linear infinite;
-}
-.review_company_logo_track.right {
-  animation: scrollRight 25s linear infinite;
-}
-
-.review_company_logo_caption {
-  text-align: center;
-  color: var(--gray);
-  padding-top: 27px;
-  border-top: 1px solid var(--gray);
-  margin-top: 42px;
-}
-
-.review_estchat {
-  display: flex;
-  flex-direction: column;
-  width: 580px;
-  height: 800px;
-  background-color: var(--black);
-  border: 1px solid var(--gray);
-  border-radius: 16px;
-  margin-top: 90px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.review_estchat_title {
-  flex: 1;
-  text-align: center;
-  color: var(--purple);
-}
-
-.review_estchat > header {
-  display: flex;
-  align-items: center;
-  padding: 10px 27px;
-  border-bottom: 1px solid var(--gray);
-  margin-bottom: 22px;
-}
-
-.review_estchat > header::before {
-  content: "";
-  width: 32px;
-  height: 32px;
-}
-
-.review_estchat .menu_icon {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-  color: var(--gray);
-}
-
-.review_estchat_window {
-  font-size: var(--body);
-  line-height: calc(var(--body) * 1.5);
-  overflow: hidden;
-}
-
-.review_estchat_window > ol {
-  padding: 22px 22px;
-  animation: scrollUp 60s linear infinite;
-}
-
-.review_estchat_window:hover > ol {
-  animation-play-state: paused;
-}
-
-.review_estchat_window li {
-  display: flex;
-  gap: 14px;
-  flex-shrink: 0;
-  margin-bottom: 18px;
-}
-
-@keyframes scrollUp {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-50%);
-  }
-}
-
-.review_estchat_window li img {
-  width: 50px;
-  height: 50px;
-  border-radius: 15px;
-  object-fit: cover;
-}
-
-.review_estchat_window li > div:last-child {
-  display: flex;
-  flex-direction: column;
-  max-width: 420px;
-  gap: 7px;
-  border: 1px solid var(--gray);
-}
-
-.review_msg_completer > div:last-child {
-  background-color: var(--super-gray);
-  border-radius: 0px 16px 16px 16px;
-  padding: 6px 12px;
-}
-
-.review_msg_staff > div:last-child {
-  background-color: var(--purple);
-  border-radius: 0px 16px 16px 16px;
-  padding: 6px 12px;
-}
-
-.review_msg_cta {
-  font-size: var(--h3);
-  line-height: calc(var(--serve) * 1);
-  font-weight: 700;
-  color: var(--black);
-  text-align: center;
-  background-color: var(--yellow);
-  border: 1.5px solid var(--black);
-  align-self: center;
-  border-radius: 50px;
-  padding: 0px 60px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.review_msg_user {
-  flex-direction: row-reverse;
-}
-
-.review_msg_user > div:last-child {
-  font-size: var(--h2-125);
-  line-height: calc(var(--h2-125) * 1.25);
-  font-weight: 700;
-  color: var(--black);
-  background-color: var(--yellow);
-  padding: 13px 35px;
-  border-radius: 16px 0px 16px 16px;
-}
-
-.review_estchat_input {
-  background-color: var(--super-gray);
-  padding: 12px 16px;
-  margin: 20px 14px 14px;
-  border: 1px solid var(--gray);
-  border-radius: 8px;
-}
-
-.review_estchat_options {
-  display: flex;
-  align-items: center;
-}
-
-.review_estchat_options::before {
-  content: "";
-  width: 25px;
-}
-
-.review_estchat_options > div {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 9px;
-}
-
-.review_estchat_options button {
-  width: 355px;
-  font-size: var(--body);
-  color: var(--white);
-  border: 1px solid var(--gray);
-  border-radius: 15px;
-  padding: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.review_estchat .fa-paper-plane {
-  font-size: 30px;
-
-  color: var(--yellow);
-}
-
-.review_estchat_icons {
-  display: flex;
-  gap: 10px;
-  font-size: 25px;
-  color: var(--gray);
-  margin-top: 6px;
-}
-
-.review_estchat_options button:hover {
-  border-color: var(--yellow);
-  box-shadow: 0 0 10px 0 var(--yellow);
 }
 
 /* 혜택 : 최정민 */
