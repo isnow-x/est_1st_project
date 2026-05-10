@@ -242,9 +242,14 @@
   font-size: calc(var(--base-font) * 3);
 }
 
+/* 모바일 섹션은 숨기고, PC 섹션은 보임 */
+#m_hero {
+  display: none;
+}
+
 @media (max-width: 768px) {
 
-  .tablet_hero_text {
+  #hero .tablet_hero_text {
     display: block;
     position: absolute;
     left: 20%;
@@ -260,14 +265,13 @@
     height: 576px;
 
     overflow: hidden;
-    background:  url(../images/t_hero_bg.png) center / cover no-repeat;
+    background: url(../images/t_hero_bg.png) center / cover no-repeat;
   }
 
   /* 컨테이너 */
   .hero_slide_container {
     width: 100%;
     height: 100%;
-    
   }
 
   /* 슬라이드 애니메이션 제거 */
@@ -305,11 +309,102 @@
   .quick_aside {
     display: none;
   }
+  #m_hero {
+  display: none;
+  }
 }
+
 @media (max-width: 400px) {
-  #hero .tablet_hero_text{
+  #hero { 
+    display: none; 
+  }
+  #hero .tablet_hero_text
+  {
+    display: none;
+  }
+
+  /* 모바일 섹션 */
+  #m_hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 20px;
+    background: #050014; /* 시안의 딥퍼플/블랙 배경 */
     text-align: center;
-    margin: 0 auto;
+  }
+
+  /* 메인 타이틀 (최대 32px) */
+  .mobile_hero_title .text-sub {
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .mobile_hero_title .text-main {
+    font-size: 32px;
+    color: var(--white);
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+
+  /* 캐릭터 이미지 사이즈 조절 */
+  #m_hero {
+    width: 400px;
+    margin: 0 auto 30px;
+    background: url(../images/m_hero_bg.png);
+  }
+  #m_hero .m_inner{
+    height: auto;
+    width: 100%;
+  }
+
+  /* 모집 공고 유리창 영역 */
+  .hero_announcement_box {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px 10px;
+    margin-bottom: 30px;
+  }
+
+  /* 위아래 보조 텍스트 (최소 8px~12px) */
+  .announcement_sub {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 5px 0;
+  }
+
+  /* 중앙 노란색 강조 텍스트 (자동 롤링용) */
+  .announcement_active {
+    display: inline-block;
+    font-size: 15px;
+    color: #fff;
+    border: 2px solid #FFD43B; /* 노란색 테두리 */
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    box-shadow: 0 0 15px rgba(255, 212, 59, 0.6); /* 노란색 그림자 광채 */
+    background: rgba(255, 212, 59, 0.1);
+  }
+
+  /* 자세히 보기 버튼 (기존 btn-big 커스텀) */
+  .hero_mobile_btn .btn-big {
+    background-color: #FFD43B !important; /* 노란색 배경 */
+    color: #000 !important; /* 검정 글씨 */
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 35px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -417,7 +512,43 @@
 
 /* 참여이유_모바일 버전 css */
 
-
+@media (max-width:402px){
+  .join .inner{
+    padding: 50px;
+  }
+  .join .join_label {
+    font-size: 16px;
+  }
+  .join_slider_group{
+    margin-top: 35px;
+    gap: 0;
+  }
+  .join .text-h1 {
+    font-size: 24px;
+  }
+  .join_slider_step1,
+  .join_slider_step2 {
+    align-items: flex-start;
+    text-align: left;
+    gap: 10px;
+  }
+  .join_slider_step1 h3,
+  .join_slider_step2 h3 {
+    font-size: 16px;
+  }
+  .join span{
+    font-size: 12px;
+  }
+  .join_slider_step1 p,
+  .join_slider_step2 p {
+    font-size: 12px;
+  }
+  .join_slider_step1 img,
+  .join_slider_step2 img {
+    width: 100%;
+    align-self: center;
+  }
+}
 
 /* 커리큘럼 - 문송연 */
 
@@ -639,16 +770,18 @@
 }
 
 /* 커리큘럼 태블릿 css */
-@media (max-width:768px){
-  .curriculum_container.pc-only { display: none; } 
+@media (max-width: 768px) {
+  .curriculum_container.pc-only {
+    display: none;
+  }
   .curriculum_container.mobile-only {
-    display: block; 
+    display: block;
     width: 100%;
     background: transparent;
     padding: 30px 64px 100px;
     box-sizing: border-box;
-  } 
-  .curriculum_container.mobile-only .curriculum_schedule > div{
+  }
+  .curriculum_container.mobile-only .curriculum_schedule > div {
     width: 100%;
     padding: 20px 55px;
     box-sizing: border-box;
@@ -656,60 +789,133 @@
     border-radius: 20px;
     margin-bottom: 25px;
   }
-  .schedule_detail{ display: block;}
-  .curriculum{ min-height: auto;}
-  .curriculum h2{ 
+  .schedule_detail {
+    display: block;
+  }
+  .curriculum {
+    min-height: auto;
+  }
+  .curriculum h2 {
     white-space: normal;
     padding: 100px 16px 80px;
     font-size: 32px;
   }
-  .curriculum_hero_guide{
-    margin-bottom: 100px;
+  .curriculum_hero_guide {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 60px;
     padding: 0 16px;
+  }
+  .hero_guide_text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 8px;
+  }
+  .hero_guide_text h3,
+  .hero_guide_text p {
+    text-align: left;
+    margin: 0;
   }
   .curriculum_hero_guide img{
     width: 80px;
   }
   .curriculum_hero_guide .hero_guide_text h3{
-    font-size: 20px;
+    font-size: 28px;
     line-height: 125%;
   }
-  .curriculum_hero_guide .hero_guide_text-body{
+  .curriculum_hero_guide .hero_guide_text-body {
     font-size: 14px;
   }
-  .category_group{
+  .category_group {
     width: 600px;
   }
-  .curriculum .category_group label{
+  .curriculum .category_group label {
     font-size: 16px;
   }
-  .mobile-only .month_title{
+  .mobile-only .month_title {
     color: var(--yellow);
     font-size: 20px;
   }
-  .mobile-only .schedule_detail{
-    font-weight: 400;
+  .curriculum_container.mobile-only > .curriculum_schedule {
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
   .mobile-only .month_title,
   .mobile-only .schedule_detail {
     text-align: left;
   }
   .curriculum_mobile_cta {
-    display: block;
+    display: flex;
     width: 100%;
     gap: 10px;
     text-align: center;
-    padding: 18px 150px;
+    justify-content: space-between;
+    padding: 18px 80px;
     box-sizing: border-box;
     border-radius: 10px;
     background: var(--yellow);
     color: var(--black);
     font-size: 24px;
   }
-  .curriculum_mobile_cta .material-icons-round {
-  font-size: 24px;
-  line-height: 1; 
+  .curriculum_mobile_cta > span:first-child {
+  font-weight: 700;
+  }
+  /* 호버 애니메이션 제거 */
+  .category_group label:hover {
+    filter: none;
+    animation: none;
+  }
+  /* 자동 애니메이션 구현 */
+   #tab1 + label {
+    animation: bounce 1s ease infinite;
+    animation-delay: 0s;
+  }
+  #tab2 + label {
+    animation: bounce 1s ease infinite;
+    animation-delay: 0.5s;
+  }
+  #tab3 + label {
+    animation: bounce 1s ease infinite;
+    animation-delay: 1s;
+  }
+  #tab1 + label,
+  #tab2 + label,
+  #tab3 + label {
+    filter: drop-shadow(0 0 10px rgba(255, 187, 39, 0.5));
+  }
+  .cta_right {
+    animation: bounce 1s ease infinite;
+  }
 }
+
+/* 커리큘럼 모바일 css */
+
+@media (max-width: 402px) {
+  .curriculum h2 .text-header{
+    font-size: 24px !important;
+  }
+  .curriculum_container.mobile-only .curriculum_schedule > div {
+    padding: 16px 20px;
+    width: 100%;
+  }
+  .mobile-only .month_title {
+    font-size: 16px;
+  }
+  .mobile-only .schedule_detail {
+    font-size: 12px;
+  }
+  .curriculum_mobile_cta {
+    font-size: 16px;
+    padding: 16px 20px;
+  }
+  .curriculum_mobile_cta .material-icons-round {
+    font-size: 16px;
+  }
 }
 
 /* 리뷰 : 장도담 */
@@ -724,7 +930,8 @@
   gap: 42px;
 }
 
-.review_left, .review_right {
+.review_left,
+.review_right {
   width: 580px;
   height: 100%;
 }
@@ -768,13 +975,21 @@
 }
 
 @keyframes scrollLeft {
-  from {transform: translateX(0);}
-  to {transform: translateX(-50%);}
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes scrollRight {
-  from {transform: translateX(-50%);}
-  to {transform: translateX(0);}
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .review_company_logo_down {
@@ -1092,74 +1307,120 @@
 
 /* --- 태블릿 버전 (max-width: 1024px) --- */
 @media (max-width: 1024px) {
+  .benefit {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* 배경 이미지 설정 (가이드: 768 * 1024 비율 최적화) */
+  .benefit::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* 배경 이미지 사이즈 가이드를 고려하여 너비 고정 및 고정 배경 적용 */
+    width: 100vw;
+    height: 100%;
+    background: url("/images/benefit_bg2.png") no-repeat center center / cover;
+    background-size: cover;
+    background-attachment: fixed; /* 좌우 리사이즈 시 커지는 현상 방지 */
+    opacity: 0.5;
+    z-index: 1;
+  }
+
   .benefit .container {
-    /* 좌우 여백 20px를 확보하기 위해 calc 사용 */
+    /* 좌우 여백 20px 반영 */
     width: calc(100% - 40px);
     max-width: 768px;
     margin: 0 auto;
-    padding: 0 20px; /* 명시적인 좌우 여백 */
+    padding: 0 20px;
     box-sizing: border-box;
-  }
-
-  .benefit_card_container {
-    /* 카드를 2열로 변경 */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* 높이는 지정해주신 576px 기준 혹은 유동적(auto) 설정 */
-    grid-auto-rows: auto;
-    min-height: 576px;
-    gap: 15px;
-    margin: 0 auto;
+    position: relative;
+    z-index: 10;
   }
 
   /* 가장 큰 글씨 32px 적용 */
   .text-header {
     font-size: 32px;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     line-height: 1.2;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .benefit_card_container {
+    display: grid;
+    /* 카드가 한 줄에 2개씩 배치되도록 설정 */
+    grid-template-columns: repeat(2, auto);
+    grid-auto-rows: auto;
+    min-height: 576px;
+    gap: 20px;
+    justify-content: center; /* 카드들을 중앙으로 정렬 */
+  }
+
+  /* 카드 박스 사이즈 250 * 250 반영 */
+  .benefit_card {
+    width: 250px;
+    height: 250px;
+    perspective: 1000px;
   }
 
   .card_front,
   .card_back {
-    background: linear-gradient(135deg, var(--purple), #3f1d6d);
+    padding: 20px;
     border-radius: 25px;
-    padding: 25px;
-    /* 카드 높이가 내용에 따라 늘어나도록 설정 */
+    background: linear-gradient(135deg, var(--purple), #3f1d6d);
+    width: 100%;
     height: 100%;
+    box-sizing: border-box;
   }
 
+  /* 아이콘 이미지 사이즈 100 * 70 반영 */
   .icon_box {
-    height: 100px;
+    width: 100px;
+    height: 70px;
+    margin: 0 auto 10px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .icon_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.45));
-    max-height: 100%;
   }
 
-  /* 중간 단계 폰트 사이즈 조정 */
+  /* 중간 폰트 24px 적용 (카드 제목 등) */
   .card_front h3,
   .card_back h3 {
-    font-size: 20px; /* 헤더보다는 작고 본문보다는 크게 */
+    font-size: 24px;
     font-weight: 800;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    text-align: center;
+    color: #fff;
   }
 
   .card_back p {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.4;
     font-weight: 700;
+    text-align: center;
   }
 
-  /* 가장 작은 글씨 10px ~ 11px 적용 */
+  /* badge 박스 120 * 30, 폰트 사이즈 16px 적용 */
   .badge {
-    width: 110px;
-    height: 26px;
-    font-size: 10px; /* 요청하신 최소 폰트 사이즈 */
+    width: 120px;
+    height: 30px;
+    font-size: 16px;
     font-weight: 800;
+    margin-bottom: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-radius: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1284,8 +1545,10 @@
 }
 
 #apply .inner {
-  width: 1280px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 #apply .inner h2 {
   color: var(--white);
@@ -1356,26 +1619,33 @@
 }
 
 #apply .slide_item {
-  flex: 0 0 1280px; /* 카드의 너비 고정 */
+  flex: 0 0 96%; /* 카드의 너비 고정 */
   scroll-snap-align: start;
+  margin: 0 auto;
 }
 
 /* --- 카드 디자인 --- */
 .apply_card {
   width: 100%;
+  max-width: 1280px;
   background: linear-gradient(145deg, #222, #111);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 40px;
   padding: 95px 110px;
-  height: 500px;
+  height: auto;
   box-sizing: border-box;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 왼쪽 텍스트 */
 
 .card_content{
-  width: 500px;
+  width: 55%;
+  min-width: 300px;
 }
 .card_title {
   margin-bottom: calc(var(--base-unit) * 3);
@@ -1429,10 +1699,10 @@
 
 /* 오른쪽 이미지 영역 */
 #apply .card_img {
-  flex: 0 0 350px;
   text-align: right;
   margin: 0;
   overflow: hidden;
+  max-width: 240px;
 }
 
 #apply .card_img img {
@@ -1444,12 +1714,13 @@
   display: block;
 }
 
-  /* 지원요건 태블릿 */
-  @media (max-width: 768px) {
- #apply .inner {
+/* 지원요건 태블릿 */
+@media (max-width: 768px) {
+  #apply .inner {
     width: 100%;
     padding: 0 20px;
     box-sizing: border-box;
+    overflow: hidden;
   }
 
   /* 헤더 */
@@ -1539,7 +1810,6 @@
 
 /* 지원요건 모바일 */
 @media (max-width: 400px) {
-
   #apply {
     padding: 40px 0;
   }
@@ -1608,7 +1878,6 @@
     width: 40px;
   }
 }
-  
 
 /* 지원독려 : 황시원 */
 /* 배경 */
