@@ -17,6 +17,9 @@
   height: 100%;
   margin: 0 auto;
 }
+.tablet_hero_text {
+  display: none;
+}
 
 .hero_slide {
   width: 400%;
@@ -239,6 +242,77 @@
   font-size: calc(var(--base-font) * 3);
 }
 
+@media (max-width: 768px) {
+
+  .tablet_hero_text {
+    display: block;
+    position: absolute;
+    left: 20%;
+    top: 110px;
+    color: var(--white);
+    font-size: var(--serve);
+    word-break: keep-all;
+    font-weight: 700;
+  }
+  /* 히어로 영역 */
+  #hero .inner {
+    width: 100%;
+    height: 576px;
+
+    overflow: hidden;
+    background:  url(../images/t_hero_bg.png) center / cover no-repeat;
+  }
+
+  /* 컨테이너 */
+  .hero_slide_container {
+    width: 100%;
+    height: 100%;
+    
+  }
+
+  /* 슬라이드 애니메이션 제거 */
+  .hero_slide {
+    width: 100%;
+    height: 100%;
+
+    animation: none;
+    transform: translateX(0) !important;
+  }
+
+  /* 배경 이미지 */
+  .hero_slide .slide_item {
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
+  /* 콘텐츠 제거 */
+  .hero_content {
+    display: none;
+  }
+
+  /* 페이지네이션 제거 */
+  .slider_pagination_container {
+    display: none;
+  }
+
+  /* 화살표 제거 */
+  .slider_arrow {
+    display: none;
+  }
+
+  /* 플로팅 버튼 제거 */
+  .quick_aside {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  #hero .tablet_hero_text{
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
 /* 참여이유 : 문송연  */
 .join {
   width: 100%;
@@ -303,7 +377,7 @@
   }
 }
 
-/* 참여이유_테블릿 버전 css */
+/* 참여이유_태블릿 버전 css */
 
 @media (max-width: 768px) {
   .join .join_label {
@@ -311,6 +385,7 @@
   }
   .join .text-h1 {
     font-size: 36px;
+    line-height: 125%;
   }
   .join span {
     font-size: 18px;
@@ -339,6 +414,10 @@
     width: 350px;
   }
 }
+
+/* 참여이유_모바일 버전 css */
+
+
 
 /* 커리큘럼 - 문송연 */
 
@@ -442,9 +521,7 @@
   gap: 95px;
 }
 .category_group {
-  display: flex;
-  justify-content: space-between;
-  width: 1280px;
+  width: 1082px;
   margin: 0 auto 50px;
 }
 
@@ -553,6 +630,9 @@
   display: none;
 }
 
+/* 커리큘럼 태블릿 css */
+
+
 /* 리뷰 : 장도담 */
 
 #review {
@@ -587,9 +667,7 @@
 
 /* 데스크탑 버전  */
 .benefit {
-  /* 피드백: width: 1920px 제거 (전체 너비 허용) */
   width: 100%;
-  /* 피드백: min-height: 980px 제거 (콘텐츠 양에 따라 유동적으로 조절)  */
   padding: 100px 0;
   position: relative;
   display: flex;
@@ -599,29 +677,30 @@
   overflow: hidden;
 }
 
-/* 배경 이미지 가상 요소  */
+/* 배경 이미지 가상 요소 (수정: 스케일링 방지 로직 적용) */
 .benefit::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  /* 뷰포트 기준으로 중앙을 잡고 고정 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
   height: 100%;
   background: url("/images/benefit_bg1.jpg") no-repeat center center / cover;
+  /* 핵심: 리사이즈 시 이미지 크기 변화를 막기 위해 뷰포트에 고정 */
+  background-attachment: fixed;
   opacity: 0.6;
   z-index: 1;
 }
 
-/* 피드백: 공통 컨테이너 클래스 활용 */
 .benefit .container {
-  /* 필요 시 공통 common.css의 .container 너비를 따름 */
   width: 1240px;
   margin: 0 auto;
   position: relative;
   z-index: 10;
 }
 
-/* 섹션 제목  */
 .text-header {
   text-align: center;
   font-size: var(--header);
@@ -630,17 +709,14 @@
   font-weight: 700;
 }
 
-/* 카드 그리드 레이아웃  */
 .benefit_card_container {
   display: grid;
-  /* 카드 너비는 가이드대로 400px 유지  */
   grid-template-columns: repeat(3, 400px);
   grid-auto-rows: 300px;
   gap: 20px;
   justify-content: center;
 }
 
-/* 카드 공통 스타일 및 애니메이션 (이전과 동일)  */
 .benefit_card {
   perspective: 1000px;
 }
@@ -699,7 +775,6 @@
 .icon_box img {
   max-height: 100%;
   object-fit: contain;
-  /* 피그마 효과 반영  */
   filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
 }
 
@@ -737,200 +812,190 @@
   margin-bottom: 20px;
 }
 
-/* 태블릿 버전 (max-width: 1024px) */
+/* --- 태블릿 버전 (max-width: 1024px) --- */
 @media (max-width: 1024px) {
-  .benefit {
-    padding: 80px 0;
-    position: relative;
-    min-height: auto;
-    overflow: hidden; /* 블러/확대된 이미지가 넘치지 않게 제어 */
-    background-color: #fff; /* 배경 투명도 적용 시 밑바탕 색상 */
-  }
-
-  /* ★ 배경 이미지 설정: 투명도 50% 및 블러 효과 ★ */
-  .benefit::before {
-    display: block;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("../images/benefit_bg2.png");
-    background-size: cover;
-    background-position: center;
-    /* 요청사항: 이미지 투명도 50% 적용 */
-    opacity: 0.5;
-    z-index: 1;
-  }
-
   .benefit .container {
-    /* 좌우 여백 20px 반영 (전체 너비에서 40px 제외) */
+    /* 좌우 여백 20px를 확보하기 위해 calc 사용 */
     width: calc(100% - 40px);
     max-width: 768px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px; /* 명시적인 좌우 여백 */
     box-sizing: border-box;
-    position: relative;
-    z-index: 10; /* 배경보다 위로 배치 */
-  }
-
-  /* 가장 큰 글씨 32px */
-  .text-header {
-    font-size: 32px;
-    margin-bottom: 60px;
-    color: #000;
-    text-align: center;
-    font-weight: 700;
   }
 
   .benefit_card_container {
+    /* 카드를 2열로 변경 */
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2열 구조 */
+    grid-template-columns: repeat(2, 1fr);
+    /* 높이는 지정해주신 576px 기준 혹은 유동적(auto) 설정 */
     grid-auto-rows: auto;
-    min-height: 576px; /* 가이드 높이 반영 */
-    gap: 20px;
-    justify-items: center;
+    min-height: 576px;
+    gap: 15px;
+    margin: 0 auto;
   }
 
-  /* 카드 박스 사이즈 354 * 360 반영 */
-  .benefit_card {
-    perspective: 1000px;
-    width: 354px;
-    height: 360px;
-  }
-
-  .card_inner {
-    width: 100%;
-    height: 100%;
+  /* 가장 큰 글씨 32px 적용 */
+  .text-header {
+    font-size: 32px;
+    margin-bottom: 40px;
+    line-height: 1.2;
   }
 
   .card_front,
   .card_back {
-    padding: 25px;
-    border-radius: 25px;
     background: linear-gradient(135deg, var(--purple), #3f1d6d);
-    width: 100%;
+    border-radius: 25px;
+    padding: 25px;
+    /* 카드 높이가 내용에 따라 늘어나도록 설정 */
     height: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
 
-  /* 아이콘 이미지 사이즈 170 * 120 반영 */
   .icon_box {
-    width: 170px;
-    height: 120px;
-    margin: 20px auto 0;
+    height: 100px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
 
   .icon_box img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.45));
+    filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.45));
+    max-height: 100%;
   }
 
+  /* 중간 단계 폰트 사이즈 조정 */
   .card_front h3,
   .card_back h3 {
-    font-size: 20px;
+    font-size: 20px; /* 헤더보다는 작고 본문보다는 크게 */
     font-weight: 800;
-    margin-top: 10px;
-    text-align: center;
-    color: #fff;
+    margin-bottom: 10px;
   }
 
   .card_back p {
     font-size: 16px;
     line-height: 1.5;
-    text-align: center;
-    color: #fff;
+    font-weight: 700;
   }
 
-  /* 가장 작은 글씨 10px */
+  /* 가장 작은 글씨 10px ~ 11px 적용 */
   .badge {
     width: 110px;
     height: 26px;
-    font-size: 10px;
-    margin-bottom: 15px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    border-radius: 50px;
+    font-size: 10px; /* 요청하신 최소 폰트 사이즈 */
+    font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 }
 
-/* 모바일 화면 대응 (max-width: 400px) */
+/* --- 모바일 화면 대응 (max-width: 400px) --- */
 @media screen and (max-width: 400px) {
   .benefit {
-    padding: 60px 0;
-    background-image: url("/images/benefit_bg3.jpg"); /* 모바일 전용 배경 */
+    width: 100%;
+    padding: 40px 0; /* 상하 패딩 약간 조절 */
+    min-height: auto;
+    background-image: url("../images/benefit_bg3.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: center top;
+    background-repeat: no-repeat;
   }
+
   .benefit .container {
     width: 100%;
-    padding: 0 16px; /* 좌우 여백 16px 반영 */
+    /* 좌우 여백 16px 반영 */
+    padding-left: 16px;
+    padding-right: 16px;
     box-sizing: border-box;
+    margin: 0 auto;
   }
 
-  /* 가장 큰 글씨 24px */
+  /* 타이틀: 가장 큰 글씨 24px */
   .text-header {
     font-size: 24px;
-    margin-bottom: 40px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 30px;
+    word-break: keep-all;
+    text-align: center; /* 모바일에서는 중앙 정렬이 깔끔합니다 */
   }
 
+  /* 카드 리스트: 2열 유지 */
   .benefit_card_container {
-    grid-template-columns: repeat(2, 1fr); /* 2열 유지 */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+    width: 100%;
   }
 
+  /* 카드 높이 및 스타일 */
   .benefit_card {
-    height: 180px; /* 모바일 카드 높이 */
-    perspective: 800px;
+    width: 100%;
+    height: 180px; /* 고정 높이 혹은 auto */
   }
 
   .card_front,
   .card_back {
-    padding: 15px 10px;
+    width: 100%;
+    height: 100%;
+    padding: 15px 12px; /* 패딩 미세 조정 */
     border-radius: 20px;
     background: linear-gradient(135deg, rgba(111, 53, 191, 0.92), rgba(63, 29, 109, 0.92));
+    backdrop-filter: blur(8px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 내용 배치 최적화 */
   }
 
-  /* 폰트 및 배지 사이즈 (최소 폰트 8px) */
+  /* 배지: 가장 작은 글씨 8px */
   .badge {
-    width: 65px;
+    width: 60px; /* 폰트가 작아졌으므로 너비 소폭 축소 */
     height: 18px;
     font-size: 8px;
+    font-weight: 600;
+    border-radius: 999px;
     margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
+  /* 카드 텍스트 */
   .card_front h3 {
-    font-size: 12px;
-  }
-  .card_back h3 {
     font-size: 13px;
-    margin-bottom: 5px;
+    font-weight: 700;
+    line-height: 1.3;
+    word-break: keep-all;
   }
+
+  .card_back h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
   .card_back p {
     font-size: 10px;
+    font-weight: 400;
     line-height: 1.4;
+    word-break: keep-all;
   }
 
+  /* 아이콘 크기 최적화 */
   .icon_box {
-    height: 60px;
-    margin-top: 5px;
+    width: 100%;
+    height: 50px;
+    margin-top: auto; /* 하단 배치 유도 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .icon_box img {
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.35));
+    max-width: 60px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
   }
 }
 
@@ -1000,14 +1065,21 @@
   overflow: hidden;
 }
 
-.apply_slide_wrapper > ul {
+.apply_slide_wrapper .slide_list {
   gap: 320px; /* 카드 사이 간격 */
   padding: 20px 0;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+}
+#apply .slide_list::-webkit-scrollbar {
+  display: none;
 }
 
 #apply .slide_item {
   flex: 0 0 1280px; /* 카드의 너비 고정 */
-  scroll-snap-align: center; /* 스크롤 시 중앙에 딱 붙음 */
+  scroll-snap-align: start;
 }
 
 /* --- 카드 디자인 --- */
@@ -1024,10 +1096,9 @@
 
 /* 왼쪽 텍스트 */
 
-/* .card_content{
-  width: 760px;
-  height: 310px;
-} */
+.card_content{
+  width: 500px;
+}
 .card_title {
   margin-bottom: calc(var(--base-unit) * 3);
 }
@@ -1046,15 +1117,14 @@
 .card_desc {
   margin-bottom: calc(var(--base-unit) * 2);
   word-break: keep-all; /* 한글 줄바꿈 예쁘게 */
+  font-size: var(--h2-150);
 }
 
 /* 카드 내부 동그란 숫자 리스트 */
 #apply .card_step_list {
   gap: 25px;
-
   /* 핵심 코드: 내용물의 너비에 딱 맞게 영역을 줄입니다 */
   width: fit-content;
-
   /* 만약 왼쪽 여백이 기본으로 잡혀있다면 초기화 */
   padding: 0;
   margin: 0;
@@ -1071,6 +1141,7 @@
   color: var(--white);
   transition: 0.3s;
   cursor: pointer;
+  font-size: var(--qna);
 }
 
 #apply .card_step_list li.active {
@@ -1083,6 +1154,7 @@
   flex: 0 0 350px;
   text-align: right;
   margin: 0;
+  overflow: hidden;
 }
 
 #apply .card_img img {
@@ -1091,9 +1163,167 @@
   height: auto;
   /* 부드러운 입체감을 위해 필터나 애니메이션 추가 가능 */
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+  display: block;
 }
 
+  /* 지원요건 태블릿 */
+@media (max-width: 768px) {
+  /* 전체 컨테이너 너비 해제 */
+  #apply .inner {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  /* 헤더 텍스트 크기 조절 */
+  .apply_header h2 {
+    font-size: var(--serve);
+  }
+
+  /* 슬라이드 래퍼 너비 조절 */
+  .apply_slide_wrapper {
+    width: 100%;
+  }
+
+  /* 슬라이드 아이템 너비 및 스냅 설정 변경 */
+  #apply .slide_item {
+    flex: 0 0 calc(100% - 40px); 
+    margin-right: 20px; 
+    scroll-snap-align: center; 
+  }
+  
+  .apply_slide_wrapper .slide_list {
+    gap: 0; /* gap 대신 margin-right로 간격 제어 */
+    padding: 20px 0;
+    overflow-x: auto; /* 스크롤 활성화 */
+  }
+
+  /* 카드 내부 레이아웃 변경 (가로 -> 세로) */
+  .apply_card {
+    flex-direction: column; 
+    height: auto; 
+    padding: 50px 90px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* 카드 내부 콘텐츠 너비 및 정렬 */
+  .card_content {
+    width: 100%;
+    order: 1; 
+  }
+  /* 카드 내부 숫자 리스트 중앙 정렬 */
+  #apply .card_step_list {
+    margin: 0 auto calc(var(--base-unit) * 2);
+  }
+
+  /* 이미지 영역 조절 */
+  #apply .card_img {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 200px; 
+    margin: 30px auto 0;
+    order: 2;
+    text-align: center;
+  }
+
+  #apply .card_img img {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  /* 상단 컨트롤러 숨김 */
+  .apply_arrows {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+
+  #apply {
+    padding: 40px 0;
+  }
+
+  /* 전체 여백 */
+  #apply .inner {
+    padding: 0 16px;
+    align-items: center;
+  }
+
+  /* 헤더 */
+  .apply_header {
+    margin-bottom: 40px;
+  }
+
+  .apply_header h2 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .apply_header p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* 슬라이드 */
+  #apply .slide_item {
+    flex: 0 0 100%;
+    margin-right: 16px;
+  }
+
+  .apply_slide_wrapper .slide_list {
+    padding: 10px 0;
+  }
+
+  /* 카드 */
+  .apply_card {
+    width: 90%;
+    padding: 20px 12px;
+    border-radius: 24px;
+  }
+
+  /* 텍스트 */
+  .card_title {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  .card_desc {
+    font-size: 12px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  /* 숫자 버튼 */
+  #apply .card_step_list {
+    gap: 10px;
+  }
+
+  #apply .card_step_list li {
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+  }
+
+  /* 이미지 */
+  #apply .card_img {
+    max-width: 140px;
+    margin-top: 10px;
+  }
+
+  /* 컨트롤러 */
+  .apply_slider_number {
+    font-size: 14px;
+  }
+
+  .apply_slider_number .bar {
+    width: 40px;
+  }
+
+}
+  
+
 /* 지원독려 : 황시원 */
+/* 배경 */
 .join_cta {
   width: 100%;
   background-image: url(../images/footer_cta_bg2.png), url(../images/footer_cta_bg1.jpg);
@@ -1101,12 +1331,14 @@
   background-position: center, center;
   background-size: cover, cover;
 }
+/* 버튼 */
 .join_cta .btn-big {
   filter: drop-shadow(0 0 10px var(--yellow));
   animation: btnBounce 1.5s ease infinite;
 }
 /* 지원독려 태블릿 */
 @media (max-width: 768px) {
+  /* 배경 */
   .join_cta {
     height: 160px;
     min-height: 160px;
@@ -1114,34 +1346,39 @@
     box-sizing: border-box;
     gap: 20px;
   }
+  /* 폰트 사이즈 */
   .join_cta .text-h1 {
     font-size: 24px;
   }
   .join_cta .text-qna {
     display: none;
   }
-  .join_cta .btn-big {
-    padding: 9px 20px;
-    font-size: 12px;
-  }
   .join_cta .btn-big .material-icons-round {
     display: none;
+  }
+  /* 버튼 */
+  .join_cta .btn-big {
+    padding: 10px 30px;
+    font-size: 16px;
   }
 }
 /* 지원독려 모바일 */
 @media (max-width: 402px) {
+  /* 배경 */
   .join_cta {
     height: 140px;
     min-height: 140px;
     padding: 20px 0;
     gap: 10px;
   }
+  /* 폰트 사이즈 */
   .join_cta .text-h1 {
     font-size: 20px;
   }
   .join_cta .text-qna {
     display: none;
   }
+  /* 버튼 */
   .join_cta .btn-big {
     padding: 9px 20px;
     font-size: 12px;
@@ -1149,9 +1386,11 @@
 }
 
 /* QNA : 황시원 */
+/* 배경 */
 .qna {
   background: var(--white);
 }
+/* 폰트 */
 .qna-text {
   color: var(--black);
 }
@@ -1173,6 +1412,7 @@
   box-sizing: border-box;
   text-align: center;
 }
+/* 질문상자 */
 .qnalist .question {
   width: 100%;
   box-sizing: border-box;
@@ -1190,6 +1430,7 @@
   border-radius: 10px 10px 0 0;
   background: #d7d7d7;
 }
+/* 답변상자 */
 .qnalist .answer {
   width: 100%;
   box-sizing: border-box;
@@ -1235,7 +1476,6 @@
     height: calc(var(--base-unit) * 3);
     padding: 0 30px;
   }
-
   .qnalist .answer {
     padding: 20px 30px;
   }
@@ -1294,7 +1534,6 @@
   .qnalist .answer {
     padding: 20px 20px;
   }
-
   /* 폰트 사이즈  */
   .qna .text-h1 {
     font-size: 20px;
