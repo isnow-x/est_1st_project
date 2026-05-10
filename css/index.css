@@ -303,7 +303,7 @@
   }
 }
 
-/* 참여이유_테블릿 버전 css */
+/* 참여이유_태블릿 버전 css */
 
 @media (max-width: 768px) {
   .join .join_label {
@@ -311,6 +311,7 @@
   }
   .join .text-h1 {
     font-size: 36px;
+    line-height: 125%;
   }
   .join span {
     font-size: 18px;
@@ -339,6 +340,10 @@
     width: 350px;
   }
 }
+
+/* 참여이유_모바일 버전 css */
+
+
 
 /* 커리큘럼 - 문송연 */
 
@@ -442,9 +447,7 @@
   gap: 95px;
 }
 .category_group {
-  display: flex;
-  justify-content: space-between;
-  width: 1280px;
+  width: 1082px;
   margin: 0 auto 50px;
 }
 
@@ -552,6 +555,9 @@
 .detail_last {
   display: none;
 }
+
+/* 커리큘럼 태블릿 css */
+
 
 /* 리뷰 : 장도담 */
 #review {
