@@ -1147,7 +1147,7 @@
 }
 
 .review_company_logo_caption {
-  color: var(-gray);
+  color: var(--super-gray);
   margin-top: 26px;
 }
 
