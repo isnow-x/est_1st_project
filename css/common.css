@@ -33,6 +33,10 @@
   --footer: calc(var(--base-font) * 0.66);
 }
 
+html {
+scroll-behavior: smooth;
+} 
+
 body {
   font-family: "Pretendard", sans-serif;
   letter-spacing: var(--base-letter-spacing);
