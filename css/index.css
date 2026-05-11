@@ -425,7 +425,7 @@
 }
 /* PC에서 br 숨기기 */
 .join_slider_step1 h3 br,
-.join_slider_step2 h3 br .join h2 br {
+.join_slider_step2 h3 br, .join h2 br {
   display: none;
 }
 .join::before {
