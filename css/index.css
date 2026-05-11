@@ -419,7 +419,7 @@
 }
 /* PC에서 br 숨기기 */
 .join_slider_step1 h3 br,
-.join_slider_step2 h3 br
+.join_slider_step2 h3 br,
 .join h2 br {
   display: none;
 }
@@ -485,6 +485,9 @@
   .join .join_label {
     font-size: 24px;
   }
+  /* 줄바꿈 */
+  .join_slider_step1 h3 br,
+  .join_slider_step2 h3 br,
   .join h2 br {
     display: block;
   }
@@ -526,6 +529,8 @@
   .join .inner {
     padding: 50px 20PX;
   }
+  .join_slider_step1 h3 br,
+  .join_slider_step2 h3 br,
   .join h2 br {
     display: block;
   }
@@ -533,7 +538,7 @@
     font-size: 16px;
   }
   .join_slider_group {
-    margin-top: 35px;
+    margin-top: 15px;
     gap: 0;
   }
   .join .text-h1 {
@@ -592,6 +597,13 @@
   white-space: nowrap;
   margin-bottom: 0;
   color: var(--white);
+}
+/* 100% 온라인 강의 멘트 PC에서 숨기기 */
+.curriculum_mobile_label {
+  display: none;
+}
+.curriculum h2 br{
+  display: none;
 }
 
 /* 상단 히어로 가이드 */
@@ -665,6 +677,10 @@
   box-sizing: border-box;
   gap: 95px;
 }
+.curriculum h2 br{
+  display: none;
+}
+
 .category_group {
   width: 1082px;
   margin: 0 auto 50px;
@@ -784,14 +800,18 @@
 
 /* 커리큘럼 태블릿 css */
 @media (max-width: 768px) {
+  .curriculum{
+    padding: 100px 84px;
+  }
   .curriculum_container.pc-only {
     display: none;
   }
   .curriculum_container.mobile-only {
+    min-height: auto;
     display: block;
     width: 100%;
     background: transparent;
-    padding: 30px 64px 100px;
+    padding: 0;
     box-sizing: border-box;
   }
   .curriculum_container.mobile-only .curriculum_schedule > div {
@@ -808,18 +828,24 @@
   .curriculum {
     min-height: auto;
   }
+  .curriculum .hero_guide_text{
+    gap: 20px;
+  }
   .curriculum h2 {
-    white-space: normal;
-    padding: 100px 16px 80px;
+    white-space: normal !important;
     font-size: 32px;
+    padding: 0;
+  }
+  .curriculum h2 br{
+  display: none;
   }
   .curriculum_hero_guide {
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-bottom: 60px;
-    padding: 0 16px;
+    margin: 60px 0;
+    padding: 0;
   }
   .hero_guide_text {
     display: flex;
@@ -837,7 +863,7 @@
     width: 80px;
   }
   .curriculum_hero_guide .hero_guide_text h3 {
-    font-size: 28px;
+    font-size: 24px;
     line-height: 125%;
   }
   .curriculum_hero_guide .hero_guide_text-body {
@@ -845,6 +871,9 @@
   }
   .category_group {
     width: 100%;
+    gap: 50px;
+    box-sizing: border-box;
+    justify-content: center;
   }
   .curriculum .category_group label {
     font-size: 16px;
@@ -909,26 +938,59 @@
 /* 커리큘럼 모바일 css */
 
 @media (max-width: 402px) {
+  .curriculum{
+    padding: 50px 20px;
+  }
   .curriculum h2 {
     font-size: 24px;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  .curriculum_hero_guide{
+    margin-bottom: 30px;
   }
   .curriculum_hero_guide img {
     display: none;
   }
-  .hero_guide_text h3 {
+  /* 모바일에서 숨기기 */
+  .hero_guide_text h3,
+  .hero_guide_text p {
     display: none;
   }
+  /* 모바일에서 보이기 */
+  .curriculum_mobile_label {
+    display: block;
+    font-size: 10px;
+    font-weight: 400;
+  }
+  .curriculum h2 br{
+    display: block;
+  }
+  .label_highlight {
+    color: var(--yellow);
+  }
+  .label_normal {
+    color: var(--white);
+  }
+
   .curriculum_container.mobile-only .curriculum_schedule > div {
+    min-height: auto;
     padding: 16px 20px;
     width: 100%;
   }
+  .curriculum_container.mobile-only .curriculum_schedule h4{
+    font-size: 12px;
+  }
+  .curriculum_container.mobile-only .curriculum_schedule div{
+    font-size: 14px;
+  }
   .category_group {
     justify-content: center;
-    gap: 30px;
-    padding: 0 16px;
+    gap: 50px;
     box-sizing: border-box;
     width: 100%;
     font-size: 10px;
+    margin: 30px 0;
   }
   .category_group label {
     align-items: center;
@@ -941,10 +1003,11 @@
     width: 60px;
   }
   #tab2 + label img {
-    width: 60px;
+    width: 50px;
   }
   .curriculum_container.mobile-only {
-    padding: 30px 16px 50px !important; /* 64px → 16px */
+  padding: 0;
+    min-height: auto;
   }
 
   .mobile-only .schedule_detail {
