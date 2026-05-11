@@ -512,7 +512,7 @@
   .join_slider_step1 p,
   .join_slider_step2 p {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 700;
   }
   .join_slider_group {
     gap: 60px;
@@ -560,13 +560,14 @@
   .join_slider_step1 h3,
   .join_slider_step2 h3 {
     font-size: 16px;
+    line-height: 125%;
   }
   .join span {
     font-size: 12px;
   }
   .join_slider_step1 p,
   .join_slider_step2 p {
-    font-size: 12px;
+    font-size: 10px;
   }
   .join_slider_step1 img,
   .join_slider_step2 img {
@@ -1007,16 +1008,18 @@
     font-size: 12px;
   }
   .category_group label img {
-    width: 60px;
+    width: 80px;
   }
   #tab2 + label img {
-    width: 50px;
+    width: 70px;
   }
   .curriculum_container.mobile-only {
   padding: 0;
     min-height: auto;
   }
-
+  .mobile-only .month_title {
+    font-weight: 700;
+  }
   .mobile-only .schedule_detail {
     font-size: 12px;
   }
