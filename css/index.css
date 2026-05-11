@@ -345,7 +345,6 @@
     margin-bottom: 20px;
     z-index: 2;
     margin-top: 70px;
-    text-align: center;
   }
 
   .mobile_hero_title .text-main {
@@ -377,7 +376,6 @@
     padding: 20px 10px;
     z-index: 2;
     margin-bottom: 10px;
-    text-align: center;
   }
 
   .announcement_sub {
@@ -2074,7 +2072,6 @@
 
 /* --- 헤더 영역 (제목 + 컨트롤러) --- */
 .apply_header {
-  text-align: center;
   margin-bottom: calc(var(--base-unit) * 3);
 }
 
