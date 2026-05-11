@@ -889,7 +889,7 @@
     flex-direction: row;
     gap: 10px;
     width: fit-content;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
   .badge_btn {
     display: inline-flex;
