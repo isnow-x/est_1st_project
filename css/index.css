@@ -846,9 +846,11 @@
     font-size: 32px;
     padding: 0;
   }
-  .curriculum h2 br{
+  .join_slider_step1 h3 br,
+  .join_slider_step2 h3 br {
     display: none;
   }
+
   .curriculum_hero_guide {
     flex-direction: row;
     justify-content: center;
