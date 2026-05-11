@@ -1114,6 +1114,7 @@
   overflow: hidden;
 }
 
+/* 리뷰 기업창 로고 1행(좌) 2행(우) 3행(좌) 에니메이션 */
 .review_company_logo.left {
   animation: scrollLeft 40s linear infinite;
 }
@@ -1138,7 +1139,7 @@
 }
 
 .review_company_logo_caption {
-  color: var(--super-gray);
+  color: var(-gray);
   margin-top: 26px;
 }
 
@@ -1173,85 +1174,15 @@
   animation: scrollUp 35s linear infinite;
 }
 
-.review_estchat_body:hover ol {
-  animation-play-state: paused;
-}
-
+/* 리뷰 채팅창 챗버블 아래서 위 방향 애니메이션 */
 @keyframes scrollUp {
   from {transform: translateY(0);}
   to {transform: translateY(-50%);}
 }
 
-.review_estchat_footer {
-  height: 177px;
-  margin: 21px;
-  gap: 10px;
-  background: var(--super-gray);
-  padding: 10px 0;
-  border: 1px solid var(--gray);
-  border-radius: 8px;
-  box-sizing: border-box;
-}
-
-.review_estchat_options {
-  gap: 30px;
-  padding: 0 30px 0 90px;
-}
-
-.review_estchat_options > div {
-  gap: 10px;
-}
-
-.review_estchat_options button {
-  width: 356px;
-  height: 34px;
-  background: transparent;
-  color: var(--white);
-  border: 1px solid var(--gray);
-  border-radius: 16px;
-  padding: 0 16px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-.review_estchat_options button:hover {
-  border-color: var(--yellow);
-  box-shadow: 0 0 10px 0 var(--yellow);
-}
-
-.review_estchat_options .fa-paper-plane {
-  font-size: 24px;
-  color: var(--yellow);
-}
-
-.review_estchat_icons {
-  gap: 12px;
-  padding-left: 10px;
-}
-
-.review_estchat_icons i {
-  color: var(--gray);
-  font-size: 25px;
-}
-
-.review_chat_completer,
-.review_chat_user,
-.review_chat_staff {
-  gap: 12px;
-  align-items: flex-start;
-}
-
-.review_chat_user {
-  flex-direction: row-reverse;
-}
-
-.review_chat_avatar img {
-  width: 50px;
-  height: 50px;
-  border-radius: 16px;
-  object-fit: cover;
-  flex-shrink: 0;
+/* 리뷰 채팅창 호버 시 멈춤 애니메이션 */
+.review_estchat_body:hover ol {
+  animation-play-state: paused;
 }
 
 .review_chat_bubble {
@@ -1297,6 +1228,83 @@
   box-sizing: border-box;
 }
 
+.review_estchat_footer {
+  height: 177px;
+  margin: 21px;
+  gap: 10px;
+  background: var(--super-gray);
+  padding: 10px 0;
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.review_estchat_options {
+  gap: 30px;
+  padding: 0 30px 0 90px;
+}
+
+.review_estchat_options > div {
+  gap: 10px;
+}
+
+/* 리뷰 입력창 선택지 손가락(클릭) 모양으로 변경 */
+.review_estchat_options button {
+  width: 356px;
+  height: 34px;
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--gray);
+  border-radius: 16px;
+  padding: 0 16px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+/* 리뷰 입력창 선택지 호버 시 외곽선 */
+.review_estchat_options button:hover {
+  border-color: var(--yellow);
+  box-shadow: 0 0 10px 0 var(--yellow);
+}
+
+.review_estchat_options .fa-paper-plane {
+  font-size: 24px;
+  color: var(--yellow);
+}
+
+.review_estchat_icons {
+  gap: 12px;
+  padding-left: 10px;
+}
+
+.review_estchat_icons i {
+  color: var(--gray);
+  font-size: 25px;
+}
+
+.review_chat_completer,
+.review_chat_user,
+.review_chat_staff {
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.review_chat_user {
+  flex-direction: row-reverse;
+}
+
+.review_chat_avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+
+
+/* 리뷰 태블릿 반응형 */
 @media (max-width: 768px) {
   #review {
     height: 1024px;
@@ -1494,6 +1502,7 @@
   .review_company_logo_down {display: none;}
 }
 
+/* 리뷰 모바일 반응형 */
 @media (max-width: 402px) {
   #review {
     height: 984px;
