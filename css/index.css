@@ -611,6 +611,9 @@
 .curriculum h2 br {
   display: none;
 }
+.curriculum_badge_group {
+  display: none;
+}
 
 /* 상단 히어로 가이드 */
 .curriculum_hero_guide {
@@ -875,6 +878,35 @@
   .curriculum_hero_guide .hero_guide_text-body {
     font-size: 14px;
   }
+
+    /* 온/오프라인 버튼 */
+
+    .curriculum_badge_group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: fit-content;
+    margin-bottom: 20px;
+  }
+  .badge_btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 2px solid var(--purple);
+    color: var(--white);
+    background: transparent;
+    width: auto;
+    height: auto;
+  }
+  .badge_btn.active {
+    background: var(--purple);
+  }
+
   .category_group {
     width: 100%;
     gap: 50px;
@@ -984,12 +1016,16 @@
     padding: 16px 20px;
     width: 100%;
   }
-  .curriculum_container.mobile-only .curriculum_schedule h4 {
-    font-size: 12px;
-  }
-  .curriculum_container.mobile-only .curriculum_schedule div {
+  .curriculum_container.mobile-only .curriculum_schedule h4{
     font-size: 14px;
   }
+  .curriculum_container.mobile-only .curriculum_schedule div{
+    font-size: 10px;
+  }
+  .curriculum_badge_group {
+    padding-left: 0;
+  }
+
   .category_group {
     justify-content: center;
     gap: 50px;
