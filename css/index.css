@@ -1111,6 +1111,10 @@
   flex-shrink: 0;
 }
 
+.review_company_logo li {
+  margin-right: calc(var(--base-unit) * 2);
+}
+
 .review_company_logo_up {
   gap: 36px;
   margin-bottom: 42px;
