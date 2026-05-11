@@ -304,16 +304,15 @@ header .btn_hamburger .material-icons-round{
 }
 /* 헤더 모바일 */
 @media (max-width: 402px) {
-  body > header{
-    height: 110px;
+    body > header{
+    height: 60px;
   }
   header .inner{
-    padding: 20px 20px 20px 26px;
+    padding: 12px 20px 12px 26px;
     margin: 0;
     max-width: 402px;
     height: 100%;
     display: flex;
-    align-items: flex-end;
     box-sizing: border-box;
   }
   header .menu_m{
@@ -333,7 +332,7 @@ header .btn_hamburger .material-icons-round{
     font-size: 10px;
   }
   header .btn_hamburger .material-icons-round{
-  font-size: 20px;
+  font-size: 24px;
   }
   header .btn_cta .material-icons-round{
     font-size: 20px;
