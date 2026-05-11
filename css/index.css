@@ -355,7 +355,6 @@
     padding: 5px 15px;
     font-weight: 700;
     line-height: 125%;
-    
   }
   .mobile_hero_title .text-sub {
     font-size: 16px;
@@ -609,7 +608,7 @@
 .curriculum_mobile_label {
   display: none;
 }
-.curriculum h2 br{
+.curriculum h2 br {
   display: none;
 }
 
@@ -684,7 +683,7 @@
   box-sizing: border-box;
   gap: 95px;
 }
-.curriculum h2 br{
+.curriculum h2 br {
   display: none;
 }
 
@@ -807,7 +806,7 @@
 
 /* 커리큘럼 태블릿 css */
 @media (max-width: 768px) {
-  .curriculum{
+  .curriculum {
     padding: 100px 84px;
   }
   .curriculum_container.pc-only {
@@ -835,7 +834,7 @@
   .curriculum {
     min-height: auto;
   }
-  .curriculum .hero_guide_text{
+  .curriculum .hero_guide_text {
     gap: 20px;
   }
   .curriculum h2 {
@@ -843,8 +842,8 @@
     font-size: 32px;
     padding: 0;
   }
-  .curriculum h2 br{
-  display: none;
+  .curriculum h2 br {
+    display: none;
   }
   .curriculum_hero_guide {
     flex-direction: row;
@@ -945,7 +944,7 @@
 /* 커리큘럼 모바일 css */
 
 @media (max-width: 402px) {
-  .curriculum{
+  .curriculum {
     padding: 50px 20px;
   }
   .curriculum h2 {
@@ -953,7 +952,7 @@
     padding: 0;
     margin-bottom: 10px;
   }
-  .curriculum_hero_guide{
+  .curriculum_hero_guide {
     margin-bottom: 30px;
   }
   .curriculum_hero_guide img {
@@ -970,7 +969,7 @@
     font-size: 10px;
     font-weight: 400;
   }
-  .curriculum h2 br{
+  .curriculum h2 br {
     display: block;
   }
   .label_highlight {
@@ -985,10 +984,10 @@
     padding: 16px 20px;
     width: 100%;
   }
-  .curriculum_container.mobile-only .curriculum_schedule h4{
+  .curriculum_container.mobile-only .curriculum_schedule h4 {
     font-size: 12px;
   }
-  .curriculum_container.mobile-only .curriculum_schedule div{
+  .curriculum_container.mobile-only .curriculum_schedule div {
     font-size: 14px;
   }
   .category_group {
@@ -1013,7 +1012,7 @@
     width: 70px;
   }
   .curriculum_container.mobile-only {
-  padding: 0;
+    padding: 0;
     min-height: auto;
   }
   .mobile-only .month_title {
@@ -1043,7 +1042,8 @@
   gap: 42px;
 }
 
-.review_left, .review_right {
+.review_left,
+.review_right {
   width: 580px;
   height: 100%;
 }
@@ -1088,13 +1088,21 @@
 }
 
 @keyframes scrollLeft {
-  from {transform: translateX(0);}
-  to {transform: translateX(-50%);}
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes scrollRight {
-  from {transform: translateX(-50%);}
-  to {transform: translateX(0);}
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .review_company_logo_down {
@@ -1140,8 +1148,12 @@
 
 /* 리뷰 채팅창 챗버블 아래서 위 방향 애니메이션 */
 @keyframes scrollUp {
-  from {transform: translateY(0);}
-  to {transform: translateY(-50%);}
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
 }
 
 /* 리뷰 채팅창 호버 시 멈춤 애니메이션 */
@@ -1289,9 +1301,15 @@
     display: contents;
   }
 
-  .review_headline_container {order: 1;}
-  .review_estchat_container {order: 2;}
-  .review_company_logo_container {order: 3;}
+  .review_headline_container {
+    order: 1;
+  }
+  .review_estchat_container {
+    order: 2;
+  }
+  .review_company_logo_container {
+    order: 3;
+  }
 
   .review_headline_container {
     width: 100%;
@@ -1351,8 +1369,12 @@
     pointer-events: none;
   }
 
-  .review_estchat_body::before { top: 0; }
-  .review_estchat_body::after  { bottom: 0; }
+  .review_estchat_body::before {
+    top: 0;
+  }
+  .review_estchat_body::after {
+    bottom: 0;
+  }
 
   .review_estchat_body ol {
     gap: 9px;
@@ -1371,7 +1393,9 @@
     padding: 0 23px 0 70px;
   }
 
-  .review_estchat_options > div {gap: 7px;}
+  .review_estchat_options > div {
+    gap: 7px;
+  }
 
   .review_estchat_options button {
     width: 277px;
@@ -1382,14 +1406,18 @@
     line-height: 1.5;
   }
 
-  .review_estchat_options .fa-paper-plane {font-size: 23px;}
+  .review_estchat_options .fa-paper-plane {
+    font-size: 23px;
+  }
 
   .review_estchat_icons {
     gap: 9px;
     padding-left: 7px;
   }
 
-  .review_estchat_icons i {font-size: 19px;}
+  .review_estchat_icons i {
+    font-size: 19px;
+  }
 
   .review_chat_completer,
   .review_chat_user,
@@ -1463,7 +1491,9 @@
     height: 22px;
   }
 
-  .review_company_logo_down {display: none;}
+  .review_company_logo_down {
+    display: none;
+  }
 }
 
 /* 리뷰 모바일 반응형 */
@@ -1601,7 +1631,7 @@
   transform: translateX(-50%);
   width: 100vw;
   height: 100%;
-  background: url("images/benefit_bg1.jpg") no-repeat center center / cover;
+  background: url("/images/benefit_bg1.jpg") no-repeat center center / cover;
   /* 핵심: 리사이즈 시 이미지 크기 변화를 막기 위해 뷰포트에 고정 */
   background-attachment: fixed;
   opacity: 0.6;
@@ -1744,7 +1774,7 @@
     /* 배경 이미지 사이즈 가이드를 고려하여 너비 고정 및 고정 배경 적용 */
     width: 100vw;
     height: 100%;
-    background: url("images/benefit_bg2.png") no-repeat center center / cover;
+    background: url("/images/benefit_bg2.png") no-repeat center center / cover;
     background-size: cover;
     background-attachment: fixed; /* 좌우 리사이즈 시 커지는 현상 방지 */
     opacity: 0.5;
@@ -1867,7 +1897,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("images/benefit_bg3.jpg") no-repeat center top / cover;
+    background: url("/images/benefit_bg3.jpg") no-repeat center top / cover;
     background-attachment: scroll; /* 모바일 배터리/성능 최적화 */
     opacity: 0.6;
     z-index: 1;
@@ -2281,7 +2311,7 @@
   }
   .apply_slide_wrapper .slide_list {
     padding: 10px 0;
-    gap: 0; 
+    gap: 0;
     scroll-behavior: smooth;
     overflow-x: auto;
     scroll-snap-type: x mandatory; /* 스냅 기능 유지 */
