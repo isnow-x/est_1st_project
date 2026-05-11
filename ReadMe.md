@@ -8,8 +8,8 @@
 
 # 🔗 빠른 링크
 
-+ [기획서] (https://www.figma.com/design/IXwcIyqdMVSNVH42znB5oe/2%EC%A1%B0-%EB%B2%84%EA%B7%B8%EC%9E%A1%EC%9D%B4-%EB%94%94%EC%9E%90%EC%9D%B8%EC%8B%9C%EC%95%88?node-id=0-1&t=o41qVon174FWZ1DE-1)
-+ [디자인원본] (https://www.figma.com/design/IXwcIyqdMVSNVH42znB5oe/2%EC%A1%B0-%EB%B2%84%EA%B7%B8%EC%9E%A1%EC%9D%B4-%EB%94%94%EC%9E%90%EC%9D%B8%EC%8B%9C%EC%95%88?node-id=0-1&t=o41qVon174FWZ1DE-1)
++ [기획서](https://www.figma.com/design/IXwcIyqdMVSNVH42znB5oe/2%EC%A1%B0-%EB%B2%84%EA%B7%B8%EC%9E%A1%EC%9D%B4-%EB%94%94%EC%9E%90%EC%9D%B8%EC%8B%9C%EC%95%88?node-id=0-1&t=o41qVon174FWZ1DE-1)
++ [디자인원본](https://www.figma.com/design/IXwcIyqdMVSNVH42znB5oe/2%EC%A1%B0-%EB%B2%84%EA%B7%B8%EC%9E%A1%EC%9D%B4-%EB%94%94%EC%9E%90%EC%9D%B8%EC%8B%9C%EC%95%88?node-id=0-1&t=o41qVon174FWZ1DE-1)
 
 ## 1.프로젝트 개요
 ### 1.1 목표
@@ -184,6 +184,6 @@ EST_1ST_PROJECT
 
 ## 6. 기획/디자인 문서 📄
 + 기획서(피그마 슬라이드): 와이어프레임 및 스토리보드, 화면 흐름, 컨셉, 요구사항, 마일스톤 정리
-링크:https://www.figma.com/slides/KDjO7Iy8PPpRHQ8556LfhO
+링크: [피그마 슬라이드 바로가기]https://www.figma.com/slides/KDjO7Iy8PPpRHQ8556LfhO
 + 디자인 원본(피그마): 컴포넌트, 컬러/타이포 스케일, 반응형 레이아웃, 아이콘
-링크:https://www.figma.com/design/IXwcIyqdMVSNVH42znB5oe/2%EC%A1%B0-%EB%B2%84%EA%B7%B8%EC%9E%A1%EC%9D%B4-%EB%94%94%EC%9E%90%EC%9D%B8%EC%8B%9C%EC%95%88?node-id=786-2291&t=o41qVon174FWZ1DE-1
+링크:[피그마 디자인 바로가기]https://www.figma.com/design/IXwcIyqdMVSNVH42znB5oe/2%EC%A1%B0-%EB%B2%84%EA%B7%B8%EC%9E%A1%EC%9D%B4-%EB%94%94%EC%9E%90%EC%9D%B8%EC%8B%9C%EC%95%88?node-id=786-2291&t=o41qVon174FWZ1DE-1
