@@ -41,16 +41,16 @@
 }
 /* 슬라이드 배경 이미지 */
 .item1 {
-  background-image: url(../images/hero_bg1.webp);
+  background-image: url(../images/hero_bg1.jpg);
 }
 .item2 {
-  background-image: url(../images/hero_bg2.webp);
+  background-image: url(../images/hero_bg2.jpg);
 }
 .item3 {
-  background-image: url(../images/hero_bg3.webp);
+  background-image: url(../images/hero_bg3.jpg);
 }
 .item4 {
-  background-image: url(../images/hero_bg4.webp);
+  background-image: url(../images/hero_bg4.jpg);
 }
 /* 자동 슬라이드 애니메이션 */
 @keyframes slide_auto {
@@ -264,7 +264,7 @@
     height: 576px;
 
     overflow: hidden;
-    background: url(../images/t_hero_bg.webp) center / cover no-repeat;
+    background: url(../images/t_hero_bg.jpg) center / cover no-repeat;
   }
 
   /* 컨테이너 */
@@ -417,7 +417,7 @@
 .join {
   width: 100%;
   min-height: 1000px;
-  background: var(--super-black) url(../images/section_join_BG.webp) no-repeat top center;
+  background: var(--super-black) url(../images/section_join_BG.jpg) no-repeat top center;
   background-size: 100% 100%;
   position: relative;
 }
