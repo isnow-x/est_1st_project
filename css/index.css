@@ -1202,13 +1202,13 @@
   bottom: 0;
 }
 
+/* 리뷰 채팅창 챗버블 아래서 위 방향 애니메이션 */
 .review_estchat_body ol {
   gap: 12px;
   padding-bottom: 12px;
   animation: scrollUp 35s linear infinite;
 }
 
-/* 리뷰 채팅창 챗버블 아래서 위 방향 애니메이션 */
 @keyframes scrollUp {
   from {
     transform: translateY(0);
