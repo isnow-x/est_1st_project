@@ -417,7 +417,7 @@
 .join {
   width: 100%;
   min-height: 1000px;
-  background: var(--super-black) url(../images/section_join_BG.png) no-repeat top center;
+  background: var(--super-black) url(../images/section_join_BG.webp) no-repeat top center;
   background-size: 100% 100%;
   position: relative;
 }
@@ -577,7 +577,7 @@
 
 .curriculum {
   min-height: 1960px;
-  background: var(--super-black) url(../images/curriculum_bg.png) no-repeat top center;
+  background: var(--super-black) url(../images/curriculum_bg.webp) no-repeat top center;
   background-size: 100% auto;
   background-position: top center;
   position: relative;
