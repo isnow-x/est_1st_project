@@ -41,16 +41,16 @@
 }
 /* 슬라이드 배경 이미지 */
 .item1 {
-  background-image: url(../images/hero_bg1.png);
+  background-image: url(../images/hero_bg1.webp);
 }
 .item2 {
-  background-image: url(../images/hero_bg2.png);
+  background-image: url(../images/hero_bg2.webp);
 }
 .item3 {
-  background-image: url(../images/hero_bg3.png);
+  background-image: url(../images/hero_bg3.webp);
 }
 .item4 {
-  background-image: url(../images/hero_bg4.png);
+  background-image: url(../images/hero_bg4.webp);
 }
 /* 자동 슬라이드 애니메이션 */
 @keyframes slide_auto {
